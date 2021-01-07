@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavMenu from "./components/NavMenu";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>testing</p>
-      </header>
+      <NavMenu />
+      <Welcome />
     </div>
   );
 }
