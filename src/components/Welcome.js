@@ -1,36 +1,19 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
-import Countdown from "react-countdown";
 
 const Welcome = () => {
-  const renderer = ({hours, minutes, seconds, completed}) => {
-    if (completed) {
-      return (
-        <div>
-          <span>Time to go!</span>
-        </div>
-      );
-    } else {
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
-
   return (
     <Container>
       <HeroImage>
-        <img src="http://placekitten.com/600/700" alt="placeholder" />
+        <img
+          src="https://lh3.google.com/u/0/d/1cS567nNYM_L6xV4xcfa2hi9L3xJq9oUh=w2858-h1936-iv1"
+          width="1600"
+          alt="placeholder"
+        />
       </HeroImage>
-      <DateInfo>
-        <Details>
-          <h3>New York, NY</h3>
-          <h5>Saturday, November 20, 2021</h5>
-          <Countdown date={Date.now() + 10000} renderer={renderer} />
-        </Details>
-      </DateInfo>
+      <TextContainer>
+        <h1>Joanna & Gabriel</h1>
+      </TextContainer>
     </Container>
   );
 };
@@ -38,10 +21,11 @@ const Welcome = () => {
 export default Welcome;
 
 const Container = styled.div`
+  border: 1px solid pink;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 1rem;
-  background: maroon;
+  background: white;
 `;
 
 const fadeIn = keyframes`
@@ -55,21 +39,17 @@ const fadeOut = keyframes`
 `;
 
 const HeroImage = styled.div`
-  display: inline-block;
+  // width: 1080px;
+  // height: 800px;
+`;
+
+const TextContainer = styled.div`
+  // border: 1px solid red;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
-  width: 200px;
-`;
-
-const DateInfo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //   border: 1px solid yellow;
-`;
-
-const Details = styled.div`
-  color: white;
-  //   border: 1px dotted white;
 `;
