@@ -46,7 +46,7 @@ const RSVPform = () => {
 
   const handlePlusOne = (e) => {
     const status = e.target.checked;
-    status ? setPlusOne(status) : setPlusOne(!status);
+    setPlusOne(status);
   };
 
   return (
