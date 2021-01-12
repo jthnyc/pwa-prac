@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import {Button} from "react-bootstrap";
 
-const RSVP = () => {
+const Event = () => {
   const renderer = ({hours, minutes, seconds, completed}) => {
     if (completed) {
       return (
@@ -21,17 +21,17 @@ const RSVP = () => {
   };
 
   return (
-    <RSVPContainer>
-      <RSVPDetails>
-        <RSVPDate>
+    <EventContainer>
+      <EventDetails>
+        <EventDate>
           <h1>The Weylin</h1>
           <h5>Saturday, November 20, 2021</h5>
           <Countdown date={"2021-11-20T17:00:00"} renderer={renderer} />
-        </RSVPDate>
+        </EventDate>
         <Button variant="outline-secondary" size="lg">
           {"R.S.V.P."}
         </Button>
-        <RSVPMap>
+        <EventMap>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.436102077581!2d-73.9623258!3d40.7101123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf7e3bbe5f895f55!2sWeylin!5e0!3m2!1sen!2sus!4v1610132730949!5m2!1sen!2sus"
             width="600"
@@ -49,31 +49,31 @@ const RSVP = () => {
             height="480"
             title="travel"
           ></iframe>
-        </RSVPMap>
-      </RSVPDetails>
-      <RSVPImage>
+        </EventMap>
+      </EventDetails>
+      <EventImage>
         <img
           src="https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80"
           alt="wedding"
         />
-      </RSVPImage>
-    </RSVPContainer>
+      </EventImage>
+    </EventContainer>
   );
 };
 
-export default RSVP;
+export default Event;
 
-const RSVPContainer = styled.div`
+const EventContainer = styled.div`
   border: 2px solid green;
   display: flex;
   justify-content: space-between;
 `;
 
-const RSVPImage = styled.div`
+const EventImage = styled.div`
   display: flex;
 `;
 
-const RSVPDetails = styled.div`
+const EventDetails = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 1rem;
@@ -82,11 +82,11 @@ const RSVPDetails = styled.div`
   padding-bottom: 5rem;
 `;
 
-const RSVPDate = styled.div`
+const EventDate = styled.div`
   color: charcoal;
   //   border: 1px dotted white;
 `;
 
-const RSVPMap = styled.div`
+const EventMap = styled.div`
   display: flex;
 `;
