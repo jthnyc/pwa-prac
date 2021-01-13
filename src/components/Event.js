@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import {Button} from "react-bootstrap";
 
-const Event = () => {
+export default function Event() {
   const renderer = ({hours, minutes, seconds, completed}) => {
     if (completed) {
       return (
@@ -59,9 +59,7 @@ const Event = () => {
       </EventImage>
     </EventContainer>
   );
-};
-
-export default Event;
+}
 
 const EventContainer = styled.div`
   border: 2px solid green;

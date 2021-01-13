@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import {addUser} from "../firebase/db";
 import {Form, Button, Col, FormControl, InputGroup} from "react-bootstrap";
-import {db} from "../firebase";
+import React, {useState} from "react";
 
 const RSVPform = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,8 +12,19 @@ const RSVPform = () => {
   const [allergies, setAllergies] = useState("");
   const [guestEmail, setEmail] = useState("");
 
-  const addUser = () => {
-    const data = {
+  const clearFields = () => {
+    setFirstName("");
+    setLastName("");
+    setRsvp("");
+    setPlusOne(false);
+    setPlusFName("");
+    setPlusLName("");
+    setAllergies("");
+    setEmail("");
+  };
+
+  const handleSubmit = (e) => {
+    const guest = {
       firstName: firstName,
       lastName: lastName,
       uid: new Date().getTime(),
@@ -24,28 +35,15 @@ const RSVPform = () => {
       allergies: allergies,
       email: guestEmail,
     };
-    db.collection("guests")
-      .doc(data.uid.toString())
-      .set(data)
-      .then(() => {
-        console.log("guest added!");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
-  const handleSubmit = (e) => {
     e.preventDefault();
-    addUser();
-    setFirstName("");
-    setLastName("");
-    setAllergies("");
-    setEmail("");
+    addUser(guest);
+    clearFields();
   };
 
   const handlePlusOne = (e) => {
     const status = e.target.checked;
+    console.log(e);
     setPlusOne(status);
   };
 
@@ -100,16 +98,7 @@ const RSVPform = () => {
         </Form.Group>
       </Form.Row>
 
-      {["checkbox"].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check
-            type={type}
-            id={`default-${type}`}
-            label={`Plus One`}
-            onClick={(e) => handlePlusOne(e)}
-          />
-        </div>
-      ))}
+      <Form.Check label={`Plus One`} onClick={(e) => handlePlusOne(e)} />
 
       {plusOne ? (
         <Form.Row>
