@@ -11,7 +11,7 @@ export const addUser = async (guest) => {
 
 export const findUser = async (guest) => {
   try {
-    const guests = db.collection("guests").doc(`${guest.firstName} ${guest.lastName}`);
+    const guests = db.collection("guests").doc(`${guest.fullName}`);
     const doc = await guests.get();
     if (doc) {
       console.log(doc.data());
