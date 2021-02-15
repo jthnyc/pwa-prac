@@ -1,31 +1,36 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
+// import heroImg from "../img/heroImg.jpg";
 
 const Welcome = () => {
   return (
-    <Container>
-      <HeroImage>
-        <img
-          src="https://lh3.google.com/u/0/d/1cS567nNYM_L6xV4xcfa2hi9L3xJq9oUh=w2858-h1936-iv1"
-          width="1600"
-          alt="placeholder"
-        />
-      </HeroImage>
-      <TextContainer>
-        <h1>Joanna & Gabriel</h1>
-      </TextContainer>
-    </Container>
+    <header>
+      <HeroContainer>
+        <HeroInner>
+          <TextContainer>Joanna & Gabriel</TextContainer>
+        </HeroInner>
+      </HeroContainer>
+    </header>
   );
 };
 
 export default Welcome;
 
-const Container = styled.div`
-  border: 1px solid pink;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-  grid-gap: 1rem;
-  background: white;
+const HeroContainer = styled.div`
+  height: 90vh;
+  width: 100vw;
+  background: transparent
+    url("https://lh3.google.com/u/0/d/1cS567nNYM_L6xV4xcfa2hi9L3xJq9oUh=w2858-h1936-iv1")
+    no-repeat center;
+  background-size: cover;
+  position: relative;
+`;
+
+const HeroInner = styled.div`
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  height: auto;
 `;
 
 const fadeIn = keyframes`
@@ -38,17 +43,17 @@ const fadeOut = keyframes`
   to {opacity: 1;}
 `;
 
-const HeroImage = styled.div`
-  // width: 1080px;
-  // height: 800px;
-`;
-
-const TextContainer = styled.div`
+const TextContainer = styled.h1`
   // border: 1px solid red;
-  padding-right: 2rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  // padding-right: 2rem;
+  position: absolute;
+  top: 25rem;
+  left: 55rem;
+  // position: absolute;
+  // top: 50%;
+  // left: 70%;
+  color: white;
+  text-shadow: 2px 2px #888888;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;

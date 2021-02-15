@@ -1,10 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import FindInvite from "./components/FindInvite";
+import {Welcome, NavMenu, Story, FindInvite, Event} from "./components/index";
 
 function App() {
   return (
     <div className="App">
+      <Welcome />
+      <NavMenu />
+      <Story />
+      <Event />
       <FindInvite />
     </div>
   );

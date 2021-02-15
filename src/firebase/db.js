@@ -9,16 +9,15 @@ export const addUser = async (guest) => {
   }
 };
 
-export const findUser = async (guest) => {
+export const findUserInvite = async (fullName) => {
   try {
-    const guests = db.collection("guests").doc(`${guest.fullName}`);
+    const guests = db.collection("guests").doc(`${fullName}`);
     const doc = await guests.get();
     if (doc) {
       console.log(doc.data());
       return doc.data();
-    } else {
-      console.log("no data");
     }
+    return null;
   } catch (error) {
     console.log(error);
   }

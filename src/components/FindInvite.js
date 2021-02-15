@@ -1,8 +1,9 @@
 // import {findUser} from "../firebase/db";
 import {Form, Button, Col, InputGroup, FormControl, ListGroup} from "react-bootstrap";
 import React, {useState} from "react";
-import {db} from "../firebase/firebase";
+import {findUserInvite} from "../firebase/db";
 import {v4 as uuidv4} from "uuid";
+import styled from "styled-components";
 
 const FindInvite = () => {
   const [fullName, setFullName] = useState("");
@@ -17,24 +18,18 @@ const FindInvite = () => {
     setFullName("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    findUser();
-    clearFields();
-  };
-
-  const findUser = async () => {
-    try {
-      const guests = db.collection("guests").doc(`${fullName}`);
-      const doc = await guests.get();
-      if (doc) {
-        setExistingGuest(doc.data());
-      } else {
-        console.log("No matching invite :/");
-      }
-    } catch (error) {
-      console.log(error);
+    let foundGuest = await findUserInvite(fullName);
+    console.log("found guest: ", foundGuest);
+    if (foundGuest) {
+      setExistingGuest(foundGuest);
+    } else if (foundGuest === null) {
+      console.log("guest not found");
+    } else {
+      console.log("not sure what this is");
     }
+    clearFields();
   };
 
   // need to work on updating the existing user's information
@@ -48,7 +43,7 @@ const FindInvite = () => {
   // }
 
   return (
-    <div>
+    <FormContainer>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Row>
           <Col>
@@ -185,8 +180,12 @@ const FindInvite = () => {
       ) : (
         <div></div>
       )}
-    </div>
+    </FormContainer>
   );
 };
 
 export default FindInvite;
+
+const FormContainer = styled.div`
+  padding: 2rem;
+`;
