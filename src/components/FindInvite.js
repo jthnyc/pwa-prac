@@ -1,7 +1,7 @@
 // import {findUser} from "../firebase/db";
 import {Form, Button, Col, InputGroup, FormControl, ListGroup} from "react-bootstrap";
 import React, {useState} from "react";
-import {findUserInvite} from "../firebase/db";
+import {findUserInvite, findGuest} from "../firebase/db";
 import {v4 as uuidv4} from "uuid";
 import styled from "styled-components";
 
@@ -10,6 +10,7 @@ const FindInvite = () => {
   const [existingGuest, setExistingGuest] = useState({});
   const [rsvp, setRsvp] = useState("");
   const [plusOne, setPlusOne] = useState(false);
+  const [plusOneList, setPlusOneList] = useState([]);
   const [plusOneStatus, setPlusOneStatus] = useState(false);
   const [allergies, setAllergies] = useState("");
   const [guestEmail, setEmail] = useState("");
@@ -18,18 +19,25 @@ const FindInvite = () => {
     setFullName("");
   };
 
-  const handleSubmit = async (e) => {
+  const handleInviteSubmit = async (e) => {
     e.preventDefault();
-    let foundGuest = await findUserInvite(fullName);
-    console.log("found guest: ", foundGuest);
-    if (foundGuest) {
+    let foundGuest = await findGuest(fullName);
+    let foundInvite = await findUserInvite(fullName);
+    // const plusOnes = foundInvite.guests.filter((guest) => guest.name !== fullName);
+    // console.log("plusONES =====: ", plusOnes);
+    if (foundGuest && foundGuest) {
       setExistingGuest(foundGuest);
+      setPlusOneList(foundInvite);
     } else if (foundGuest === null) {
       console.log("guest not found");
     } else {
       console.log("not sure what this is");
     }
     clearFields();
+  };
+
+  const handleRSVPSubmit = (e) => {
+    console.log("FORM SUBMITTED");
   };
 
   // need to work on updating the existing user's information
@@ -44,33 +52,10 @@ const FindInvite = () => {
 
   return (
     <FormContainer>
-      <Form onSubmit={(e) => handleSubmit(e)}>
-        <Form.Row>
-          <Col>
-            <Form.Text className="text-muted">
-              Please enter your full name as shown on invitation.
-            </Form.Text>
-            <Form.Group controlId="formFirstName">
-              <Form.Control
-                type="text"
-                name="firstname"
-                placeholder="Enter full name"
-                onChange={(e) => setFullName(e.target.value)}
-                value={fullName}
-              />
-            </Form.Group>
-          </Col>
-        </Form.Row>
-
-        <Button variant="primary" type="submit">
-          Find Invitation
-        </Button>
-      </Form>
-
       {Object.keys(existingGuest).length !== 0 ? (
         <div>
           <h2>Hi, {existingGuest.firstName}!</h2>
-          <Form onSubmit={(e) => handleSubmit(e)}>
+          <Form onSubmit={(e) => handleRSVPSubmit(e)}>
             <Form.Row>
               <Form.Group>
                 <Button
@@ -101,19 +86,22 @@ const FindInvite = () => {
             {plusOne ? (
               <Form.Row>
                 <ListGroup>
-                  {Object.keys(existingGuest.plusOne).map((person) => {
+                  {console.log("WHAT DOES THIS PRINT?: ", plusOneList)}
+                  {plusOneList.guests.map((person) => {
                     return (
                       <ListGroup.Item key={uuidv4()}>
-                        {person}
+                        {person.name}
                         <Form.Check
                           label={""}
-                          onClick={() => {
+                          onClick={(e) => {
                             console.log("clicked!");
-                            console.log("STATUS OF PLUS 1: ", plusOneStatus);
-                            plusOneStatus
-                              ? setPlusOneStatus(!plusOneStatus)
-                              : setPlusOneStatus(plusOneStatus);
-                            existingGuest.plusOne[person] = plusOneStatus;
+                            console.log("target == ", e.target.checked);
+                            person.rsvp = e.target.checked;
+                            // console.log(person.rsvp);
+                            // plusOneStatus
+                            //   ? setPlusOneStatus(!plusOneStatus)
+                            //   : setPlusOneStatus(plusOneStatus);
+                            // plusOneList.guests[person].rsvp = plusOneStatus;
                           }}
                         />
                       </ListGroup.Item>
@@ -125,7 +113,7 @@ const FindInvite = () => {
               <div></div>
             )}
 
-            {console.log("PLUS ONE LIST: ", existingGuest.plusOne)}
+            {/* {console.log("PLUS ONE LIST: ", existingGuest.plusOne)} */}
 
             <InputGroup>
               <InputGroup.Prepend>
@@ -178,7 +166,28 @@ const FindInvite = () => {
           </Form>
         </div>
       ) : (
-        <div></div>
+        <Form onSubmit={(e) => handleInviteSubmit(e)}>
+          <Form.Row>
+            <Col>
+              <Form.Text className="text-muted">
+                Please enter your full name as shown on invitation.
+              </Form.Text>
+              <Form.Group controlId="formFirstName">
+                <Form.Control
+                  type="text"
+                  name="firstname"
+                  placeholder="Enter full name"
+                  onChange={(e) => setFullName(e.target.value)}
+                  value={fullName}
+                />
+              </Form.Group>
+            </Col>
+          </Form.Row>
+
+          <Button variant="primary" type="submit">
+            Find Invitation
+          </Button>
+        </Form>
       )}
     </FormContainer>
   );

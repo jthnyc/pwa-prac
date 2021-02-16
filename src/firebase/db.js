@@ -9,16 +9,40 @@ export const addUser = async (guest) => {
   }
 };
 
-export const findUserInvite = async (fullName) => {
+export const findGuest = async (fullName) => {
   try {
-    const guests = db.collection("guests").doc(`${fullName}`);
-    const doc = await guests.get();
+    const findGuest = db.collection("guests").doc(`${fullName}`);
+    const doc = await findGuest.get();
     if (doc) {
-      console.log(doc.data());
-      return doc.data();
+      const foundGuest = doc.data();
+      return foundGuest;
     }
     return null;
   } catch (error) {
     console.log(error);
   }
+};
+
+export const findUserInvite = async (fullName) => {
+  try {
+    const foundGuest = db.collection("guests").doc(`${fullName}`);
+    const doc = await foundGuest.get();
+    if (doc) {
+      const inviteID = doc.data().inviteID;
+      // console.log("INVITE #: ", inviteID);
+      const foundInvite = db.collection("invites").doc(`${inviteID}`);
+      const doc2 = await foundInvite.get();
+      const inviteDetails = doc2.data();
+      // console.log("Invite Details ====== ", inviteDetails);
+      return inviteDetails;
+    }
+    return null;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateInvite = (req, res) => {
+  try {
+  } catch (error) {}
 };
