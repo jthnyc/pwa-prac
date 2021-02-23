@@ -2,16 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import {Welcome, NavMenu, Story, FindInvite, Event} from "./components/index";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Welcome />
       <NavMenu />
-      <Story />
-      <Event />
+      {/* <Story /> */}
+      {/* <Event /> */}
       <FindInvite />
     </div>
   );
-}
+};
 
 export default App;

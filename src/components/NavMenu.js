@@ -1,5 +1,6 @@
 import React from "react";
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Nav, Navbar} from "react-bootstrap";
+// import styled from "styled-components";
 
 const NavMenu = () => {
   return (
@@ -28,7 +29,30 @@ const NavMenu = () => {
         </Nav> */}
       </Navbar.Collapse>
     </Navbar>
+    // <Navbar>
+    //   <ul>
+    //     <li>
+    //       <a href="Story">Story</a>
+    //     </li>
+    //     <li>
+    //       <a href="RSVP">RSVP</a>
+    //     </li>
+    //     <li>
+    //       <a href="Schedule">Schedule</a>
+    //     </li>
+    //     <li>
+    //       <a href="Travel">Travel</a>
+    //     </li>
+    //   </ul>
+    // </Navbar>
   );
 };
 
 export default NavMenu;
+
+// const Navbar = styled.nav`
+//   border: 1px solid green;
+//   background: transparent;
+//   position: absolute;
+//   top: 0px;
+// `;

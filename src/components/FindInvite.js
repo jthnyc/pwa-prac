@@ -1,7 +1,7 @@
 // import {findUser} from "../firebase/db";
 import {Form, Button, Col, InputGroup, FormControl, ListGroup} from "react-bootstrap";
 import React, {useState} from "react";
-import {findUserInvite, findGuest} from "../firebase/db";
+import {findInviteByGuestName, findGuestByName} from "../firebase/db";
 import {v4 as uuidv4} from "uuid";
 import styled from "styled-components";
 
@@ -11,7 +11,7 @@ const FindInvite = () => {
   const [rsvp, setRsvp] = useState("");
   const [plusOne, setPlusOne] = useState(false);
   const [plusOneList, setPlusOneList] = useState([]);
-  const [plusOneStatus, setPlusOneStatus] = useState(false);
+  // const [plusOneStatus, setPlusOneStatus] = useState(false);
   const [allergies, setAllergies] = useState("");
   const [guestEmail, setEmail] = useState("");
 
@@ -21,13 +21,16 @@ const FindInvite = () => {
 
   const handleInviteSubmit = async (e) => {
     e.preventDefault();
-    let foundGuest = await findGuest(fullName);
-    let foundInvite = await findUserInvite(fullName);
+    let foundGuest = await findGuestByName(fullName);
+    let inviteDetails = await findInviteByGuestName(fullName);
+    console.log("found invite: ", inviteDetails);
+    let plusOnes = inviteDetails[1];
+    console.log("plus ones: ", plusOnes);
     // const plusOnes = foundInvite.guests.filter((guest) => guest.name !== fullName);
     // console.log("plusONES =====: ", plusOnes);
-    if (foundGuest && foundGuest) {
+    if (foundGuest && inviteDetails) {
       setExistingGuest(foundGuest);
-      setPlusOneList(foundInvite);
+      setPlusOneList(plusOnes);
     } else if (foundGuest === null) {
       console.log("guest not found");
     } else {
@@ -37,24 +40,18 @@ const FindInvite = () => {
   };
 
   const handleRSVPSubmit = (e) => {
+    e.preventDefault();
     console.log("FORM SUBMITTED");
+    console.log("what is E here: ", e);
+
+    // this submit needs to update existing invite in database
   };
-
-  // need to work on updating the existing user's information
-  // const updateUser = async () => {
-  //   try {
-  //     const guestInQuestion = db.collection("guests").doc(`${fullName}`);
-
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
 
   return (
     <FormContainer>
       {Object.keys(existingGuest).length !== 0 ? (
         <div>
-          <h2>Hi, {existingGuest.firstName}!</h2>
+          <h2>Hi, {existingGuest.name.split(" ")[0]}!</h2>
           <Form onSubmit={(e) => handleRSVPSubmit(e)}>
             <Form.Row>
               <Form.Group>
@@ -96,7 +93,7 @@ const FindInvite = () => {
                           onClick={(e) => {
                             console.log("clicked!");
                             console.log("target == ", e.target.checked);
-                            person.rsvp = e.target.checked;
+                            person.attending = e.target.checked;
                             // console.log(person.rsvp);
                             // plusOneStatus
                             //   ? setPlusOneStatus(!plusOneStatus)

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
-// import heroImg from "../img/heroImg.jpg";
+import heroImg from "../img/heroImg.jpg";
 
 const Welcome = () => {
   return (
@@ -19,9 +19,7 @@ export default Welcome;
 const HeroContainer = styled.div`
   height: 90vh;
   width: 100vw;
-  background: transparent
-    url("https://lh3.google.com/u/0/d/1cS567nNYM_L6xV4xcfa2hi9L3xJq9oUh=w2858-h1936-iv1")
-    no-repeat center;
+  background: transparent url(${heroImg}) no-repeat center;
   background-size: cover;
   position: relative;
 `;
