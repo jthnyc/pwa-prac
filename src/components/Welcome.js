@@ -7,7 +7,7 @@ const Welcome = () => {
     <header>
       <HeroContainer>
         <HeroInner>
-          <TextContainer>Joanna & Gabriel</TextContainer>
+          <TextContainer>November 20, 2021</TextContainer>
         </HeroInner>
       </HeroContainer>
     </header>
@@ -17,18 +17,29 @@ const Welcome = () => {
 export default Welcome;
 
 const HeroContainer = styled.div`
-  height: 90vh;
+  position: relative;
+  height: 100vh;
   width: 100vw;
   background: transparent url(${heroImg}) no-repeat center;
   background-size: cover;
-  position: relative;
+
+  @media (min-width: 767px) {
+    height: 98vh;
+  }
+
+  @media (min-width: 1023px) {
+    height: 95vh;
+  }
 `;
 
 const HeroInner = styled.div`
-  text-align: right;
+  // border: 1px solid red;
+  text-align: center;
   position: absolute;
-  width: 100%;
-  height: auto;
+  width: 25%;
+  height: 3rem;
+  top: 35rem;
+  left: 75rem;
 `;
 
 const fadeIn = keyframes`
@@ -42,14 +53,6 @@ const fadeOut = keyframes`
 `;
 
 const TextContainer = styled.h1`
-  // border: 1px solid red;
-  // padding-right: 2rem;
-  position: absolute;
-  top: 25rem;
-  left: 55rem;
-  // position: absolute;
-  // top: 50%;
-  // left: 70%;
   color: white;
   text-shadow: 2px 2px #888888;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};

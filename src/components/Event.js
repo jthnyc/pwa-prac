@@ -21,9 +21,9 @@ export default function Event() {
 
   return (
     <EventContainer>
+      <h2>Wedding Details</h2>
       <EventDetails>
         <EventDate>
-          <h2>Wedding Details</h2>
           <EventLocation>
             <h5>Saturday, November 20, 2021</h5>
             <h5>The Weylin</h5>
@@ -53,26 +53,27 @@ export default function Event() {
           ></iframe>
         </EventMap>
       </EventDetails>
-      <EventImage>
+      {/* <EventImage>
         <img
           src="https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80"
           alt="wedding"
         />
-      </EventImage>
+      </EventImage> */}
     </EventContainer>
   );
 }
 
 const EventContainer = styled.div`
   // border: 2px solid green;
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
-const EventImage = styled.div`
-  display: flex;
-`;
+// const EventImage = styled.div`
+//   display: flex;
+// `;
 
 const EventDetails = styled.div`
   // display: grid;
