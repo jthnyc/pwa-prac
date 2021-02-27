@@ -39,7 +39,7 @@ const HeroInner = styled.div`
   width: 25%;
   height: 3rem;
   top: 35rem;
-  left: 75rem;
+  left: 70rem;
 `;
 
 const fadeIn = keyframes`

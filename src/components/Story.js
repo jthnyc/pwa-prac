@@ -28,12 +28,8 @@ const Story = () => {
         <p>
           In 2019, Gabe proposed during a candlelight cruise in the Riviera Maya, Mexico.
           A year later, Joanna and Gabe were married in an intimate ceremony on October
-          10, 2020—they promptly then returned to the beaches of Cancun before traveling
-          on to San Miguel de Allende for their honeymoon.
-        </p>
-        <p>
-          As much fun as that was, they can’t wait to celebrate with all of their
-          favourite people and declare their love all over again.
+          10, 2020—as much fun as that was, they can’t wait to celebrate with all of their
+          favourite people.
         </p>
         <p>
           They also still disagree on Lang Lang—-although they both agree Martha Argerich

@@ -1,7 +1,11 @@
-// import {findUser} from "../firebase/db";
 import {Form, Button, Col, InputGroup, FormControl, ListGroup} from "react-bootstrap";
 import React, {useState} from "react";
-import {findInviteByGuestName, findGuestByName} from "../firebase/db";
+import {
+  findGuestById,
+  findGuestByName,
+  findInviteByGuestId,
+  submitRSVPResponse,
+} from "../firebase/db";
 import {v4 as uuidv4} from "uuid";
 import styled from "styled-components";
 
@@ -11,7 +15,8 @@ const FindInvite = () => {
   const [rsvp, setRsvp] = useState("");
   const [plusOne, setPlusOne] = useState(false);
   const [plusOneList, setPlusOneList] = useState([]);
-  // const [plusOneStatus, setPlusOneStatus] = useState(false);
+  const [plusOneRsvp, setPlusOneRsvp] = useState([]);
+  const [plusOneName, setPlusOneName] = useState("");
   const [allergies, setAllergies] = useState("");
   const [guestEmail, setEmail] = useState("");
 
@@ -22,29 +27,42 @@ const FindInvite = () => {
   const handleInviteSubmit = async (e) => {
     e.preventDefault();
     let foundGuest = await findGuestByName(fullName);
-    let inviteDetails = await findInviteByGuestName(fullName);
-    console.log("found invite: ", inviteDetails);
-    let plusOnes = inviteDetails[1];
-    console.log("plus ones: ", plusOnes);
-    // const plusOnes = foundInvite.guests.filter((guest) => guest.name !== fullName);
-    // console.log("plusONES =====: ", plusOnes);
-    if (foundGuest && inviteDetails) {
-      setExistingGuest(foundGuest);
-      setPlusOneList(plusOnes);
-    } else if (foundGuest === null) {
-      console.log("guest not found");
-    } else {
-      console.log("not sure what this is");
+    if (!foundGuest) {
+      alert("Sorry, this name did not match any invite!");
+      return;
     }
+    setExistingGuest(foundGuest);
+    let inviteDetails = await findInviteByGuestId(foundGuest.id);
+    let plusOnes = await Promise.all(
+      inviteDetails.guests
+        .filter((guest) => guest.id !== foundGuest.id)
+        .map((guest) => findGuestById(guest.id))
+    );
+    setPlusOneList([...plusOnes]);
     clearFields();
   };
 
+  // WIP - this toggle logic needs to update existing plueOneRsvp array and not block checkbox
+  const updatePlueOneRSVPStatus = (e) => {
+    let findMatch = plusOneRsvp.find((name) => name === e.target.value);
+    if (findMatch) {
+      alert("Already added to rsvp list");
+    } else {
+      setPlusOneRsvp([...plusOneRsvp, e.target.value]);
+    }
+  };
+
+  // WIP - this submit needs to update existing invite in database
   const handleRSVPSubmit = (e) => {
     e.preventDefault();
-    console.log("FORM SUBMITTED");
-    console.log("what is E here: ", e);
-
-    // this submit needs to update existing invite in database
+    const rsvpSubmit = {
+      guest: existingGuest,
+      rsvpState: rsvp,
+      plusOnes: plusOneName === "" ? plusOneRsvp : [plusOneName],
+      allergies: allergies,
+      email: guestEmail === "" ? existingGuest.email : guestEmail,
+    };
+    submitRSVPResponse(rsvpSubmit);
   };
 
   return (
@@ -81,36 +99,43 @@ const FindInvite = () => {
             />
 
             {plusOne ? (
-              <Form.Row>
-                <ListGroup>
-                  {console.log("WHAT DOES THIS PRINT?: ", plusOneList)}
-                  {plusOneList.guests.map((person) => {
-                    return (
-                      <ListGroup.Item key={uuidv4()}>
-                        {person.name}
-                        <Form.Check
-                          label={""}
-                          onClick={(e) => {
-                            console.log("clicked!");
-                            console.log("target == ", e.target.checked);
-                            person.attending = e.target.checked;
-                            // console.log(person.rsvp);
-                            // plusOneStatus
-                            //   ? setPlusOneStatus(!plusOneStatus)
-                            //   : setPlusOneStatus(plusOneStatus);
-                            // plusOneList.guests[person].rsvp = plusOneStatus;
-                          }}
-                        />
-                      </ListGroup.Item>
-                    );
-                  })}
-                </ListGroup>
-              </Form.Row>
+              <PlusOneContainer>
+                <Form.Row>
+                  {plusOneList.length !== 0 ? (
+                    <ListGroup>
+                      {plusOneList.map((person) => {
+                        return (
+                          <ListGroup.Item key={uuidv4()}>
+                            {person.name}
+                            <Form.Check
+                              label={""}
+                              value={person.name}
+                              onClick={(e) => {
+                                updatePlueOneRSVPStatus(e);
+                              }}
+                            />
+                          </ListGroup.Item>
+                        );
+                      })}
+                    </ListGroup>
+                  ) : (
+                    <Form.Group>
+                      <Form.Control
+                        type="text"
+                        placeholder="Plus One Name"
+                        onChange={(e) => setPlusOneName(e.target.value)}
+                        value={plusOneName}
+                      />
+                      <Form.Text className="text-muted">
+                        We're excited to celebrate with you and your guest!
+                      </Form.Text>
+                    </Form.Group>
+                  )}
+                </Form.Row>
+              </PlusOneContainer>
             ) : (
               <div></div>
             )}
-
-            {/* {console.log("PLUS ONE LIST: ", existingGuest.plusOne)} */}
 
             <InputGroup>
               <InputGroup.Prepend>
@@ -194,4 +219,8 @@ export default FindInvite;
 
 const FormContainer = styled.div`
   padding: 2rem;
+`;
+
+const PlusOneContainer = styled.div`
+  display: flex;
 `;
