@@ -33,11 +33,13 @@ const FindInvite = () => {
     }
     setExistingGuest(foundGuest);
     let inviteDetails = await findInviteByGuestId(foundGuest.id);
+    console.log("invite details: ", inviteDetails);
     let plusOnes = await Promise.all(
       inviteDetails.guests
         .filter((guest) => guest.id !== foundGuest.id)
         .map((guest) => findGuestById(guest.id))
     );
+    console.log("PLUS ONES: ", plusOnes);
     setPlusOneList([...plusOnes]);
     clearFields();
   };

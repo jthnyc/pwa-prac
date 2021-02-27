@@ -98,17 +98,46 @@ export const findInviteByGuestName = async (fullName) => {
 };
 
 /**
+ * WORK IN PROGRESS: this needs to downsize quite a bit. Working on it.
  * @param {object} rsvp - rsvp object returned from guest input
  */
 export const submitRSVPResponse = async (rsvp) => {
   console.log("RSVP: ", rsvp);
   const {allergies, email, guest, plusOnes, rsvpState} = rsvp;
-  const invite = await findInviteByGuestId(guest.id);
-  if (rsvpState === "Regretfully Decline") {
-    console.log("declined");
-    // WIP - need to update database with declined RSVP
-  } else {
-    console.log("accepted");
-    // WIP - need to update database with accepted RSVP along with additional info
+  const inviteToUpdate = await findInviteByGuestId(guest.id);
+  console.log("inviteToUpdate: ", inviteToUpdate);
+
+  // need to find plusOne guest ids:
+  const plusOneIds = [];
+  for (let guest of plusOnes) {
+    let guestRef = await findGuestByName(guest);
+    let guestObj = {};
+    guestObj.id = guestRef.id;
+    guestObj.attending = true;
+    plusOneIds.push(guestObj);
   }
+  let guestObj = {};
+  guestObj.id = guest.id;
+  guestObj.attending = true;
+  plusOneIds.push({...guestObj});
+  console.log("Plus Ones: ==== ", plusOneIds);
+
+  // create a new object to update the entire invite
+  const response = {
+    id: inviteToUpdate.id,
+    guests: plusOneIds,
+    email: email,
+    rsvpState: rsvpState,
+    rsvp: true,
+    allergies: allergies,
+  };
+
+  db.collection("invites").doc(`${inviteToUpdate.id}`).set(response);
+
+  // if (rsvpState === "Regretfully Decline") {
+  //   db.collection
+  // } else {
+  //   console.log("ACCEPTED")
+  //   db.collection("invites").doc(`${inviteToUpdate.id}`).set(response);
+  // }
 };
