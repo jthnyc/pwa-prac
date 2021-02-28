@@ -99,6 +99,7 @@ export const findInviteByGuestName = async (fullName) => {
 
 /**
  * WORK IN PROGRESS: this needs to downsize quite a bit. Working on it.
+ * ALSO: probably need to use update instead of set.
  * @param {object} rsvp - rsvp object returned from guest input
  */
 export const submitRSVPResponse = async (rsvp) => {

@@ -4,42 +4,43 @@ import heroImg from "../img/heroImg.jpg";
 
 const Welcome = () => {
   return (
-    <header>
+    <Header>
       <HeroContainer>
         <HeroInner>
-          <TextContainer>November 20, 2021</TextContainer>
+          <DateText>November 20, 2021</DateText>
         </HeroInner>
       </HeroContainer>
-    </header>
+    </Header>
   );
 };
 
 export default Welcome;
 
+const Header = styled.header`
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: auto;
+  left: 0;
+`;
+
 const HeroContainer = styled.div`
   position: relative;
-  height: 100vh;
-  width: 100vw;
   background: transparent url(${heroImg}) no-repeat center;
   background-size: cover;
-
-  @media (min-width: 767px) {
-    height: 98vh;
-  }
-
-  @media (min-width: 1023px) {
-    height: 95vh;
-  }
+  height: 95vh;
+  display: grid;
+  border: 5px solid green;
+  // grid-template-columns: [left-start] auto [right-start] 50%;
+  // grid-template-rows: [top-start] auto [bottom-start] 20%;
+  grid-template-columns: repeat(12, 9%);
+  grid-template-rows: [top-start] auto [bottom-start] 20%;
 `;
 
 const HeroInner = styled.div`
   // border: 1px solid red;
-  text-align: center;
-  position: absolute;
-  width: 25%;
-  height: 3rem;
-  top: 35rem;
-  left: 70rem;
+  grid-column: 9 / span 3;
+  grid-row-start: bottom-start;
 `;
 
 const fadeIn = keyframes`
@@ -52,7 +53,7 @@ const fadeOut = keyframes`
   to {opacity: 1;}
 `;
 
-const TextContainer = styled.h1`
+const DateText = styled.h1`
   color: white;
   text-shadow: 2px 2px #888888;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
