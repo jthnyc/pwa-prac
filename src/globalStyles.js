@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: "Barlow Semi Condensed", serif;
         font-size: 16px;
+        -webkit-font-smoothing: antialiased;
     }
 
     ul {
