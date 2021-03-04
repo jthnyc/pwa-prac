@@ -15,9 +15,12 @@ const StoryImage = () => {
 export default StoryImage;
 
 const StoryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 2rem;
+  border: 1px solid green;
+  // display: flex;
+  // flex-direction: column;
+  // padding-left: 1.5rem;
+  // display: grid;
+  // grid-template-columns: ;
 `;
 
 const StoryImg1 = styled.div`
@@ -36,5 +39,5 @@ const StoryImg2 = styled.div`
   width: 50%;
   position: relative;
   top: -400px;
-  left: 500px;
+  left: 330px;
 `;

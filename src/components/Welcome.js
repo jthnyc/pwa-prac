@@ -30,7 +30,7 @@ const HeroContainer = styled.div`
   background-size: cover;
   height: 95vh;
   display: grid;
-  border: 5px solid green;
+  // border: 5px solid green;
   // grid-template-columns: [left-start] auto [right-start] 50%;
   // grid-template-rows: [top-start] auto [bottom-start] 20%;
   grid-template-columns: repeat(12, 9%);
@@ -54,6 +54,7 @@ const fadeOut = keyframes`
 `;
 
 const DateText = styled.h1`
+  font-size: 3em;
   color: white;
   text-shadow: 2px 2px #888888;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};

@@ -21,6 +21,7 @@ const NavMenu = () => {
           </ListItem>
         </Navlist>
       </MenuToggle>
+      {/* <NameText>Joanna & Gabe</NameText> */}
     </Navbar>
   );
 };
@@ -35,6 +36,19 @@ const fadeIn = keyframes`
 const fadeOut = keyframes`
   from {opacity: 0;}
   to {opacity: 1;}
+`;
+
+const Navbar = styled.nav`
+  // border: 1px solid yellow;
+  background: transparent;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  visibility: ${(props) => (props.out ? "hidden" : "visible")};
+  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+  transition: visibility 3s linear;
 `;
 
 const MenuToggle = styled.div`
@@ -104,20 +118,6 @@ const MenuToggle = styled.div`
   }
 `;
 
-const Navbar = styled.nav`
-  // border: 1px solid yellow;
-  background: transparent;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(3, 50px);
-  top: 0px;
-  visibility: ${(props) => (props.out ? "hidden" : "visible")};
-  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
-  transition: visibility 3s linear;
-`;
-
 const Navlist = styled.ul`
   position: absolute;
   width: 300px;
@@ -138,6 +138,11 @@ const ListItem = styled.li`
 
 const ListLink = styled.a`
   color: green;
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-shadow: 1px 1px #888888;
 `;
+
+// const NameText = styled.h1`
+//   color: white;
+//   align-self: center;
+// `;
