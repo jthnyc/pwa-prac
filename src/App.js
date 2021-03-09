@@ -5,9 +5,9 @@ import {
   NavMenu,
   Story,
   StoryImage,
-  // FindInvite,
-  // Event,
-  // EventImage,
+  FindInvite,
+  Event,
+  EventImage,
 } from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
@@ -27,7 +27,7 @@ const App = () => {
           <Story />
         </Right1>
       </Panels>
-      {/* <Decoration></Decoration>
+      <Decoration></Decoration>
       <Panels>
         <Left1>
           <EventImage />
@@ -35,14 +35,14 @@ const App = () => {
         <Right1>
           <Event />
         </Right1>
-      </Panels> */}
-      {/* <Decoration></Decoration>
+      </Panels>
+      <Decoration></Decoration>
       <Panels>
         <Left1></Left1>
         <Right1>
           <FindInvite />
         </Right1>
-      </Panels> */}
+      </Panels>
     </AppContainer>
   );
 };
@@ -64,13 +64,11 @@ const Panels = styled.div`
 `;
 
 const Left1 = styled.div`
-  // border: 1px solid red;
   width: 60%;
   height: 100vh;
 `;
 
 const Right1 = styled.div`
-  // border: 1px solid green;
   width: 40%;
   height: 100vh;
 `;

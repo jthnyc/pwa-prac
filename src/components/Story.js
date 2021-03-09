@@ -1,18 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-// import g_bw from "../img/g_bw.JPG";
-// import j_color from "../img/j_color.JPG";
 
 const Story = () => {
   return (
     <StoryContainer>
       <h2>Our Story</h2>
       <StoryText>
-        <p>
-          {/* <StoryStart>I</StoryStart> */}
-          It was a drizzly Tuesday night....
-        </p>
-        {/* <StoryImg1></StoryImg1> */}
+        <p>It was a drizzly Tuesday night....</p>
         <p>
           Joanna and Gabe first crossed paths on a dark and stormy night (really!) at a
           fundraiser in midtown Manhattan. They bonded over a mutual love of music and the
@@ -36,7 +30,6 @@ const Story = () => {
           is better anyway.
         </p>
       </StoryText>
-      {/* <StoryImg2></StoryImg2> */}
     </StoryContainer>
   );
 };
@@ -54,23 +47,3 @@ const StoryText = styled.div`
   margin-top: 2em;
   line-height: 2em;
 `;
-
-// const StoryStart = styled.span`
-//   font-size: 6rem;
-// `;
-
-// const StoryImg1 = styled.div`
-//   border: 1px solid gray;
-//   background: transparent url(${g_bw}) no-repeat center;
-//   background-size: contain;
-//   height: 400px;
-//   width: auto;
-// `;
-
-// const StoryImg2 = styled.div`
-//   border: 1px solid gray;
-//   background: transparent url(${j_color}) no-repeat center;
-//   background-size: contain;
-//   height: 400px;
-//   width: auto;
-// `;

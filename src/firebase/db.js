@@ -84,31 +84,18 @@ export const findInviteByGuestId = async (id) => {
 };
 
 /**
- * @param {string} fullname - name of the guest to find
- * @return {Promise<object>} if invite is found or undefined.
- */
-export const findInviteByGuestName = async (fullName) => {
-  const guest = await findGuestByName(fullName);
-  if (guest) {
-    const guestId = guest.id;
-    const foundInvite = await findInviteByGuestId(guestId);
-    return foundInvite;
-  }
-  return undefined;
-};
-
-/**
- * WORK IN PROGRESS: this needs to downsize quite a bit. Working on it.
+ * WORK IN PROGRESS: this needs to downsize - Working on it.
  * ALSO: probably need to use update instead of set.
  * @param {object} rsvp - rsvp object returned from guest input
  */
-export const submitRSVPResponse = async (rsvp) => {
-  console.log("RSVP: ", rsvp);
-  const {allergies, email, guest, plusOnes, rsvpState} = rsvp;
+export const submitRSVPResponse = async ({
+  allergies,
+  email,
+  guest,
+  plusOnes,
+  rsvpState,
+}) => {
   const inviteToUpdate = await findInviteByGuestId(guest.id);
-  console.log("inviteToUpdate: ", inviteToUpdate);
-
-  // need to find plusOne guest ids:
   const plusOneIds = [];
   for (let guest of plusOnes) {
     let guestRef = await findGuestByName(guest);
@@ -121,9 +108,7 @@ export const submitRSVPResponse = async (rsvp) => {
   guestObj.id = guest.id;
   guestObj.attending = true;
   plusOneIds.push({...guestObj});
-  console.log("Plus Ones: ==== ", plusOneIds);
 
-  // create a new object to update the entire invite
   const response = {
     id: inviteToUpdate.id,
     guests: plusOneIds,
@@ -134,11 +119,4 @@ export const submitRSVPResponse = async (rsvp) => {
   };
 
   db.collection("invites").doc(`${inviteToUpdate.id}`).set(response);
-
-  // if (rsvpState === "Regretfully Decline") {
-  //   db.collection
-  // } else {
-  //   console.log("ACCEPTED")
-  //   db.collection("invites").doc(`${inviteToUpdate.id}`).set(response);
-  // }
 };

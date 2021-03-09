@@ -16,11 +16,6 @@ export default StoryImage;
 
 const StoryContainer = styled.div`
   border: 1px solid green;
-  // display: flex;
-  // flex-direction: column;
-  // padding-left: 1.5rem;
-  // display: grid;
-  // grid-template-columns: ;
 `;
 
 const StoryImg1 = styled.div`

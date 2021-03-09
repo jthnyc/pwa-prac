@@ -30,15 +30,11 @@ const HeroContainer = styled.div`
   background-size: cover;
   height: 95vh;
   display: grid;
-  // border: 5px solid green;
-  // grid-template-columns: [left-start] auto [right-start] 50%;
-  // grid-template-rows: [top-start] auto [bottom-start] 20%;
   grid-template-columns: repeat(12, 9%);
   grid-template-rows: [top-start] auto [bottom-start] 20%;
 `;
 
 const HeroInner = styled.div`
-  // border: 1px solid red;
   grid-column: 9 / span 3;
   grid-row-start: bottom-start;
 `;

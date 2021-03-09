@@ -1,12 +1,7 @@
 import React from "react";
 import {Form, Col} from "react-bootstrap";
-// import RSVPContext from "../../context/RSVPContext";
 
 const Name = ({firstName, setFirstName, lastName, setLastName}) => {
-  //   const {firstName, setFirstName, lastName, setLastName} = useContext(RSVPContext);
-  //   const [firstName, setFirstName] = useState("");
-  //   const [lastName, setLastName] = useState("");
-
   return (
     <Form.Row>
       <Col>

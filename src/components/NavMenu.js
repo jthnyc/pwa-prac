@@ -21,7 +21,6 @@ const NavMenu = () => {
           </ListItem>
         </Navlist>
       </MenuToggle>
-      {/* <NameText>Joanna & Gabe</NameText> */}
     </Navbar>
   );
 };
@@ -39,7 +38,6 @@ const fadeOut = keyframes`
 `;
 
 const Navbar = styled.nav`
-  // border: 1px solid yellow;
   background: transparent;
   width: 100%;
   height: 10%;
@@ -52,7 +50,6 @@ const Navbar = styled.nav`
 `;
 
 const MenuToggle = styled.div`
-  // border: 2px solid red;
   display: block;
   position: relative;
   top: 50px;
@@ -141,8 +138,3 @@ const ListLink = styled.a`
   font-size: 1.5em;
   text-shadow: 1px 1px #888888;
 `;
-
-// const NameText = styled.h1`
-//   color: white;
-//   align-self: center;
-// `;
