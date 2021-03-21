@@ -4,5 +4,31 @@
   },
   "date": {
     "t": "2021年 11月 20日"
+  },
+  "story": {
+    "t": "我們的故事",
+    "l1": "在一個下著毛毛雨的星期二晚上....",
+    "l2": "Joanna and Gabe first crossed paths on a dark and stormy night (really!) at a fundraiser in midtown Manhattan. They bonded over a mutual love of music and thearts—though they disagreed strongly on whether Lang Lang is a great pianist.",
+    "l3": "After a few evenings exchanging Spotify lists, watching films, and discovering a shared appreciation for Eataly, Broadway, and cocktail bars—they knew they had found something special in each other. In the years since, they’ve called the diverse community of Long Island City home, while continuing to explore the arts and culinary scene in New York.",
+    "l4": "In 2019, Gabe proposed during a candlelight cruise in the Riviera Maya, Mexico. A year later, Joanna and Gabe were married in an intimate ceremony on October 10, 2020—-as much fun as that was, they can’t wait to celebrate with all of their favorite people.",
+    "l5": "They also still disagree on Lang Lang—-although they both agree Martha Argerich is better anyway."
+  },
+  "qa": {
+    "t": "問答",
+    "q1": "中Is this the best way to get the latest information about the wedding?",
+    "a1": "中Yes! We will be updating this website as the year goes on. Please check back for the most updated information.",
+    "q2": "中What's the best way to reach you if we have questions?",
+    "a2": "中Please reach us at hello@joannaandgabriel.love",
+    "q3": "中What are your COVID protocols?",
+    "a3": "中Our COVID protocols are...",
+    "q4": "Placeholder Q4",
+    "a4": "Placeholder A4",
+    "q5": "Placeholder Q5",
+    "a5": "Placeholder A5",
+    "q6": "Placeholder Q6",
+    "a6": "Placeholder A6"
+  },
+  "questionnaire": {
+    "t": "意見表"
   }
 }

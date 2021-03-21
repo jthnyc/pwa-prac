@@ -16,13 +16,13 @@ const NavMenu = () => {
         <span></span>
         <Navlist>
           <ListItem>
-            <ListLink href="Story">Story</ListLink>
+            <ListLink href="Story">{t("story.t")}</ListLink>
           </ListItem>
           <ListItem>
-            <ListLink href="Q&A">Q&A</ListLink>
+            <ListLink href="Q&A">{t("qa.t")}</ListLink>
           </ListItem>
           <ListItem>
-            <ListLink href="Travel">Travel</ListLink>
+            <ListLink href="Travel">{t("questionnaire.t")}</ListLink>
           </ListItem>
         </Navlist>
       </MenuToggle>
