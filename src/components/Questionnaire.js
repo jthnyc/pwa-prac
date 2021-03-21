@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 const Questionnaire = () => {
   const {t} = useTranslation();
   return (
-    <QuestionnaireContainer>
+    <QuestionnaireContainer id="questionnaire">
       <h2>{t("questionnaire.t")}</h2>
     </QuestionnaireContainer>
   );

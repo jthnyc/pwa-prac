@@ -9,8 +9,10 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: "Barlow Semi Condensed", serif;
+        // font-family: Cormorant;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
     }
 
     ul {

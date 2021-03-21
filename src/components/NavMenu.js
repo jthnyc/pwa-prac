@@ -16,23 +16,26 @@ const NavMenu = () => {
         <span></span>
         <Navlist>
           <ListItem>
-            <ListLink href="Story">{t("story.t")}</ListLink>
+            <ListLink href="#story">{t("story.t")}</ListLink>
           </ListItem>
           <ListItem>
-            <ListLink href="Q&A">{t("qa.t")}</ListLink>
+            <ListLink href="#faq">{t("qa.t")}</ListLink>
           </ListItem>
           <ListItem>
-            <ListLink href="Travel">{t("questionnaire.t")}</ListLink>
+            <ListLink href="#questionnaire">{t("questionnaire.t")}</ListLink>
           </ListItem>
         </Navlist>
       </MenuToggle>
       <LangToggle>
-        <LangButton type="button" onClick={() => handleClick("en")}>
-          En
-        </LangButton>
-        <LangButton type="button" onClick={() => handleClick("zh")}>
-          繁
-        </LangButton>
+        {i18n.language !== "en" ? (
+          <LangButton type="button" onClick={() => handleClick("en")}>
+            En
+          </LangButton>
+        ) : (
+          <LangButton type="button" onClick={() => handleClick("zh")}>
+            繁
+          </LangButton>
+        )}
       </LangToggle>
     </Navbar>
   );
@@ -56,7 +59,9 @@ const Navbar = styled.nav`
   height: 10%;
   position: absolute;
   top: 0px;
-  display: flex;
+  display: grid;
+  grid-template-columns: [first] 48px [second] 33px auto [third-col] 33px [fourth] 48px;
+  grid-template-rows: [first] 48px [second-row] 26px auto;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
@@ -153,21 +158,17 @@ const ListLink = styled.a`
 `;
 
 const LangToggle = styled.div`
-  position: absolute;
   width: 6.25rem;
-  margin: -5rem 0 0 90.625rem;
-  padding: 0.625rem;
-  padding-top: 7.8125rem;
-  display: flex;
+  grid-column-start: third-col;
+  grid-row-start: second-row;
 `;
 
 const LangButton = styled.button`
   background: transparent;
-  // border: 1px solid green;
   border: none;
   color: white;
-  text-shadow: 2px 2px #888888;
-  width: 3.125rem;
-  height: 3.125rem;
-  font-size: 20px;
+  text-shadow: 0.125rem 0.125rem #888888;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  font-size: 1.25rem;
 `;

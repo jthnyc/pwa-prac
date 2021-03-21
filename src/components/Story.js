@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 const Story = () => {
   const {t} = useTranslation();
   return (
-    <StoryContainer>
+    <StoryContainer id="story">
       <h2>{t("story.t")}</h2>
       <StoryText>
         <p>{t("story.l1")}</p>

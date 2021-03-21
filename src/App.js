@@ -10,6 +10,7 @@ import {
 } from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
+import {device} from "./device";
 
 function App() {
   return (
@@ -38,6 +39,28 @@ const AppContainer = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  @media ${device.mobileS} {
+    max-width: 321px;
+  }
+  @media ${device.mobileM} {
+    max-width: 376px;
+  }
+  @media ${device.mobileL} {
+    max-width: 426px;
+  }
+  @media ${device.tablet} {
+    max-width: 769px;
+  }
+  @media ${device.laptop} {
+    max-width: 1024px;
+  }
+  @media ${device.laptopL} {
+    max-width: 1441px;
+  }
+  @media ${device.laptop} {
+    max-width: 2560px;
+  }
 `;
 
 const Decoration = styled.div`
