@@ -58,6 +58,7 @@ const HeroContainer = styled.div`
   display: grid;
   grid-template-columns: auto [col-start] 36.625rem;
   grid-template-rows: auto [top-start] 30%;
+  background-position-x: 16.667%;
 
   @media ${device.mobileS} {
     grid-template-columns: auto [col-start] 18rem;
