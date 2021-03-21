@@ -1,7 +1,12 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
+import {useTranslation} from "react-i18next";
 
 const NavMenu = () => {
+  const {t, i18n} = useTranslation();
+  function handleClick(lang) {
+    i18n.changeLanguage(lang);
+  }
   return (
     <Navbar>
       <MenuToggle>
@@ -21,6 +26,14 @@ const NavMenu = () => {
           </ListItem>
         </Navlist>
       </MenuToggle>
+      <LangToggle>
+        <LangButton type="button" onClick={() => handleClick("en")}>
+          En
+        </LangButton>
+        <LangButton type="button" onClick={() => handleClick("zh")}>
+          繁
+        </LangButton>
+      </LangToggle>
     </Navbar>
   );
 };
@@ -117,10 +130,10 @@ const MenuToggle = styled.div`
 
 const Navlist = styled.ul`
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
+  width: 18.75rem;
+  margin: -6.25rem 0 0 -3.125rem;
+  padding: 3.125rem;
+  padding-top: 7.8125rem;
 
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
@@ -137,4 +150,24 @@ const ListLink = styled.a`
   color: green;
   font-size: 1.5em;
   text-shadow: 1px 1px #888888;
+`;
+
+const LangToggle = styled.div`
+  position: absolute;
+  width: 6.25rem;
+  margin: -5rem 0 0 90.625rem;
+  padding: 0.625rem;
+  padding-top: 7.8125rem;
+  display: flex;
+`;
+
+const LangButton = styled.button`
+  background: transparent;
+  // border: 1px solid green;
+  border: none;
+  color: white;
+  text-shadow: 2px 2px #888888;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 20px;
 `;

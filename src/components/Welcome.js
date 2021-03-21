@@ -1,13 +1,18 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import heroImg from "../img/heroImg.jpg";
+import {useTranslation} from "react-i18next";
 
 const Welcome = () => {
+  const {t} = useTranslation();
   return (
     <Header>
       <HeroContainer>
         <HeroInner>
-          <DateText>November 20, 2021</DateText>
+          <DateText>{t("names.t")}</DateText>
+          <DateText>{t("date.t")}</DateText>
+          {/* <DateText>Joanna & Gabriel</DateText>
+          <DateText>November 20, 2021</DateText> */}
         </HeroInner>
       </HeroContainer>
     </Header>

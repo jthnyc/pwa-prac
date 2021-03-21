@@ -15,24 +15,29 @@ const StoryImage = () => {
 export default StoryImage;
 
 const StoryContainer = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
+  display: grid;
+  grid-template-columns: repeat(6, 16.5%);
+  grid-template-rows: repeat(4, 20%);
+  margin-left: 2rem;
 `;
 
 const StoryImg1 = styled.div`
-  border: 1px solid gray;
+  // border: 1px solid gray;
   background: transparent url(${g_bw}) no-repeat center;
   background-size: contain;
-  height: 600px;
-  width: 50%;
+  height: 37.5rem;
+  width: 60%;
+  grid-column: 1 / span 5;
+  grid-row: 1 / span 3;
 `;
 
 const StoryImg2 = styled.div`
-  border: 1px solid gray;
+  // border: 1px solid gray;
   background: transparent url(${j_color}) no-repeat center;
   background-size: contain;
-  height: 600px;
-  width: 50%;
-  position: relative;
-  top: -400px;
-  left: 330px;
+  height: 37.5rem;
+  width: 100%;
+  grid-column: 4 / span 6;
+  grid-row: 2 / span 5;
 `;

@@ -8,3 +8,4 @@ export {default as Schedule} from "./Schedule";
 export {default as Travel} from "./Travel";
 export {default as Event} from "./Event";
 export {default as EventImage} from "./EventImage";
+export {default as Questionnaire} from "./Questionnaire";
