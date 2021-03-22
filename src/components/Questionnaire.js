@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {useTranslation} from "react-i18next";
+// import {useTranslation} from "react-i18next";
 
 const Questionnaire = () => {
-  const {t} = useTranslation();
+  //   const {t} = useTranslation();
   return (
     <QuestionnaireContainer id="questionnaire">
-      <h2>{t("questionnaire.t")}</h2>
+      {/* <h2>{t("questionnaire.t")}</h2> */}
     </QuestionnaireContainer>
   );
 };

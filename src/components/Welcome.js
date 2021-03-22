@@ -37,15 +37,15 @@ const Header = styled.header`
     max-width: 426px;
   }
   @media ${device.tablet} {
-    max-width: 769px;
+    max-width: 768px;
   }
   @media ${device.laptop} {
     max-width: 1024px;
   }
   @media ${device.laptopL} {
-    max-width: 1441px;
+    max-width: 1440px;
   }
-  @media ${device.laptop} {
+  @media ${device.desktop} {
     max-width: 2560px;
   }
 `;

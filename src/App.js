@@ -40,27 +40,27 @@ const AppContainer = styled.div`
   padding: 0;
   box-sizing: border-box;
 
-  @media ${device.mobileS} {
-    max-width: 321px;
-  }
-  @media ${device.mobileM} {
-    max-width: 376px;
-  }
-  @media ${device.mobileL} {
-    max-width: 426px;
-  }
-  @media ${device.tablet} {
-    max-width: 769px;
-  }
-  @media ${device.laptop} {
-    max-width: 1024px;
-  }
-  @media ${device.laptopL} {
-    max-width: 1441px;
-  }
-  @media ${device.laptop} {
-    max-width: 2560px;
-  }
+  // @media ${device.mobileS} {
+  //   max-width: 321px;
+  // }
+  // @media ${device.mobileM} {
+  //   max-width: 376px;
+  // }
+  // @media ${device.mobileL} {
+  //   max-width: 426px;
+  // }
+  // @media ${device.tablet} {
+  //   max-width: 768px;
+  // }
+  // @media ${device.laptop} {
+  //   max-width: 1024px;
+  // }
+  // @media ${device.laptopL} {
+  //   max-width: 1440px;
+  // }
+  // @media ${device.desktop} {
+  //   max-width: 2560px;
+  // }
 `;
 
 const Decoration = styled.div`

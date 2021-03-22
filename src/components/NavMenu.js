@@ -1,6 +1,7 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import {useTranslation} from "react-i18next";
+import {device} from "../device";
 
 const NavMenu = () => {
   const {t, i18n} = useTranslation();
@@ -65,6 +66,28 @@ const Navbar = styled.nav`
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
+
+  @media ${device.mobileS} {
+    max-width: 321px;
+  }
+  @media ${device.mobileM} {
+    max-width: 376px;
+  }
+  @media ${device.mobileL} {
+    max-width: 426px;
+  }
+  @media ${device.tablet} {
+    max-width: 768px;
+  }
+  @media ${device.laptop} {
+    max-width: 1024px;
+  }
+  @media ${device.laptopL} {
+    max-width: 1440px;
+  }
+  @media ${device.desktop} {
+    max-width: 2560px;
+  }
 `;
 
 const MenuToggle = styled.div`
