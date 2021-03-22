@@ -6,14 +6,34 @@ import {device} from "../device";
 
 const StoryImage = () => {
   return (
-    <StoryContainer>
-      <StoryImg1></StoryImg1>
-      <StoryImg2></StoryImg2>
-    </StoryContainer>
+    <LeftContainer>
+      <StoryContainer>
+        <StoryImg1></StoryImg1>
+        <StoryImg2></StoryImg2>
+      </StoryContainer>
+    </LeftContainer>
   );
 };
 
 export default StoryImage;
+
+const LeftContainer = styled.div`
+  // visibility: hidden;
+  // height: 100vh;
+
+  @media ${device.tablet} {
+    width: 60%;
+  }
+  @media ${device.laptop} {
+    width: 60%;
+  }
+  @media ${device.laptopL} {
+    width: 60%;
+  }
+  @media ${device.desktop} {
+    width: 60%;
+  }
+`;
 
 const StoryContainer = styled.div`
   border: 1px solid green;
@@ -21,28 +41,6 @@ const StoryContainer = styled.div`
   grid-template-columns: repeat(6, 16.5%);
   grid-template-rows: repeat(4, 20%);
   margin-left: 2rem;
-
-  // @media ${device.mobileS} {
-  //   display: none;
-  // }
-  // @media ${device.mobileM} {
-  //   display: none;
-  // }
-  // @media ${device.mobileL} {
-  //   display: none;
-  // }
-  // @media ${device.tablet} {
-  //   display: none;
-  // }
-  // @media ${device.laptop} {
-  //   border: 1px solid gold;
-  // }
-  // @media ${device.laptopL} {
-  //   border: 1px solid red;
-  // }
-  // @media ${device.desktop} {
-  //   border: 2px solid black;
-  // }
 `;
 
 const StoryImg1 = styled.div`

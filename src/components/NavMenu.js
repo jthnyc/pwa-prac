@@ -1,7 +1,6 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import {useTranslation} from "react-i18next";
-import {device} from "../device";
 
 const NavMenu = () => {
   const {t, i18n} = useTranslation();
@@ -30,11 +29,11 @@ const NavMenu = () => {
       <LangToggle>
         {i18n.language !== "en" ? (
           <LangButton type="button" onClick={() => handleClick("en")}>
-            En
+            <Lang>En</Lang>
           </LangButton>
         ) : (
           <LangButton type="button" onClick={() => handleClick("zh")}>
-            繁
+            <Lang>繁</Lang>
           </LangButton>
         )}
       </LangToggle>
@@ -61,33 +60,11 @@ const Navbar = styled.nav`
   position: absolute;
   top: 0px;
   display: grid;
-  grid-template-columns: [first] 48px [second] 33px auto [third-col] 33px [fourth] 48px;
-  grid-template-rows: [first] 48px [second-row] 26px auto;
+  grid-template-columns: [first-col] 3rem [second-col] 2.0625rem auto [third-col] 2.0625rem [fourth-col] 3rem;
+  grid-template-rows: [first] 3rem [second-row] 1.625rem auto;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
-
-  @media ${device.mobileS} {
-    max-width: 321px;
-  }
-  @media ${device.mobileM} {
-    max-width: 376px;
-  }
-  @media ${device.mobileL} {
-    max-width: 426px;
-  }
-  @media ${device.tablet} {
-    max-width: 768px;
-  }
-  @media ${device.laptop} {
-    max-width: 1024px;
-  }
-  @media ${device.laptopL} {
-    max-width: 1440px;
-  }
-  @media ${device.desktop} {
-    max-width: 2560px;
-  }
 `;
 
 const MenuToggle = styled.div`
@@ -181,7 +158,6 @@ const ListLink = styled.a`
 `;
 
 const LangToggle = styled.div`
-  width: 6.25rem;
   grid-column-start: third-col;
   grid-row-start: second-row;
 `;
@@ -194,4 +170,8 @@ const LangButton = styled.button`
   width: 2.0625rem;
   height: 2.0625rem;
   font-size: 1.25rem;
+`;
+
+const Lang = styled.span`
+  vertical-align: top;
 `;

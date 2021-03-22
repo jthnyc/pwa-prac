@@ -5,11 +5,14 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        // for debugging purposes
+        // background: #000 !important;
+        // color: #0f0 !important;
+        // outline: solid #f00 1px !important;
     }
 
     body {
         font-family: "Barlow Semi Condensed", serif;
-        // font-family: Cormorant;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
