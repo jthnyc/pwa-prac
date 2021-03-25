@@ -36,10 +36,11 @@ const LeftContainer = styled.div`
 `;
 
 const StoryContainer = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
   display: grid;
   grid-template-columns: repeat(6, 16.5%);
   grid-template-rows: repeat(4, 20%);
+  column-gap: 1rem;
   margin-left: 2rem;
 `;
 

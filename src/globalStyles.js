@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
     }
 
+    #root {
+        white-space: pre-line;
+    }
+
     ul {
         list-style-type: none;
     }

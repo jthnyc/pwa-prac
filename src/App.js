@@ -5,7 +5,10 @@ import {
   NavMenu,
   Story,
   StoryImage,
+  Wedding,
+  EventImage,
   FAQ,
+  COVID,
   Questionnaire,
 } from "./components/index";
 import styled from "styled-components";
@@ -26,7 +29,12 @@ function App() {
         <Story />
         {/* </Right1> */}
       </Panels>
+      {/* <Panels>
+        <Wedding />
+        <EventImage />
+      </Panels> */}
       <FAQ />
+      <COVID />
       <Questionnaire />
     </AppContainer>
   );

@@ -19,7 +19,10 @@ const NavMenu = () => {
             <ListLink href="#story">{t("story.t")}</ListLink>
           </ListItem>
           <ListItem>
-            <ListLink href="#faq">{t("qa.t")}</ListLink>
+            <ListLink href="#faq">{t("faq.t")}</ListLink>
+          </ListItem>
+          <ListItem>
+            <ListLink href="#covid">{t("covid.nav")}</ListLink>
           </ListItem>
           <ListItem>
             <ListLink href="#questionnaire">{t("questionnaire.t")}</ListLink>

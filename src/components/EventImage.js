@@ -1,14 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import jg_rings from "../img/jg_rings.JPG";
+import {device} from "../device";
 
-export default function Event() {
+const EventImg = () => {
   return (
-    <EventContainer>
-      <EventImage></EventImage>
-    </EventContainer>
+    <RightContainer>
+      <EventContainer>
+        <EventImage></EventImage>
+      </EventContainer>
+    </RightContainer>
   );
-}
+};
+
+export default EventImg;
+
+const RightContainer = styled.div`
+  width: 100%;
+  // height: 100vh;
+
+  @media ${device.tablet} {
+    width: 40%;
+  }
+  @media ${device.laptop} {
+    width: 40%;
+  }
+  @media ${device.laptopL} {
+    width: 40%;
+  }
+  @media ${device.desktop} {
+    width: 40%;
+  }
+`;
 
 const EventContainer = styled.div`
   // border: 2px solid green;
