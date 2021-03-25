@@ -5,8 +5,6 @@ import {
   NavMenu,
   Story,
   StoryImage,
-  Wedding,
-  EventImage,
   FAQ,
   COVID,
   Questionnaire,
@@ -29,10 +27,6 @@ function App() {
         <Story />
         {/* </Right1> */}
       </Panels>
-      {/* <Panels>
-        <Wedding />
-        <EventImage />
-      </Panels> */}
       <FAQ />
       <COVID />
       <Questionnaire />
