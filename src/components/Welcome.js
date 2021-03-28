@@ -1,55 +1,67 @@
 import React from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
+import heroImg from "../img/heroImg.jpg";
+// import {useTranslation} from "react-i18next";
 
 const Welcome = () => {
+  // const {t} = useTranslation();
   return (
-    <Container>
-      <HeroImage>
-        <img
-          src="https://lh3.google.com/u/0/d/1cS567nNYM_L6xV4xcfa2hi9L3xJq9oUh=w2858-h1936-iv1"
-          width="1600"
-          alt="placeholder"
-        />
-      </HeroImage>
-      <TextContainer>
-        <h1>Joanna & Gabriel</h1>
-      </TextContainer>
-    </Container>
+    <Header>
+      <HeroContainer>
+        {/* <HeroInner> */}
+        {/* <DateText>{t("names.t")}</DateText>
+          <DateText>{t("date.t")}</DateText> */}
+        {/* </HeroInner> */}
+      </HeroContainer>
+    </Header>
   );
 };
 
 export default Welcome;
 
-const Container = styled.div`
-  border: 1px solid pink;
+const Header = styled.header`
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: auto;
+  left: 0;
+`;
+
+const HeroContainer = styled.div`
+  position: relative;
+  background: transparent url(${heroImg}) no-repeat center;
+  background-size: cover;
+  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-  grid-gap: 1rem;
-  background: white;
+  grid-template-columns: auto [col-start] 36.625rem;
+  grid-template-rows: auto [top-start] 30%;
+  background-position-x: 16.667%;
 `;
 
-const fadeIn = keyframes`
-  from {opacity: 0;}
-  to {opacity: 1;}
-`;
+// const HeroInner = styled.div`
+//   grid-column-start: col-start;
+//   grid-row-start: top-start;
+//   display: flex;
+//   flex-direction: column;
+// `;
 
-const fadeOut = keyframes`
-  from {opacity: 0;}
-  to {opacity: 1;}
-`;
+// const fadeIn = keyframes`
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// `;
 
-const HeroImage = styled.div`
-  // width: 1080px;
-  // height: 800px;
-`;
+// const fadeOut = keyframes`
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// `;
 
-const TextContainer = styled.div`
-  // border: 1px solid red;
-  padding-right: 2rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  visibility: ${(props) => (props.out ? "hidden" : "visible")};
-  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
-  transition: visibility 3s linear;
-`;
+// const DateText = styled.span`
+//   font-size: 3em;
+//   color: white;
+//   text-shadow: 2px 2px #888888;
+//   text-align: right;
+//   width: 90%;
+//   visibility: ${(props) => (props.out ? "hidden" : "visible")};
+//   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+//   transition: visibility 3s linear;
+// `;
