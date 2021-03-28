@@ -25,18 +25,10 @@ export default Story;
 
 const RightContainer = styled.div`
   width: 100%;
-  // height: 100vh;
+  height: 50vh;
+  // border: 1px solid blue;
 
-  @media ${device.tablet} {
-    width: 40%;
-  }
   @media ${device.laptop} {
-    width: 40%;
-  }
-  @media ${device.laptopL} {
-    width: 40%;
-  }
-  @media ${device.desktop} {
     width: 40%;
   }
 `;
@@ -44,7 +36,11 @@ const RightContainer = styled.div`
 const StoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 2rem;
+
+  @media ${device.laptop} {
+    padding: 3rem;
+  }
 `;
 
 const StoryText = styled.div`

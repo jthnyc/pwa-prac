@@ -1,16 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import g_bw from "../img/g_bw.JPG";
-import j_color from "../img/j_color.JPG";
+import {g_bw, j_color, jg_bw, jg_color} from "../img/index";
 import {device} from "../device";
+import Slider from "react-slick";
 
 const StoryImage = () => {
   return (
     <LeftContainer>
-      <StoryContainer>
+      {/* <StoryContainer>
         <StoryImg1></StoryImg1>
         <StoryImg2></StoryImg2>
-      </StoryContainer>
+      </StoryContainer> */}
+      <Slider
+        // dots={true}
+        autoplay={true}
+        infinite={true}
+        speed={1000}
+        slidesToScroll={1}
+        arrows={true}
+        slidesToShow={3}
+      >
+        <StoryImg1></StoryImg1>
+        <StoryImg2></StoryImg2>
+        <StoryImg3></StoryImg3>
+        <StoryImg4></StoryImg4>
+      </Slider>
     </LeftContainer>
   );
 };
@@ -18,48 +32,51 @@ const StoryImage = () => {
 export default StoryImage;
 
 const LeftContainer = styled.div`
-  // visibility: hidden;
-  // height: 100vh;
+  display: none;
 
-  @media ${device.tablet} {
-    width: 60%;
-  }
   @media ${device.laptop} {
     width: 60%;
-  }
-  @media ${device.laptopL} {
-    width: 60%;
-  }
-  @media ${device.desktop} {
-    width: 60%;
+    height: 100vh;
+    margin: 1.25rem;
+    display: initial;
   }
 `;
 
-const StoryContainer = styled.div`
-  // border: 1px solid green;
-  display: grid;
-  grid-template-columns: repeat(6, 16.5%);
-  grid-template-rows: repeat(4, 20%);
-  column-gap: 1rem;
-  margin-left: 2rem;
-`;
+// const StoryContainer = styled.div`
+//   // border: 1px solid green;
+//   display: grid;
+//   grid-template-columns: repeat(6, 16.5%);
+//   grid-template-rows: repeat(4, 20%);
+//   column-gap: 1rem;
+//   margin-left: 2rem;
+// `;
 
 const StoryImg1 = styled.div`
   // border: 1px solid gray;
   background: transparent url(${g_bw}) no-repeat center;
   background-size: contain;
   height: 37.5rem;
-  width: 60%;
-  grid-column: 1 / span 5;
-  grid-row: 1 / span 3;
+  width: 50%;
+  // grid-column: 1 / span 5;
+  // grid-row: 1 / span 3;
 `;
 
 const StoryImg2 = styled.div`
-  // border: 1px solid gray;
   background: transparent url(${j_color}) no-repeat center;
   background-size: contain;
   height: 37.5rem;
-  width: 100%;
-  grid-column: 4 / span 6;
-  grid-row: 2 / span 5;
+  // grid-column: 4 / span 6;
+  // grid-row: 2 / span 5;
+`;
+
+const StoryImg3 = styled.div`
+  background: transparent url(${jg_bw}) no-repeat center;
+  background-size: contain;
+  height: 37.5rem;
+`;
+
+const StoryImg4 = styled.div`
+  background: transparent url(${jg_color}) no-repeat center;
+  background-size: contain;
+  height: 37.5rem;
 `;
