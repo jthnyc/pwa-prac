@@ -1,6 +1,7 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import {useTranslation} from "react-i18next";
+import {device} from "../device";
 
 const NavMenu = () => {
   const {t, i18n} = useTranslation();
@@ -73,19 +74,19 @@ const Navbar = styled.nav`
 const MenuToggle = styled.div`
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
+  top: 3.125rem;
+  left: 3.125rem;
 
   z-index: 1;
   user-select: none;
 
   & input {
     display: block;
-    width: 40px;
-    height: 32px;
+    width: 2.5rem;
+    height: 2rem;
     position: absolute;
-    top: -7px;
-    left: -5px;
+    top: -0.4375rem;
+    left: -0.3125rem;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
@@ -93,13 +94,13 @@ const MenuToggle = styled.div`
 
   & span {
     display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
+    width: 2.0625rem;
+    height: 0.25rem;
+    margin-bottom: 0.3125rem;
     position: relative;
 
     background: #ffffff;
-    border-radius: 3px;
+    border-radius: 0.1875rem;
 
     z-index: 1;
 
@@ -138,26 +139,35 @@ const MenuToggle = styled.div`
 
 const Navlist = styled.ul`
   position: absolute;
-  width: 18.75rem;
+  width: 13rem;
   margin: -6.25rem 0 0 -3.125rem;
   padding: 3.125rem;
   padding-top: 7.8125rem;
+  border-radius: 0 0 1.25rem 0;
 
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+  @media ${device.tablet} {
+    width: 18.75rem;
+  }
 `;
 
 const ListItem = styled.li`
-  // border: 1px solid gray;
+  padding-bottom: 0.125rem;
 `;
 
 const ListLink = styled.a`
-  color: green;
-  font-size: 1.5em;
+  color: #002366;
+  font-size: 1em;
   text-shadow: 1px 1px #888888;
+
+  @media ${device.tablet} {
+    font-size: 1.5em;
+  }
 `;
 
 const LangToggle = styled.div`
