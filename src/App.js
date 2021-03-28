@@ -20,12 +20,8 @@ function App() {
       <NavMenu />
       <Decoration></Decoration>
       <Panels>
-        {/* <Left1> */}
         <StoryImage />
-        {/* </Left1>  */}
-        {/* <Right1> */}
         <Story />
-        {/* </Right1> */}
       </Panels>
       <FAQ />
       <COVID />
@@ -49,13 +45,3 @@ const Decoration = styled.div`
 const Panels = styled.div`
   display: flex;
 `;
-
-// const Left1 = styled.div`
-//   width: 60%;
-//   height: 100vh;
-// `;
-
-// const Right1 = styled.div`
-//   width: 40%;
-//   height: 100vh;
-// `;
