@@ -14,7 +14,7 @@ const StoryImage = () => {
       <Slider
         autoplay={true}
         infinite={true}
-        speed={1000}
+        speed={2000}
         slidesToScroll={1}
         arrows={true}
         slidesToShow={3}
@@ -33,10 +33,10 @@ export default StoryImage;
 const LeftContainer = styled.div`
   display: none;
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     width: 60%;
-    height: 100vh;
-    margin: 1.25rem;
+    margin: 1.5rem;
+    margin-bottom: 0;
     display: initial;
   }
 `;

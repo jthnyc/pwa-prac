@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Accordion, Card} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
+import {device} from "../device";
 
 const COVID = () => {
   const {t} = useTranslation();
@@ -160,5 +161,9 @@ export default COVID;
 const COVIDContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 2rem;
+
+  @media ${device.laptopL} {
+    padding: 3rem;
+  }
 `;

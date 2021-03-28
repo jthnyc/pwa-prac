@@ -1,6 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {Welcome, NavMenu, Story, StoryImage, FAQ, COVID} from "./components/index";
+import {
+  Welcome,
+  NavMenu,
+  Story,
+  StoryImage,
+  // Wedding,
+  FAQ,
+  COVID,
+  Footer,
+} from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 
@@ -15,8 +24,20 @@ function App() {
         <StoryImage />
         <Story />
       </Panels>
-      <FAQ />
-      <COVID />
+      {/* <Panels>
+        <StoryImage />
+        <Wedding />
+      </Panels> */}
+      <Panels>
+        <StoryImage />
+        <FAQ />
+      </Panels>
+      <Decoration></Decoration>
+      <Panels>
+        <StoryImage />
+        <COVID />
+      </Panels>
+      <Footer />
     </AppContainer>
   );
 }
@@ -35,5 +56,4 @@ const Decoration = styled.div`
 
 const Panels = styled.div`
   display: flex;
-  height: 110vh;
 `;

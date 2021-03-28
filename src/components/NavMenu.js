@@ -25,9 +25,6 @@ const NavMenu = () => {
           <ListItem>
             <ListLink href="#covid">{t("covid.nav")}</ListLink>
           </ListItem>
-          <ListItem>
-            <ListLink href="#questionnaire">{t("questionnaire.t")}</ListLink>
-          </ListItem>
         </Navlist>
       </MenuToggle>
       <LangToggle>
@@ -177,6 +174,12 @@ const LangToggle = styled.div`
 
 const LangButton = styled.button`
   background: transparent;
+  // background: radial-gradient(
+  //   ellipse at center,
+  //   rgba(0, 0, 0, 0.1) 0,
+  //   rgba(0, 0, 0, 0.1) 4%,
+  //   transparent 78%
+  // );
   border: none;
   color: white;
   text-shadow: 0.125rem 0.125rem #888888;

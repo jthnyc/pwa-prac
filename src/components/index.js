@@ -11,3 +11,4 @@ export {default as EventImage} from "./EventImage";
 export {default as Questionnaire} from "./Questionnaire";
 export {default as FAQ} from "./FAQ";
 export {default as COVID} from "./COVID";
+export {default as Footer} from "./Footer";

@@ -25,10 +25,11 @@ export default Story;
 
 const RightContainer = styled.div`
   width: 100%;
-  border: 1px solid blue;
+  height: 100vh;
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     width: 40%;
+    height: 75vh;
   }
 `;
 
@@ -37,7 +38,7 @@ const StoryContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     padding: 3rem;
   }
 `;
