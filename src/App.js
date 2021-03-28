@@ -1,14 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {
-  Welcome,
-  NavMenu,
-  Story,
-  StoryImage,
-  FAQ,
-  COVID,
-  Questionnaire,
-} from "./components/index";
+import {Welcome, NavMenu, Story, StoryImage, FAQ, COVID} from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 
@@ -25,7 +17,6 @@ function App() {
       </Panels>
       <FAQ />
       <COVID />
-      <Questionnaire />
     </AppContainer>
   );
 }
