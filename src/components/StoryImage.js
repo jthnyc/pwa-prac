@@ -12,7 +12,6 @@ const StoryImage = () => {
         <StoryImg2></StoryImg2>
       </StoryContainer> */}
       <Slider
-        // dots={true}
         autoplay={true}
         infinite={true}
         speed={1000}

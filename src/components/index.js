@@ -2,7 +2,6 @@ export {default as Welcome} from "./Welcome";
 export {default as NavMenu} from "./NavMenu";
 export {default as Story} from "./Story";
 export {default as StoryImage} from "./StoryImage";
-export {default as StoryImage2} from "./StoryImage2";
 export {default as FindInvite} from "./FindInvite";
 export {default as RSVPform} from "./RSVPform";
 export {default as Wedding} from "./Wedding";
