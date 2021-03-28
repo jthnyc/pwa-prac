@@ -24,6 +24,7 @@ function App() {
         <StoryImage />
         <Story />
       </Panels>
+      <Decoration></Decoration>
       {/* <Panels>
         <StoryImage />
         <Wedding />
