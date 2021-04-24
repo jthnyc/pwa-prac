@@ -33,7 +33,12 @@
   },
   "email": {
     "t": "Email Sign Up",
-    "l1": "We'd like to be in touch to provide updates to the wedding,\nlet us know the best email to reach you: "
+    "l1": "We'd like to be in touch to provide updates to the wedding,\nlet us know the best email to reach you: ",
+    "first": "First Name",
+    "last": "Last Name",
+    "form": "Best email to reach you",
+    "message": "Message to the couple",
+    "submit": "Send"
   },
   "covid": {
     "nav": "COVID Information",

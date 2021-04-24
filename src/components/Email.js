@@ -47,7 +47,7 @@ const Email = () => {
                 <Form.Control
                   type="text"
                   name="firstname"
-                  placeholder="First name"
+                  placeholder={t("email.first")}
                   onChange={(e) => setFirstName(e.target.value)}
                   value={firstName}
                 />
@@ -58,7 +58,7 @@ const Email = () => {
                 <Form.Control
                   type="text"
                   name="lastname"
-                  placeholder="Last name"
+                  placeholder={t("email.last")}
                   onChange={(e) => setLastName(e.target.value)}
                   value={lastName}
                 />
@@ -71,7 +71,7 @@ const Email = () => {
               <Form.Group controlId="formBasicEmail">
                 <Form.Control
                   type="email"
-                  placeholder="Best email to reach you"
+                  placeholder={t("email.form")}
                   onChange={(e) => setEmail(e.target.value)}
                   value={guestEmail}
                 />
@@ -86,7 +86,7 @@ const Email = () => {
             <Col>
               <InputGroup>
                 <InputGroup.Prepend>
-                  <InputGroup.Text>Message to the couple: </InputGroup.Text>
+                  <InputGroup.Text>{t("email.message")}</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   as="textarea"
@@ -99,7 +99,7 @@ const Email = () => {
           </Form.Row>
 
           <Button variant="primary" type="submit">
-            Submit
+            {t("email.submit")}
           </Button>
         </Form>
       </EmailContainer>
