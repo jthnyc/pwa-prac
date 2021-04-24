@@ -28,8 +28,11 @@ const Email = () => {
       email: guestEmail,
     };
 
+    console.log("GUEST TO ADD - ", guest);
+
     e.preventDefault();
     addGuestEmail(guest);
+    console.log("after adding guest");
     clearFields();
   };
 
