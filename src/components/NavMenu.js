@@ -23,6 +23,9 @@ const NavMenu = () => {
             <ListLink href="#faq">{t("faq.t")}</ListLink>
           </ListItem>
           <ListItem>
+            <ListLink href="#email">{t("email.t")}</ListLink>
+          </ListItem>
+          <ListItem>
             <ListLink href="#covid">{t("covid.nav")}</ListLink>
           </ListItem>
         </Navlist>

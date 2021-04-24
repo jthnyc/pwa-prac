@@ -31,6 +31,10 @@
     "q7": "Dress code",
     "a7": "The dress code for our wedding is Black Tie (Required). It means wear a tuxedo or an evening gown (see here) and have fun with it!\nEquivalent formal dress in the Taiwanese / Chinese (modern Qipao or Zhongshan suit) and Filipino tradition (Barong tagalog or Maria Clara dress) are also acceptable options."
   },
+  "email": {
+    "t": "Email Sign Up",
+    "l1": "We'd like to be in touch to provide updates to the wedding,\nlet us know the best email to reach you: "
+  },
   "covid": {
     "nav": "COVID Information",
     "t": "COVID Safety Precautions",

@@ -40,7 +40,7 @@ const HeroContainer = styled.div`
 
   @media ${device.tablet} {
     grid-template-columns: auto [col-start] 36.625rem;
-    grid-template-rows: auto [top-start] 20%;
+    grid-template-rows: auto [top-start] 23%;
   }
 `;
 
@@ -71,7 +71,7 @@ const DateText = styled.span`
   transition: visibility 3s linear;
 
   @media ${device.tablet} {
-    width: 90%;
+    width: 80%;
     font-size: 3em;
     text-align: right;
   }
