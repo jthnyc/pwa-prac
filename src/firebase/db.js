@@ -49,7 +49,7 @@ export const addGuestEmail = async (guest) => {
   try {
     const id = uuidv4();
     guest.id = id;
-    db.collection("emails").doc(id).set(guest);
+    await db.collection("emails").doc(id).set(guest);
   } catch (error) {
     console.log(error);
   }
