@@ -27,7 +27,7 @@ const RightContainer = styled.div`
   width: 100%;
   height: 100vh;
 
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     width: 40%;
     height: 75vh;
   }

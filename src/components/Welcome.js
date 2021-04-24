@@ -39,8 +39,13 @@ const HeroContainer = styled.div`
   grid-template-rows: auto [top-start] 15%;
 
   @media ${device.tablet} {
-    grid-template-columns: auto [col-start] 36.625rem;
-    grid-template-rows: auto [top-start] 23%;
+    grid-template-columns: auto [col-start] 20.625rem;
+    grid-template-rows: auto [top-start] 20%;
+  }
+
+  @media ${device.laptop} {
+    grid-template-columns: auto [col-start] 28.625rem;
+    grid-template-rows: auto [top-start] 25%;
   }
 `;
 
@@ -72,7 +77,13 @@ const DateText = styled.span`
 
   @media ${device.tablet} {
     width: 80%;
-    font-size: 3em;
+    font-size: 2em;
+    text-align: right;
+  }
+
+  @media ${device.laptop} {
+    width: 80%;
+    font-size: 2.8em;
     text-align: right;
   }
 `;
