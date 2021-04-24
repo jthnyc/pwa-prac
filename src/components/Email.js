@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {addUser} from "../firebase/db";
+import {addGuestEmail} from "../firebase/db";
 import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
@@ -29,7 +29,7 @@ const Email = () => {
     };
 
     e.preventDefault();
-    addUser(guest);
+    addGuestEmail(guest);
     clearFields();
   };
 
