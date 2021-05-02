@@ -1,16 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {g_bw, j_color, jg_bw, jg_color} from "../img/index";
+import {g_bw, j_color, jg_bw, jg_bw2, jg_color, jg_rings} from "../img/index";
 import {device} from "../device";
 import Slider from "react-slick";
 
 const StoryImage = () => {
   return (
     <LeftContainer>
-      {/* <StoryContainer>
-        <StoryImg1></StoryImg1>
-        <StoryImg2></StoryImg2>
-      </StoryContainer> */}
       <Slider
         autoplay={true}
         infinite={true}
@@ -23,6 +19,8 @@ const StoryImage = () => {
         <StoryImg2></StoryImg2>
         <StoryImg3></StoryImg3>
         <StoryImg4></StoryImg4>
+        <StoryImg5></StoryImg5>
+        <StoryImg6></StoryImg6>
       </Slider>
     </LeftContainer>
   );
@@ -41,31 +39,17 @@ const LeftContainer = styled.div`
   }
 `;
 
-// const StoryContainer = styled.div`
-//   // border: 1px solid green;
-//   display: grid;
-//   grid-template-columns: repeat(6, 16.5%);
-//   grid-template-rows: repeat(4, 20%);
-//   column-gap: 1rem;
-//   margin-left: 2rem;
-// `;
-
 const StoryImg1 = styled.div`
-  // border: 1px solid gray;
   background: transparent url(${g_bw}) no-repeat center;
   background-size: contain;
   height: 37.5rem;
   width: 50%;
-  // grid-column: 1 / span 5;
-  // grid-row: 1 / span 3;
 `;
 
 const StoryImg2 = styled.div`
   background: transparent url(${j_color}) no-repeat center;
   background-size: contain;
   height: 37.5rem;
-  // grid-column: 4 / span 6;
-  // grid-row: 2 / span 5;
 `;
 
 const StoryImg3 = styled.div`
@@ -76,6 +60,18 @@ const StoryImg3 = styled.div`
 
 const StoryImg4 = styled.div`
   background: transparent url(${jg_color}) no-repeat center;
+  background-size: contain;
+  height: 37.5rem;
+`;
+
+const StoryImg5 = styled.div`
+  background: transparent url(${jg_bw2}) no-repeat center;
+  background-size: contain;
+  height: 37.5rem;
+`;
+
+const StoryImg6 = styled.div`
+  background: transparent url(${jg_rings}) no-repeat center;
   background-size: contain;
   height: 37.5rem;
 `;

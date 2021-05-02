@@ -5,7 +5,6 @@ import {
   NavMenu,
   Story,
   StoryImage,
-  // Wedding,
   FAQ,
   Email,
   COVID,
@@ -26,10 +25,6 @@ function App() {
         <Story />
       </Panels>
       <Decoration></Decoration>
-      {/* <Panels>
-        <StoryImage />
-        <Wedding />
-      </Panels> */}
       <Panels>
         <StoryImage />
         <FAQ />

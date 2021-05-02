@@ -1,6 +1,6 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
-import heroImg from "../img/heroImg.jpg";
+import {hero_img} from "../img/index";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 
@@ -30,7 +30,7 @@ const Header = styled.header`
 
 const HeroContainer = styled.div`
   position: relative;
-  background: transparent url(${heroImg}) no-repeat center;
+  background: transparent url(${hero_img}) no-repeat center;
   background-size: cover;
   height: 100vh;
   background-position-x: 16.667%;
