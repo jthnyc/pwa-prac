@@ -10,13 +10,16 @@ const Wedding = () => {
         <WeddingText>
           <EventDate>
             <EventLocation>
-              <h5>
+              <h2>Brooklyn, NY</h2>
+              <h5>Saturday, November 20, 2021</h5>
+              {/* <h5>
                 <a href="https://weylin.com/" target="_blank" rel="noopener noreferrer">
                   Weylin
                 </a>
               </h5>
-              <h5>Saturday, November 20, 2021</h5>
-              <h6>175 Broadway, Brooklyn, NY 11211</h6>
+              <h5>5 PM EST</h5>
+              <h6>Reception to follow</h6> */}
+              <h4>The Weylin</h4>
               {/* <CountDown /> */}
             </EventLocation>
 
@@ -44,12 +47,6 @@ const LeftContainer = styled.div`
   // height: 100vh;
 
   @media ${device.laptop} {
-    width: 60%;
-  }
-  @media ${device.laptopL} {
-    width: 60%;
-  }
-  @media ${device.desktop} {
     width: 60%;
   }
 `;

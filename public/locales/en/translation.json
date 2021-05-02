@@ -25,18 +25,27 @@
     "q4": "What if you plan to postpone?",
     "a4": "While we do not anticipate further postponement for a variety of reasons, any announcements about the status of the wedding will be posted on our website first.\nWe plan to contact all guests via phone or other electronic means (email, DM, etc.) if there are urgent updates.\n\nIf you would like us to have your email or phone on file for the latest updates, please feel free to send us an email at hi@joannaandgabriel.love",
     "q5": "Where is your registry?",
-    "a5": "We don’t have one—at least in the traditional sense! Under the circumstances and hardships of the past year (and then some), your presence at our event is more than enough.\nWe are truly blessed and are just happy to be celebrating if you are able to join us. That said, we have a feeling that this won’t stop some of you who still feel tradition-bound, in which case we’d like to direct your generosity towards some causes we care deeply about. And in case any of them don’t move you—or you are just incredibly loving!—we’ll set aside an option for our honeymoon fund. We will provide more detail on giving as we have more to share.",
+    "a5": "We don’t have one—at least in the traditional sense! Under the circumstances and hardships of the past year (and then some), your presence at our event is more than enough.\nWe are truly blessed and are just happy to be celebrating if you are able to join us. That said, we have a feeling that this won’t stop some of you who still feel tradition-bound, in which case we’d like to direct your generosity towards some causes we care deeply about. \nAnd in case any of them don’t move you—or you are just incredibly loving!—we’ll set aside an option for our honeymoon fund. We will provide more detail on giving as we have more to share.",
     "q6": "Which airports are closest?",
     "a6": "For international guests planning to stay in New York City, John F. Kennedy International Airport (JFK) is likely to be your best option.\nDomestic guests, especially those who are staying in New Jersey, may want to fly into Newark Liberty International Airport (EWR) instead.",
     "q7": "Dress code",
     "a7": "The dress code for our wedding is Black Tie (Required). It means wear a tuxedo or an evening gown (see here) and have fun with it!\nEquivalent formal dress in the Taiwanese / Chinese (modern Qipao or Zhongshan suit) and Filipino tradition (Barong tagalog or Maria Clara dress) are also acceptable options."
+  },
+  "email": {
+    "t": "Email Sign Up",
+    "l1": "We'd like to be in touch to provide updates to the wedding,\nlet us know the best email to reach you: ",
+    "first": "First Name",
+    "last": "Last Name",
+    "form": "Best email to reach you",
+    "message": "Message to the couple",
+    "submit": "Send"
   },
   "covid": {
     "nav": "COVID Information",
     "t": "COVID Safety Precautions",
     "subt": "If there is anything we have learned in the last year, it is that health and safety regulations and guidance for the pandemic will continue to evolve on a weekly basis. Bringing together some of the most important people in our lives into the same location all at once (including you!) presents some logistical challenges.\n\nThese guidelines are necessary to avoid compromising anyone whose health is at-risk, and for the comfort and well-being of everyone in attendance. While we recognize that some of these precautions may be inconvenient, there are no exceptions to these guidelines for any of our vendors or guests.\n\nWe thank you in advance for your understanding, and kindly ask that you check this site regularly for updates as we get closer to November.",
     "q-1": "How frequently will you update these guidelines?",
-    "a-1": "We expect we’ll have meaningful updates around June. President Biden has instructed all states to make the COVID-19 vaccine eligible to all US adults by May 1st.\n\nWe are using one month after this date as a milestone for monitoring what initial vaccination rates look like, and therefore what our initial expectation would be for vaccination by our wedding date in November.",
+    "a-1": "We expect we’ll have meaningful updates around June. President Biden has instructed all states to make the COVID-19 vaccine eligible to all US adults by May 1st.\nWe are using one month after this date as a milestone for monitoring what initial vaccination rates look like, and therefore what our initial expectation would be for vaccination by our wedding date in November.",
     "q-2": "Will we need to bring masks?",
     "a-2": "Yes. We’ll be reassessing our stance on this and other COVID-related measures as we get closer to the wedding.",
     "q-3": "What if I forget to bring my mask?",
@@ -54,9 +63,9 @@
     "q-9": "I have not been vaccinated or don’t plan to be. Do I need to present a test?",
     "a-9": "Yes, you will need to provide a negative PCR or rapid test.",
     "q-10": "What kind of COVID tests will be required?",
-    "a-10": "For non-vaccinated guests, we will require either of the following at the door prior to entering the venue.\n\n1. A negative PCR test. Results must be returned within 72 hours of our wedding start time. Test results from before 5pm EST on November 17th will not be valid.\n\n2. A negative rapid test. Results must be returned within 6 hours of our wedding start time. Test results from before 11am EST on November 20th will not be valid.",
+    "a-10": "For non-vaccinated guests, we will require either of the following at the door prior to entering the venue.\n\n1. A negative PCR test. Results must be returned within 72 hours of our wedding start time. Test results from before 5pm EST on November 17th will not be valid.\n2. A negative rapid test. Results must be returned within 6 hours of our wedding start time. Test results from before 11am EST on November 20th will not be valid.",
     "q-11": "What if I take a PCR test prior to the wedding and it comes back too early? What if it doesn’t come in time at all?",
-    "a-11": "As a precaution, we are working on fall-back options for rapid testing.\n\nWe expect COVID testing will become cheaper and more accessible by later this year. If so, we hope to make those options available to our guests if the economics allow.\n\nThat said, we believe full vaccination will be the best and safest way to enjoy our wedding, and highly encourage it even outside of our event.",
+    "a-11": "As a precaution, we are working on fall-back options for rapid testing.\n\nWe expect COVID testing will become cheaper and more accessible by later this year. If so, we hope to make those options available to our guests if the economics allow.\nThat said, we believe full vaccination will be the best and safest way to enjoy our wedding, and highly encourage it even outside of our event.",
     "q-12": "What if I took a test and it came back negative, but I am feeling sick or unwell?",
     "a-12": "As a precaution, we kindly ask that you stay home—both for your own health and for those at the event.",
     "q-13": "Will you be doing contact tracing?",
@@ -66,5 +75,8 @@
   },
   "questionnaire": {
     "t": "Questionnaire"
+  },
+  "footer": {
+    "c": "Contact Us"
   }
 }

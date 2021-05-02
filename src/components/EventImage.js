@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import jg_rings from "../img/jg_rings.JPG";
+import {jg_rings} from "../img/index";
 import {device} from "../device";
 
 const EventImg = () => {

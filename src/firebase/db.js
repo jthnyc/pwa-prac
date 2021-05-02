@@ -28,7 +28,7 @@ const fetchAllInvites = async () => {
 };
 
 /**
- * Save a guest with a generated Id to the DB
+ * RSVP - Save a guest with a generated Id to the DB
  * @param {Object} guest - object with new information on a guest
  */
 export const addUser = async (guest) => {
@@ -36,6 +36,20 @@ export const addUser = async (guest) => {
     const id = uuidv4();
     guest.id = id;
     db.collection("guests").doc(id).set(guest);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/**
+ * Email - Save a guest with a generated Id to the DB
+ * @param {Object} guest - object with new information on a guest
+ */
+export const addGuestEmail = async (guest) => {
+  try {
+    const id = uuidv4();
+    guest.id = id;
+    await db.collection("emails").doc(id).set(guest);
   } catch (error) {
     console.log(error);
   }

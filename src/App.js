@@ -6,8 +6,9 @@ import {
   Story,
   StoryImage,
   FAQ,
+  Email,
   COVID,
-  Questionnaire,
+  Footer,
 } from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
@@ -23,9 +24,22 @@ function App() {
         <StoryImage />
         <Story />
       </Panels>
-      <FAQ />
-      <COVID />
-      <Questionnaire />
+      <Decoration></Decoration>
+      <Panels>
+        <StoryImage />
+        <FAQ />
+      </Panels>
+      <Decoration></Decoration>
+      <Panels>
+        <StoryImage />
+        <Email />
+      </Panels>
+      <Decoration></Decoration>
+      <Panels>
+        <StoryImage />
+        <COVID />
+      </Panels>
+      <Footer />
     </AppContainer>
   );
 }
