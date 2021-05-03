@@ -88,5 +88,7 @@ const FAQContainer = styled.div`
 
   @media ${device.laptopL} {
     padding: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 `;

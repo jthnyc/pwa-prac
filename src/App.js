@@ -19,24 +19,17 @@ function App() {
       <GlobalStyle />
       <Welcome />
       <NavMenu />
-      <Decoration></Decoration>
       <Panels>
-        <StoryImage />
         <Story />
       </Panels>
-      <Decoration></Decoration>
+      <StoryImage />
       <Panels>
-        <StoryImage />
         <FAQ />
       </Panels>
-      <Decoration></Decoration>
       <Panels>
-        <StoryImage />
         <Email />
       </Panels>
-      <Decoration></Decoration>
       <Panels>
-        <StoryImage />
         <COVID />
       </Panels>
       <Footer />
@@ -50,10 +43,6 @@ const AppContainer = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-`;
-
-const Decoration = styled.div`
-  height: 10vh;
 `;
 
 const Panels = styled.div`
