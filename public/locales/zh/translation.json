@@ -8,10 +8,10 @@
   "story": {
     "t": "我們的故事",
     "l1": "在一個下著毛毛雨的星期二晚上....",
-    "l2": "子軒與宇誠在曼哈頓中城的一個籌款活動中認識。他們為音樂和藝術的共同愛好而建立了聯繫，儘管他們對郎朗是否是一位偉大的鋼琴家持著相反的意見。",
-    "l3": "共同欣賞幾個晚上交換了Spotify清單，看了電影並發現了對Eataly，Broadway和雞尾酒吧的共同欣賞之後，他們知道他們之間找到了一些特別的共同點。從那以後的幾年中，他們在長島市的多元化社區中稱呼為家，同時繼續探索紐約的藝術和烹飪風光。",
-    "l4": "In 2019, Gabe proposed during a candlelight cruise in the Riviera Maya, Mexico. A year later, Joanna and Gabe were married in an intimate ceremony on October 10, 2020—-as much fun as that was, they can’t wait to celebrate with all of their favorite people.",
-    "l5": "They also still disagree on Lang Lang—-although they both agree Martha Argerich is better anyway."
+    "l2": "子軒與宇誠在曼哈頓中城的一個籌款活動中認識。儘管他們對郎朗是否是一位偉大的鋼琴家持著相反的意見，他們還是為了彼此共同對音樂和藝術的愛好而建立了聯繫...",
+    "l3": "從交換 Spotify 音樂歌單，書籍及電影心得，到了解彼此對義大利美食及百老匯的熱衷，他們知道他們找到了一些特別的共同點。從那以後的幾年中，他們稱紐約皇后區的 Long Island City 多元化的社區為家，並繼續一起探索紐約獨有的藝術和各國美食。",
+    "l4": "2019年秋季，在取得子軒父親的准許後，宇誠精心安排了於墨西哥 Riviera Maya 的一場水上燭光晚餐，來向子軒求婚。一年後，子軒與宇誠於 2020年 十月十日 登記結婚，且期待能與親朋好友在延後的婚禮日期，一起歡聚慶祝!",
+    "l5": "他們仍然對郎朗持不同的意見 —- 但同意 Martha Argerich (瑪莎·阿格里奇) 是更棒的鋼琴家 :)"
   },
   "faq": {
     "t": "FAQ",
@@ -33,7 +33,7 @@
   },
   "email": {
     "t": "電郵通知",
-    "l1": "我們希望能與您聯繫並提供有關婚禮的最新信息，\n請讓我們知道您的電郵地址： ",
+    "l1": "我們希望能與您聯繫並提供有關婚禮的最新信息，請讓我們知道您的電郵地址： ",
     "first": "名字",
     "last": "姓氏",
     "form": "電郵地址",

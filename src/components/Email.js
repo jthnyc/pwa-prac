@@ -37,7 +37,7 @@ const Email = () => {
   };
 
   return (
-    <EmailContainer id="questionnaire">
+    <EmailContainer id="email">
       <h2>{t("email.t")}</h2>
       <EmailText>
         <p>{t("email.l1")}</p>
