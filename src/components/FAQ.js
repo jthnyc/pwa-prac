@@ -11,7 +11,7 @@ const FAQ = () => {
       <h2>{t("faq.t")}</h2>
       <p>
         {t("faq.subt")}
-        <a href="mailto:hi@joannaandgabriel.love">Hi@JoannaAndGabriel.love</a>
+        <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
       </p>
       <Accordion defaultActiveKey="0">
         <Card>
