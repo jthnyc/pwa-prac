@@ -4,7 +4,7 @@ import {Accordion, Card} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 
-const FAQ = () => {
+const Faq = () => {
   const {t} = useTranslation();
   return (
     <FAQContainer id="faq">
@@ -79,7 +79,7 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Faq;
 
 const FAQContainer = styled.div`
   display: flex;

@@ -5,7 +5,7 @@ import {
   NavMenu,
   Story,
   StoryImage,
-  FAQ,
+  Faq,
   Email,
   COVID,
   Footer,
@@ -24,7 +24,7 @@ function App() {
       </Panels>
       <StoryImage />
       <Panels>
-        <FAQ />
+        <Faq />
       </Panels>
       <Panels>
         <Email />
