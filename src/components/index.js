@@ -12,3 +12,5 @@ export {default as Email} from "./Email";
 export {default as Faq} from "./Faq";
 export {default as COVID} from "./COVID";
 export {default as Footer} from "./Footer";
+export {default as Landing} from "./Landing";
+export {default as Photos} from "./Photos";

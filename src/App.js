@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import {
   Welcome,
+  Photos,
+  // Landing,
   NavMenu,
   Story,
   StoryImage,
@@ -18,21 +20,29 @@ function App() {
     <AppContainer>
       <GlobalStyle />
       <Welcome />
+      {/* <Landing /> */}
       <NavMenu />
-      <Panels>
-        <Story />
-      </Panels>
-      <StoryImage />
-      <Panels>
-        <Faq />
-      </Panels>
-      <Panels>
-        <Email />
-      </Panels>
-      <Panels>
-        <COVID />
-      </Panels>
-      <Footer />
+      <Test>
+        <Left>
+          <Photos />
+        </Left>
+        <Right>
+          <Panels>
+            <Story />
+          </Panels>
+          <StoryImage />
+          <Panels>
+            <Faq />
+          </Panels>
+          <Panels>
+            <Email />
+          </Panels>
+          <Panels>
+            <COVID />
+          </Panels>
+          <Footer />
+        </Right>
+      </Test>
     </AppContainer>
   );
 }
@@ -47,4 +57,18 @@ const AppContainer = styled.div`
 
 const Panels = styled.div`
   display: flex;
+`;
+
+const Test = styled.div`
+  display: flex;
+`;
+
+const Left = styled.div`
+  border: 1px solid green;
+  width: 60%;
+`;
+
+const Right = styled.div`
+  border: 1px solid red;
+  width: 40%;
 `;
