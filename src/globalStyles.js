@@ -26,6 +26,14 @@ const GlobalStyle = createGlobalStyle`
         list-style-type: none;
     }
 
+    img {
+        width: 100%;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
     @mixin for-size($size) {
         @if $size == phone-only {
             @media (max-width: 599px) { @content; }

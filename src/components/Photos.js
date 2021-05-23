@@ -8,6 +8,9 @@ const Photos = () => {
       <img src={g_bw} alt="g_bw" />
       <img src={jg_color} alt="jg_color" />
       <img src={jg_rings} alt="jg_rings" />
+      <img src={j_color} alt="j_color" />
+      <img src={jg_bw} alt="jg_bw" />
+      <img src={jg_bw2} alt="jg_bw2" />
       {/* <PhotoContainer>
         <img src={j_color} alt="j_color" />
       </PhotoContainer>
@@ -30,6 +33,9 @@ const PhotoWrapper = styled.div`
   //   border: 10px solid green;
 `;
 
-// const PhotoContainer = styled.div`
+// const ImgContainer = styled.div`
+//   width: 100%;
+//   max-width: 100%;
+//   border: 1px solid red;
 //   height: 200px;
 // `;

@@ -4,7 +4,8 @@ import {
   Welcome,
   Photos,
   // Landing,
-  NavMenu,
+  // NavMenu,
+  Nav,
   Story,
   StoryImage,
   Faq,
@@ -21,7 +22,8 @@ function App() {
       <GlobalStyle />
       <Welcome />
       {/* <Landing /> */}
-      <NavMenu />
+      {/* <NavMenu /> */}
+      <Nav />
       <Test>
         <Left>
           <Photos />
