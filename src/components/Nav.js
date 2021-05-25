@@ -12,24 +12,22 @@ const Nav = () => {
   return (
     <Header>
       <InnerHeader>
-        <Navigation>
-          <Navlist>
-            <ListContainer>
-              <ListItem>
-                <Link href="#story">{t("story.t")}</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#faq">{t("faq.t")}</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#email">{t("email.t")}</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#covid">{t("covid.nav")}</Link>
-              </ListItem>
-            </ListContainer>
-          </Navlist>
-        </Navigation>
+        <Navlist>
+          <ListContainer>
+            <ListItem>
+              <Link href="#story">{t("story.t")}</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#faq">{t("faq.t")}</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#email">{t("email.t")}</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#covid">{t("covid.nav")}</Link>
+            </ListItem>
+          </ListContainer>
+        </Navlist>
         <LangContainer>
           {i18n.language !== "en" ? (
             <LangButton type="button" onClick={() => handleClick("en")}>
@@ -65,29 +63,25 @@ const Header = styled.header`
   top: 0px;
   z-index: 10;
   background: transparent;
+  height: 10%;
 `;
 
 const InnerHeader = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 100vw;
-  margin: 10px 45px;
+  align-items: center;
 `;
-
-const Navigation = styled.div``;
 
 const Navlist = styled.nav`
   border: 1px solid green;
   display: flex;
-  align-items: center;
-  visibility: ${(props) => (props.out ? "hidden" : "visible")};
-  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
-  transition: visibility 3s linear;
 `;
 
 const ListContainer = styled.ul`
-  // display: flex;
+  display: flex;
+  visibility: ${(props) => (props.out ? "hidden" : "visible")};
+  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+  transition: visibility 3s linear;
 `;
 
 const ListItem = styled.li`
@@ -101,8 +95,7 @@ const ListItem = styled.li`
 
 const Link = styled.a`
   border: 1px solid red;
-  // padding: 5px;
-  margin: 0 20px;
+  margin: 20px;
   color: #fff;
   font-size: 1.2em;
   text-shadow: 1px 1px #888888;
@@ -129,4 +122,7 @@ const LangButton = styled.button`
   height: 2.0625rem;
   font-size: 1.25rem;
   display: flex;
+  visibility: ${(props) => (props.out ? "hidden" : "visible")};
+  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+  transition: visibility 3s linear;
 `;
