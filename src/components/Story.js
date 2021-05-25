@@ -29,8 +29,8 @@ const StoryContainer = styled.div`
   @media ${device.laptopL} {
     // align-items: center;
     padding: 3rem;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;
 

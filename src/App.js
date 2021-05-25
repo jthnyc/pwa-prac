@@ -15,6 +15,7 @@ import {
 } from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
+import {device} from "./device";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <Panels>
             <Story />
           </Panels>
-          <StoryImage />
+          {/* <StoryImage /> */}
           <Panels>
             <Faq />
           </Panels>
@@ -66,11 +67,15 @@ const Test = styled.div`
 `;
 
 const Left = styled.div`
-  border: 1px solid green;
-  width: 60%;
+  @media ${device.laptop} {
+    width: 60%;
+  }
 `;
 
 const Right = styled.div`
-  border: 1px solid red;
-  width: 40%;
+  width: 100%;
+
+  @media ${device.laptop} {
+    width: 40%;
+  }
 `;

@@ -10,37 +10,39 @@ const Nav = () => {
   }
 
   return (
-    <Navbar>
-      <FlexContainer>
-        <Navlist>
-          <ListContainer>
-            <ListItem>
-              <Link href="#story">{t("story.t")}</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#faq">{t("faq.t")}</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#email">{t("email.t")}</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#covid">{t("covid.nav")}</Link>
-            </ListItem>
-            <ListItem>
-              {i18n.language !== "en" ? (
-                <LangButton type="button" onClick={() => handleClick("en")}>
-                  <span>En</span>
-                </LangButton>
-              ) : (
-                <LangButton type="button" onClick={() => handleClick("zh")}>
-                  <span>繁</span>
-                </LangButton>
-              )}
-            </ListItem>
-          </ListContainer>
-        </Navlist>
-      </FlexContainer>
-    </Navbar>
+    <Header>
+      <InnerHeader>
+        <Navigation>
+          <Navlist>
+            <ListContainer>
+              <ListItem>
+                <Link href="#story">{t("story.t")}</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#faq">{t("faq.t")}</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#email">{t("email.t")}</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#covid">{t("covid.nav")}</Link>
+              </ListItem>
+            </ListContainer>
+          </Navlist>
+        </Navigation>
+        <LangContainer>
+          {i18n.language !== "en" ? (
+            <LangButton type="button" onClick={() => handleClick("en")}>
+              <span>En</span>
+            </LangButton>
+          ) : (
+            <LangButton type="button" onClick={() => handleClick("zh")}>
+              <span>繁</span>
+            </LangButton>
+          )}
+        </LangContainer>
+      </InnerHeader>
+    </Header>
   );
 };
 
@@ -56,48 +58,66 @@ const fadeOut = keyframes`
   to {opacity: 1;}
 `;
 
-const Navbar = styled.div`
-    // border: 1px solid yellow;
-    background: transparent;
-    width: 100%;
-    height 10%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: flex-end;
+const Header = styled.header`
+  border: 1px solid yellow;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  background: transparent;
 `;
 
-const FlexContainer = styled.div`
+const InnerHeader = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin: 10px 45px;
 `;
+
+const Navigation = styled.div``;
 
 const Navlist = styled.nav`
+  border: 1px solid green;
   display: flex;
+  align-items: center;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
 `;
 
 const ListContainer = styled.ul`
-  display: flex;
+  // display: flex;
 `;
 
 const ListItem = styled.li`
-  padding: 15px 10px;
-  margin: 10px 5px;
+  // padding: 15px 10px;
+  // margin: 10px 5px;
 
-  &:hover {
-    border-bottom: 2px #fff solid;
-  }
+  // &:hover {
+  //   border-bottom: 2px #fff solid;
+  // }
 `;
 
 const Link = styled.a`
-  //   border: 1px solid red;
-  padding: 5px;
-  margin: 0 5px;
+  border: 1px solid red;
+  // padding: 5px;
+  margin: 0 20px;
   color: #fff;
   font-size: 1.2em;
   text-shadow: 1px 1px #888888;
+  letter-spacing: 0.1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+const LangContainer = styled.div`
+  border: 1px solid red;
+  width: 3.125rem;
+  display: flex;
+  align-items: center;
 `;
 
 const LangButton = styled.button`

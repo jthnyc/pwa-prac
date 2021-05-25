@@ -165,7 +165,7 @@ const COVIDContainer = styled.div`
 
   @media ${device.laptopL} {
     padding: 3rem;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;

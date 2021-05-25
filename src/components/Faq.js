@@ -85,10 +85,11 @@ const FAQContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  width: 100vw;
 
   @media ${device.laptopL} {
     padding: 3rem;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;
