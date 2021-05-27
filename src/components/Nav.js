@@ -1,10 +1,11 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import {useTranslation} from "react-i18next";
-import {device} from "../device";
+// import {device} from "../device";
 
 const Nav = () => {
   const {t, i18n} = useTranslation();
+
   function handleClick(lang) {
     i18n.changeLanguage(lang);
   }
@@ -57,7 +58,7 @@ const fadeOut = keyframes`
 `;
 
 const Header = styled.header`
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
   width: 100vw;
   position: fixed;
   top: 0px;
@@ -73,7 +74,7 @@ const InnerHeader = styled.div`
 `;
 
 const Navlist = styled.nav`
-  border: 1px solid green;
+  // border: 1px solid green;
   display: flex;
 `;
 
@@ -94,7 +95,7 @@ const ListItem = styled.li`
 `;
 
 const Link = styled.a`
-  border: 1px solid red;
+  // border: 1px solid red;
   margin: 20px;
   color: #fff;
   font-size: 1.2em;
@@ -107,7 +108,7 @@ const Link = styled.a`
 `;
 
 const LangContainer = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 3.125rem;
   display: flex;
   align-items: center;

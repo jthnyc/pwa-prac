@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {background} from "../img/index";
+// import {LoginContext} from "../context/LoginContext";
 
 const Landing = () => {
+  // const {isAuthenticated, handleSubmit, handleChange} = useContext(LoginContext);
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -24,16 +26,22 @@ const Landing = () => {
   };
 
   return (
-    <LandingContainer>
-      <BackgroundContainer>
-        <FormContainer>
-          <FormBox onSubmit={(e) => handleSubmit(e)}>
-            <InputField type="text" onChange={(e) => handleChange(e)} />
-            <SubmitButton>Submit</SubmitButton>
-          </FormBox>
-        </FormContainer>
-      </BackgroundContainer>
-    </LandingContainer>
+    <div>
+      {isAuthenticated ? (
+        <LandingContainer>
+          <BackgroundContainer>
+            <FormContainer>
+              <FormBox onSubmit={(e) => handleSubmit(e)}>
+                <InputField type="text" onChange={(e) => handleChange(e)} />
+                <SubmitButton>Submit</SubmitButton>
+              </FormBox>
+            </FormContainer>
+          </BackgroundContainer>
+        </LandingContainer>
+      ) : (
+        <div></div>
+      )}
+    </div>
   );
 };
 

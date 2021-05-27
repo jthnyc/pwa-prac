@@ -26,11 +26,12 @@ const StoryContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
 
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     // align-items: center;
     padding: 3rem;
-    margin-left: 5%;
-    margin-right: 5%;
+    // margin-left: 5%;
+    // margin-right: 5%;
+    margin: 5%;
   }
 `;
 
