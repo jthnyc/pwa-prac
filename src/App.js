@@ -17,7 +17,7 @@ import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import {device} from "./device";
 // import {LoginContext} from "./context/LoginContext";
-import {background} from "../src/img/index";
+import {background, background2} from "../src/img/index";
 
 function App() {
   // need to update this to use isAuthenticated from LoginContext
@@ -121,21 +121,16 @@ const Right = styled.div`
 `;
 
 const LandingContainer = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // padding: 2rem;
-  // height: 800px;
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: auto;
-  left: 0;
 `;
 
 const BackgroundContainer = styled.div`
   position: relative;
-  background: transparent url(${background}) no-repeat center;
+  background: transparent url(${background2}) no-repeat center;
   background-size: cover;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

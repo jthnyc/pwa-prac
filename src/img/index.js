@@ -7,3 +7,4 @@ export {default as hero_img} from "./hero_img.jpeg";
 export {default as jg_color} from "./jg_color.jpeg";
 export {default as background} from "./background.png";
 export {default as background_triangles} from "./background-triangles.png";
+export {default as background2} from "./1135.jpg";
