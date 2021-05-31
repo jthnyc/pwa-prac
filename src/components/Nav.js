@@ -63,23 +63,27 @@ const Header = styled.header`
   position: fixed;
   top: 0px;
   z-index: 10;
-  background: transparent;
+  // background: transparent;
   height: 10%;
+  background: white;
 `;
 
 const InnerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 `;
 
 const Navlist = styled.nav`
   // border: 1px solid green;
   display: flex;
+  align-items: center;
 `;
 
 const ListContainer = styled.ul`
   display: flex;
+  margin: 0;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
@@ -96,10 +100,10 @@ const ListItem = styled.li`
 
 const Link = styled.a`
   // border: 1px solid red;
-  margin: 20px;
-  color: #fff;
+  margin: 50px;
+  color: black;
   font-size: 1.2em;
-  text-shadow: 1px 1px #888888;
+  text-shadow: 0.05rem 0.05rem #888888;
   letter-spacing: 0.1rem;
 
   &:last-child {
@@ -117,8 +121,8 @@ const LangContainer = styled.div`
 const LangButton = styled.button`
   background: transparent;
   border: none;
-  color: #fff;
-  text-shadow: 0.125rem 0.125rem #888888;
+  color: #black;
+  text-shadow: 0.05rem 0.05rem #888888;
   width: 2.0625rem;
   height: 2.0625rem;
   font-size: 1.25rem;

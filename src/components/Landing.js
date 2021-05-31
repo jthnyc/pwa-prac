@@ -6,6 +6,7 @@ import {background} from "../img/index";
 const Landing = () => {
   // const {isAuthenticated, handleSubmit, handleChange} = useContext(LoginContext);
   const [password, setPassword] = useState("");
+  // check in localstorage before setting this value to false
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleChange = (e) => {
@@ -20,8 +21,9 @@ const Landing = () => {
     if (password !== "123") {
       console.log("wrong password");
     }
-    localStorage.setItem("password", password);
+    // don't save value in localstorage, save value of hasEnteredPW / isAuthenticated
     setIsAuthenticated(true);
+    localStorage.setItem("isAuthenticated", isAuthenticated);
     setPassword("");
   };
 
@@ -69,7 +71,7 @@ const BackgroundContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  border: 1px solid red;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;

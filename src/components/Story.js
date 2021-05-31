@@ -26,12 +26,10 @@ const StoryContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
 
-  @media ${device.laptop} {
-    // align-items: center;
+  @media ${device.laptopL} {
     padding: 3rem;
-    // margin-left: 5%;
-    // margin-right: 5%;
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;
 

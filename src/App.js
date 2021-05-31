@@ -4,10 +4,9 @@ import {
   Welcome,
   Photos,
   // Landing,
-  // NavMenu,
+  NavMenu,
   Nav,
   Story,
-  // StoryImage,
   Faq,
   Email,
   COVID,
@@ -17,12 +16,14 @@ import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import {device} from "./device";
 // import {LoginContext} from "./context/LoginContext";
-import {background, background2} from "../src/img/index";
+import {background2} from "../src/img/index";
+import useLocalStorage from "react-use-localstorage";
 
 function App() {
   // need to update this to use isAuthenticated from LoginContext
   const [password, setPassword] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState();
+  const [localAuth, setLocalAuth] = useLocalStorage("isAuth", false);
 
   const handleChange = (e) => {
     const input = e.target.value;
@@ -36,19 +37,19 @@ function App() {
     if (password !== "123") {
       console.log("wrong password");
     }
-    localStorage.setItem("password", password);
+    // localStorage.setItem("isAuthenticated", isAuthenticated);
     setIsAuthenticated(true);
+    setLocalAuth(true);
     setPassword("");
   };
 
   return (
     <div>
-      {isAuthenticated ? (
+      {isAuthenticated || localAuth ? (
         <AppContainer>
           <GlobalStyle />
           <Welcome />
-          {/* <NavMenu /> */}
-          <Nav />
+          {window.innerWidth === 425 ? <NavMenu /> : <Nav />}
           <Test>
             <Left>
               <Photos />
@@ -57,7 +58,6 @@ function App() {
               <Panels>
                 <Story />
               </Panels>
-              {/* <StoryImage /> */}
               <Panels>
                 <Faq />
               </Panels>
@@ -78,7 +78,7 @@ function App() {
             <BackgroundContainer>
               <FormContainer>
                 <FormBox onSubmit={(e) => handleSubmit(e)}>
-                  <InputField type="text" onChange={(e) => handleChange(e)} />
+                  <InputField type="password" onChange={(e) => handleChange(e)} />
                   <SubmitButton>Submit</SubmitButton>
                 </FormBox>
               </FormContainer>
@@ -137,15 +137,17 @@ const BackgroundContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  border: 1px solid red;
+  border: 5px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
+  width: 500px;
 `;
 
 const FormBox = styled.form`
   // border: 1px solid red;
+  width: 80%;
 `;
 
 const InputField = styled.input`
@@ -153,13 +155,15 @@ const InputField = styled.input`
   border-bottom: 1px solid black;
   outline: none;
   width: 100%;
+  height: 50px;
+  text-align: center;
 `;
 
 const SubmitButton = styled.button`
   border-style: none;
-  color: green;
-  background-color: darkblue;
-  // height: 90px;
+  color: white;
+  background-color: teal;
   width: 100%;
   outline: none;
+  height: 50px;
 `;
