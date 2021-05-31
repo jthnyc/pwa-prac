@@ -3,9 +3,6 @@ import React, {useState} from "react";
 import {
   Welcome,
   Photos,
-  // Landing,
-  // NavMenu,
-  // Nav,
   Nav2,
   Story,
   Faq,
@@ -16,12 +13,12 @@ import {
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import {device} from "./device";
-// import {LoginContext} from "./context/LoginContext";
 import {background2} from "../src/img/index";
 import useLocalStorage from "react-use-localstorage";
+import {divider} from "./img/index";
 
 function App() {
-  // need to update this to use isAuthenticated from LoginContext
+  // need to update the following to use LoginContext
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [localAuth, setLocalAuth] = useLocalStorage("isAuth", false);
@@ -37,8 +34,8 @@ function App() {
     console.log("Submitted");
     if (password !== "123") {
       console.log("wrong password");
+      // need to add error handle on frontend
     }
-    // localStorage.setItem("isAuthenticated", isAuthenticated);
     setIsAuthenticated(true);
     setLocalAuth(true);
     setPassword("");
@@ -51,6 +48,8 @@ function App() {
           <GlobalStyle />
           <Nav2 />
           <Welcome />
+          {/* Working on conditionally rendering a different Nav
+          Using Bootstrap for now */}
           {/* {window.innerWidth === 425 ? <NavMenu /> : <Nav />} */}
           <Test>
             <Left>
@@ -60,12 +59,15 @@ function App() {
               <Panels>
                 <Story />
               </Panels>
+              <img src={divider} alt="hi" />
               <Panels>
                 <Faq />
               </Panels>
+              <img src={divider} alt="hi" />
               <Panels>
                 <Email />
               </Panels>
+              <img src={divider} alt="hi" />
               <Panels>
                 <COVID />
               </Panels>
@@ -75,7 +77,6 @@ function App() {
         </AppContainer>
       ) : (
         <div>
-          {/* <Landing /> */}
           <LandingContainer>
             <BackgroundContainer>
               <FormContainer>
@@ -148,7 +149,6 @@ const FormContainer = styled.div`
 `;
 
 const FormBox = styled.form`
-  // border: 1px solid red;
   width: 80%;
 `;
 

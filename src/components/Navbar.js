@@ -49,7 +49,6 @@ const fadeOut = keyframes`
 `;
 
 const LangContainer = styled.div`
-  // border: 1px solid red;
   width: 3.125rem;
   display: flex;
   align-items: center;
