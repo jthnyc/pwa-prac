@@ -4,8 +4,9 @@ import {
   Welcome,
   Photos,
   // Landing,
-  NavMenu,
-  Nav,
+  // NavMenu,
+  // Nav,
+  Nav2,
   Story,
   Faq,
   Email,
@@ -48,8 +49,9 @@ function App() {
       {isAuthenticated || localAuth ? (
         <AppContainer>
           <GlobalStyle />
+          <Nav2 />
           <Welcome />
-          {window.innerWidth === 425 ? <NavMenu /> : <Nav />}
+          {/* {window.innerWidth === 425 ? <NavMenu /> : <Nav />} */}
           <Test>
             <Left>
               <Photos />
