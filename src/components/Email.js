@@ -101,7 +101,7 @@ const Email = () => {
         </Form.Row>
 
         <Test>
-          <Button variant="primary" type="submit">
+          <Button variant="outline-secondary" type="submit">
             {t("email.submit")}
           </Button>
         </Test>
