@@ -9,7 +9,7 @@ const NavMenu = () => {
   return (
     <Footer>
       <h5>
-        <a href="mailto:hi@joannaandgabriel.love">{t("footer.c")}</a>
+        <a href="mailto:hello@joannaandgabriel.love">{t("footer.c")}</a>
       </h5>
       <h5>©2021 {t("names.t")}</h5>
     </Footer>

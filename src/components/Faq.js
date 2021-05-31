@@ -4,14 +4,14 @@ import {Accordion, Card} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 
-const FAQ = () => {
+const Faq = () => {
   const {t} = useTranslation();
   return (
     <FAQContainer id="faq">
       <h2>{t("faq.t")}</h2>
       <p>
         {t("faq.subt")}
-        <a href="mailto:hi@joannaandgabriel.love">Hi@JoannaAndGabriel.love</a>
+        <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
       </p>
       <Accordion defaultActiveKey="0">
         <Card>
@@ -79,7 +79,7 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Faq;
 
 const FAQContainer = styled.div`
   display: flex;
@@ -88,5 +88,7 @@ const FAQContainer = styled.div`
 
   @media ${device.laptopL} {
     padding: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 `;

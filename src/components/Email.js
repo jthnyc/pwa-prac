@@ -37,98 +37,99 @@ const Email = () => {
   };
 
   return (
-    <RightContainer>
-      <EmailContainer id="questionnaire">
-        <h2>{t("email.t")}</h2>
-        <EmailText>
-          <p>{t("email.l1")}</p>
-        </EmailText>
-        <Form onSubmit={(e) => handleSubmit(e)}>
-          <Form.Row>
-            <Col>
-              <Form.Group controlId="formFirstName">
-                <Form.Control
-                  type="text"
-                  name="firstname"
-                  placeholder={t("email.first")}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  value={firstName}
-                />
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group controlId="formLastName">
-                <Form.Control
-                  type="text"
-                  name="lastname"
-                  placeholder={t("email.last")}
-                  onChange={(e) => setLastName(e.target.value)}
-                  value={lastName}
-                />
-              </Form.Group>
-            </Col>
-          </Form.Row>
+    <EmailContainer id="email">
+      <h2>{t("email.t")}</h2>
+      <EmailText>
+        <p>{t("email.l1")}</p>
+      </EmailText>
+      <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Row>
+          <Col>
+            <Form.Group controlId="formFirstName">
+              <Form.Control
+                type="text"
+                name="firstname"
+                placeholder={t("email.first")}
+                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+              />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group controlId="formLastName">
+              <Form.Control
+                type="text"
+                name="lastname"
+                placeholder={t("email.last")}
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
+              />
+            </Form.Group>
+          </Col>
+        </Form.Row>
 
-          <Form.Row>
-            <Col>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control
-                  type="email"
-                  placeholder={t("email.form")}
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={guestEmail}
-                />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-            </Col>
-          </Form.Row>
+        <Form.Row>
+          <Col>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control
+                type="email"
+                placeholder={t("email.form")}
+                onChange={(e) => setEmail(e.target.value)}
+                value={guestEmail}
+              />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+          </Col>
+        </Form.Row>
 
-          <Form.Row>
-            <Col>
-              <InputGroup>
-                <InputGroup.Prepend>
-                  <InputGroup.Text>{t("email.message")}</InputGroup.Text>
-                </InputGroup.Prepend>
-                <FormControl
-                  as="textarea"
-                  aria-label="With textarea"
-                  onChange={(e) => setMessage(e.target.value)}
-                  value={message}
-                />
-              </InputGroup>
-            </Col>
-          </Form.Row>
+        <Form.Row>
+          <Col>
+            <InputGroup>
+              <InputGroup.Prepend>
+                <InputGroup.Text>{t("email.message")}</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                as="textarea"
+                aria-label="With textarea"
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+              />
+            </InputGroup>
+          </Col>
+        </Form.Row>
 
+        <Test>
           <Button variant="primary" type="submit">
             {t("email.submit")}
           </Button>
-        </Form>
-      </EmailContainer>
-    </RightContainer>
+        </Test>
+      </Form>
+    </EmailContainer>
   );
 };
 
 export default Email;
 
-const RightContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-
-  @media ${device.laptopL} {
-    width: 40%;
-    height: 75vh;
-  }
-`;
-
 const EmailContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 2rem;
+  width: 100vw;
+
+  @media ${device.laptopL} {
+    padding: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 `;
 
 const EmailText = styled.div`
+  // margin-top: 2em;
+  // line-height: 2em;
+`;
+
+const Test = styled.div`
   margin-top: 2em;
-  line-height: 2em;
 `;

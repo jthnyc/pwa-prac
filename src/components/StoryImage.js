@@ -12,7 +12,7 @@ const StoryImage = () => {
         infinite={true}
         speed={2000}
         slidesToScroll={1}
-        arrows={true}
+        arrows={false}
         slidesToShow={3}
       >
         <StoryImg1></StoryImg1>
