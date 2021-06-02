@@ -12,7 +12,7 @@ const Nav2 = () => {
   }
 
   return (
-    <Navbar fixed="top" bg="light" expand="lg">
+    <StyledNavbar fixed="top" bg="light" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <StyledNav className="mr-auto">
@@ -33,7 +33,7 @@ const Nav2 = () => {
           )}
         </LangContainer>
       </Navbar.Collapse>
-    </Navbar>
+    </StyledNavbar>
   );
 };
 
@@ -49,8 +49,22 @@ const fadeOut = keyframes`
   to {opacity: 1;}
 `;
 
+// may incorporate below styles to update navbar look
+// trying to use mix-blend-mode to account for color difference in scroll
+const StyledNavbar = styled(Navbar)`
+  // border: 2px solid red;
+  // padding-top: 0.625rem;
+  // background: transparent;
+  // mix-blend-mode: difference;
+`;
+
 const StyledNav = styled(Nav)`
   width: 50%;
+  // border: 1px solid green;
+
+  @media ${device.mobileL} {
+    margin-top: 1.25rem;
+  }
 `;
 
 const StyledNavLink = styled(Nav.Link)`
@@ -63,7 +77,11 @@ const StyledNavLink = styled(Nav.Link)`
   }
 
   @media ${device.laptop} {
-    font-size: 1.5em;
+    font-size: 1rem;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 1.5rem;
   }
 `;
 
@@ -71,6 +89,7 @@ const LangContainer = styled.div`
   width: 3.125rem;
   display: flex;
   align-items: center;
+  // need to update visibility here per device
 `;
 
 const LangButton = styled.button`

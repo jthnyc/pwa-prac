@@ -27,7 +27,7 @@ const StoryContainer = styled.div`
   padding: 2rem;
 
   @media ${device.laptopL} {
-    padding: 3rem;
+    padding-top: 5rem;
     margin-left: 5%;
     margin-right: 5%;
   }
