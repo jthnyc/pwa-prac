@@ -24,12 +24,14 @@ export default Story;
 const StoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 8rem 0;
+  margin-left: 8%;
+  margin-right: 8%;
 
-  @media ${device.laptopL} {
-    padding-top: 5rem;
-    margin-left: 5%;
-    margin-right: 5%;
+  @media ${device.laptop} {
+    padding: 5rem 0;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 `;
 
