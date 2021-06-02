@@ -9,7 +9,7 @@ const Story = () => {
     <StoryContainer id="story">
       <h2>{t("story.t")}</h2>
       <StoryText>
-        <p>{t("story.l1")}</p>
+        <FirstLine>{t("story.l1")}</FirstLine>
         <p>{t("story.l2")}</p>
         <p>{t("story.l3")}</p>
         <p>{t("story.l4")}</p>
@@ -36,4 +36,10 @@ const StoryContainer = styled.div`
 const StoryText = styled.div`
   margin-top: 2em;
   line-height: 2em;
+`;
+
+const FirstLine = styled.p`
+  &::first-letter {
+    font-size: 2em;
+  }
 `;
