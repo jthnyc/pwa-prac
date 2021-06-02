@@ -2,6 +2,7 @@ import React from "react";
 import styled, {keyframes} from "styled-components";
 import {Navbar, Nav} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
+import {device} from "../device";
 
 const Nav2 = () => {
   const {t, i18n} = useTranslation();
@@ -14,12 +15,12 @@ const Nav2 = () => {
     <Navbar fixed="top" bg="light" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#story">{t("story.t")}</Nav.Link>
-          <Nav.Link href="#faq">{t("faq.t")}</Nav.Link>
-          <Nav.Link href="#email">{t("email.t")}</Nav.Link>
-          <Nav.Link href="#covid">{t("covid.nav")}</Nav.Link>
-        </Nav>
+        <StyledNav className="mr-auto">
+          <StyledNavLink href="#story">{t("story.t")}</StyledNavLink>
+          <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
+          <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
+          <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
+        </StyledNav>
         <LangContainer>
           {i18n.language !== "en" ? (
             <LangButton type="button" onClick={() => handleClick("en")}>
@@ -46,6 +47,24 @@ const fadeIn = keyframes`
 const fadeOut = keyframes`
   from {opacity: 0;}
   to {opacity: 1;}
+`;
+
+const StyledNav = styled(Nav)`
+  width: 50%;
+`;
+
+const StyledNavLink = styled(Nav.Link)`
+  font-weight: bold;
+  visibility: ${(props) => (props.out ? "hidden" : "visible")};
+  animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+
+  &:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.5em;
+  }
 `;
 
 const LangContainer = styled.div`

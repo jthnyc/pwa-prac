@@ -12,7 +12,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: "Barlow Semi Condensed", serif;
+        // font-family: "Barlow Semi Condensed", serif;
+        // font-family: "Tangerine", cursive;
+        font-family: "La Belle Aurore", cursive;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
