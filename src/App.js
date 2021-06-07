@@ -22,22 +22,23 @@ function App() {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [localAuth, setLocalAuth] = useLocalStorage("isAuth", false);
+  const [error, setError] = useState();
 
   const handleChange = (e) => {
     const input = e.target.value;
-    console.log("input: ", input);
     setPassword(input);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted");
-    if (password !== "123") {
+    if (password !== "bazinga!") {
       console.log("wrong password");
-      // need to add error handle on frontend
+      setError("Uh oh! Wrong password. Try again :)");
+      setIsAuthenticated(false);
+    } else {
+      setIsAuthenticated(true);
+      setLocalAuth(true);
     }
-    setIsAuthenticated(true);
-    setLocalAuth(true);
     setPassword("");
   };
 
@@ -81,8 +82,13 @@ function App() {
             <BackgroundContainer>
               <FormContainer>
                 <FormBox onSubmit={(e) => handleSubmit(e)}>
-                  <InputField type="password" onChange={(e) => handleChange(e)} />
+                  <InputField
+                    type="password"
+                    onChange={(e) => handleChange(e)}
+                    placeholder="Open Sesame!"
+                  />
                   <SubmitButton>Submit</SubmitButton>
+                  <ErrorMessage>{error}</ErrorMessage>
                 </FormBox>
               </FormContainer>
             </BackgroundContainer>
@@ -141,6 +147,8 @@ const BackgroundContainer = styled.div`
 
 const FormContainer = styled.div`
   border: 5px solid white;
+  box-shadow: 0.05rem 0.05rem #888888;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,22 +158,35 @@ const FormContainer = styled.div`
 
 const FormBox = styled.form`
   width: 80%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const InputField = styled.input`
   border: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 0.025rem solid black;
   outline: none;
   width: 100%;
   height: 50px;
   text-align: center;
+
+  &:focus::placeholder {
+    color: transparent;
+  }
 `;
 
 const SubmitButton = styled.button`
   border-style: none;
-  color: white;
-  background-color: teal;
+  color: black;
+  border: 0.025rem solid black;
   width: 100%;
   outline: none;
   height: 50px;
+  background: white;
+`;
+
+const ErrorMessage = styled.div`
+  text-align: center;
 `;
