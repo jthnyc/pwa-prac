@@ -10,7 +10,7 @@
     "firebase": "^8.2.2",
     "firebase-admin": "^9.4.2",
     "firebase-tools": "^9.10.2",
-    "framer-motion": "^4.1.16",
+    "framer-motion": "^4.1.17",
     "i18next": "^19.9.2",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
