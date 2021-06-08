@@ -60,7 +60,6 @@ const StyledNavbar = styled(Navbar)`
 
 const StyledNav = styled(Nav)`
   width: 50%;
-  // border: 1px solid green;
 
   @media ${device.mobileL} {
     margin-top: 1.25rem;
@@ -85,11 +84,11 @@ const StyledNavLink = styled(Nav.Link)`
   }
 `;
 
+// need to update visibility here per device
 const LangContainer = styled.div`
   width: 3.125rem;
   display: flex;
   align-items: center;
-  // need to update visibility here per device
 `;
 
 const LangButton = styled.button`

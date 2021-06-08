@@ -16,9 +16,9 @@ import {device} from "./device";
 import {background2} from "../src/img/index";
 import useLocalStorage from "react-use-localstorage";
 import {divider} from "./img/index";
+// import env from "react-dotenv";
 
 function App() {
-  // need to update the following to use LoginContext
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [localAuth, setLocalAuth] = useLocalStorage("isAuth", false);
@@ -31,10 +31,10 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== "bazinga!") {
-      console.log("wrong password");
+    if (password !== "123") {
       setError("Uh oh! Wrong password. Try again :)");
       setIsAuthenticated(false);
+      setPassword("");
     } else {
       setIsAuthenticated(true);
       setLocalAuth(true);
@@ -49,9 +49,6 @@ function App() {
           <GlobalStyle />
           <Nav2 />
           <Welcome />
-          {/* Working on conditionally rendering a different Nav
-          Using Bootstrap for now */}
-          {/* {window.innerWidth === 425 ? <NavMenu /> : <Nav />} */}
           <Test>
             <Left>
               <Photos />
