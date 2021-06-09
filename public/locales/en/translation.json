@@ -36,8 +36,9 @@
     "l1": "We'd like to be in touch to provide updates to the wedding, let us know the best email to reach you: ",
     "first": "First Name",
     "last": "Last Name",
-    "form": "Best email to reach you",
-    "message": "Message to the couple",
+    "form": "Email",
+    "message": "Message",
+    "placeholder": "We recently moved...",
     "submit": "Send"
   },
   "covid": {

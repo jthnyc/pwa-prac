@@ -67,6 +67,7 @@ const fadeOut = keyframes`
 `;
 
 const DateText = styled.span`
+  font-family: "La Belle Aurore", cursive;
   font-size: 1.5em;
   color: white;
   text-align: center;

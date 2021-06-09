@@ -37,7 +37,8 @@
     "first": "名字",
     "last": "姓氏",
     "form": "電郵地址",
-    "message": "給我們的留言",
+    "message": "留言",
+    "placeholder": "我們最新的地址是...",
     "submit": "寄出"
   },
   "covid": {

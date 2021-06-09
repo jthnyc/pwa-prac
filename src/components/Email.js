@@ -77,9 +77,6 @@ const Email = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={guestEmail}
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
           </Col>
         </Form.Row>
@@ -92,6 +89,7 @@ const Email = () => {
               </InputGroup.Prepend>
               <FormControl
                 as="textarea"
+                placeholder={t("email.placeholder")}
                 aria-label="With textarea"
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
