@@ -13,9 +13,10 @@ import {
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import {device} from "./device";
-import {background2} from "../src/img/index";
 import useLocalStorage from "react-use-localstorage";
 import {divider} from "./img/index";
+import ParticlesBg from "particles-bg";
+import {Button, TextField} from "@material-ui/core";
 // import env from "react-dotenv";
 
 function App() {
@@ -23,6 +24,31 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [localAuth, setLocalAuth] = useLocalStorage("isAuth", false);
   const [error, setError] = useState();
+  let config = {
+    num: [4, 7],
+    rps: 0.1,
+    radius: [5, 40],
+    life: [1.5, 3],
+    v: [2, 3],
+    tha: [-40, 40],
+    alpha: [0.6, 0],
+    scale: [0.1, 0.4],
+    position: "all",
+    color: ["random", "#ff0000"],
+    random: 15,
+  };
+
+  if (Math.random() > 0.85) {
+    config = Object.assign(config, {
+      onParticleUpdate: (ctx, particle) => {
+        ctx.beginPath();
+        ctx.rect(particle.p.x, particle.p.y, particle.radius * 2, particle.radius * 2);
+        ctx.fillStyle = particle.color;
+        ctx.fill();
+        ctx.closePath();
+      },
+    });
+  }
 
   const handleChange = (e) => {
     const input = e.target.value;
@@ -34,7 +60,6 @@ function App() {
     if (password !== "123") {
       setError("Uh oh! Wrong password. Try again :)");
       setIsAuthenticated(false);
-      setPassword("");
     } else {
       setIsAuthenticated(true);
       setLocalAuth(true);
@@ -77,14 +102,24 @@ function App() {
         <div>
           <LandingContainer>
             <BackgroundContainer>
+              <ParticlesBg type="custom" bg={true} config={config} />
               <FormContainer>
                 <FormBox onSubmit={(e) => handleSubmit(e)}>
-                  <InputField
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
                     type="password"
+                    id="password"
+                    autoComplete="current-password"
                     onChange={(e) => handleChange(e)}
-                    placeholder="Open Sesame!"
                   />
-                  <SubmitButton>Submit</SubmitButton>
+                  <Button type="submit" fullwidth color="default" size="large">
+                    Enter
+                  </Button>
                   <ErrorMessage>{error}</ErrorMessage>
                 </FormBox>
               </FormContainer>
@@ -134,7 +169,6 @@ const LandingContainer = styled.div`
 
 const BackgroundContainer = styled.div`
   position: relative;
-  background: transparent url(${background2}) no-repeat center;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -143,9 +177,6 @@ const BackgroundContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  border: 5px solid white;
-  box-shadow: 0.05rem 0.05rem #888888;
-  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,29 +190,6 @@ const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
-
-const InputField = styled.input`
-  border: transparent;
-  border-bottom: 0.025rem solid black;
-  outline: none;
-  width: 100%;
-  height: 50px;
-  text-align: center;
-
-  &:focus::placeholder {
-    color: transparent;
-  }
-`;
-
-const SubmitButton = styled.button`
-  border-style: none;
-  color: black;
-  border: 0.025rem solid black;
-  width: 100%;
-  outline: none;
-  height: 50px;
-  background: white;
 `;
 
 const ErrorMessage = styled.div`
