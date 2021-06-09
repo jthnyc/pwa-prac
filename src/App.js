@@ -17,7 +17,8 @@ import useLocalStorage from "react-use-localstorage";
 import {divider} from "./img/index";
 import ParticlesBg from "particles-bg";
 import {Button, TextField} from "@material-ui/core";
-// import env from "react-dotenv";
+
+const {REACT_APP_SITE_PWD} = process.env;
 
 function App() {
   const [password, setPassword] = useState("");
@@ -57,7 +58,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== "123") {
+    if (password !== REACT_APP_SITE_PWD) {
       setError("Uh oh! Wrong password. Try again :)");
       setIsAuthenticated(false);
     } else {
@@ -116,6 +117,7 @@ function App() {
                     id="password"
                     autoComplete="current-password"
                     onChange={(e) => handleChange(e)}
+                    value={password}
                   />
                   <Button type="submit" fullwidth color="default" size="large">
                     Enter
