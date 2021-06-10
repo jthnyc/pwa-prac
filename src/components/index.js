@@ -16,3 +16,6 @@ export {default as COVID} from "./COVID";
 export {default as Footer} from "./Footer";
 export {default as Landing} from "./Landing";
 export {default as Photos} from "./Photos";
+export {default as Images1} from "./Images1";
+export {default as Images2} from "./Images2";
+export {default as Images3} from "./Images3";
