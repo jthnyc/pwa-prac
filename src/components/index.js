@@ -19,3 +19,6 @@ export {default as Photos} from "./Photos";
 export {default as Images1} from "./Images1";
 export {default as Images2} from "./Images2";
 export {default as Images3} from "./Images3";
+export {default as Images4} from "./Images4";
+export {default as Album} from "./Album";
+export {default as PhotoTile} from "./PhotoTile";

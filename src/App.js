@@ -6,6 +6,8 @@ import {
   Images1,
   Images2,
   Images3,
+  Images4,
+  Album,
   Nav2,
   Story,
   Faq,
@@ -101,6 +103,8 @@ function App() {
           <Panels>
             <COVID />
           </Panels>
+          <Images4 />
+          <Album />
           <Footer />
           {/* </Right> */}
           {/* </Test> */}

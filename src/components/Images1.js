@@ -14,7 +14,7 @@ const Images1 = () => {
       setScrollUp(false);
     }
     setScrollY(window.pageYOffset);
-    console.log(scrollY);
+    // console.log(scrollY);
   };
 
   useEffect(() => {
