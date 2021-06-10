@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {jg_color, jg_rings} from "../img/index";
+import {jg_color} from "../img/index";
 
-// can check for if scrollup or down to change photo?
 const Images3 = () => {
   return <ImageContainer></ImageContainer>;
 };

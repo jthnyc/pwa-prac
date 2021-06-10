@@ -15,4 +15,5 @@ const ImageContainer = styled.div`
   height: 100vh;
   background-attachment: fixed;
   background-position-y: 25%;
+  background-position-x: 80%;
 `;

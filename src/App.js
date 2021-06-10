@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState} from "react";
 import {
   Welcome,
-  // Photos,
   Images1,
   Images2,
   Images3,
@@ -17,9 +16,7 @@ import {
 } from "./components/index";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
-// import {device} from "./device";
 import useLocalStorage from "react-use-localstorage";
-// import {divider} from "./img/index";
 import ParticlesBg from "particles-bg";
 import {Button, TextField} from "@material-ui/core";
 
@@ -80,34 +77,24 @@ function App() {
           <GlobalStyle />
           <Nav2 />
           <Welcome />
-          {/* <Test> */}
-          {/* <Left>
-              <Photos />
-            </Left>
-            <Right> */}
           <Panels>
             <Story />
           </Panels>
           <Images1 />
-          {/* <img src={divider} alt="hi" /> */}
           <Panels>
             <Faq />
           </Panels>
           <Images2 />
-          {/* <img src={divider} alt="hi" /> */}
           <Panels>
             <Email />
           </Panels>
           <Images3 />
-          {/* <img src={divider} alt="hi" /> */}
           <Panels>
             <COVID />
           </Panels>
           <Images4 />
           <Album />
           <Footer />
-          {/* </Right> */}
-          {/* </Test> */}
         </AppContainer>
       ) : (
         <div>
@@ -154,25 +141,6 @@ const AppContainer = styled.div`
 const Panels = styled.div`
   display: flex;
 `;
-
-// const Test = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
-
-// const Left = styled.div`
-//   @media ${device.laptop} {
-//     width: 60%;
-//   }
-// `;
-
-// const Right = styled.div`
-//   width: 100%;
-
-//   @media ${device.laptop} {
-//     width: 40%;
-//   }
-// `;
 
 const LandingContainer = styled.div`
   position: absolute;

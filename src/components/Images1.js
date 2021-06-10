@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {g_bw, j_color} from "../img/index";
 
-// can check for if scrollup or down to change photo?
 const Images1 = () => {
   const [scrollUp, setScrollUp] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -14,7 +13,6 @@ const Images1 = () => {
       setScrollUp(false);
     }
     setScrollY(window.pageYOffset);
-    // console.log(scrollY);
   };
 
   useEffect(() => {
