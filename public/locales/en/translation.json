@@ -80,6 +80,9 @@
   "album": {
     "t": "Photos"
   },
+  "recommendations": {
+    "t": "Recommendations"
+  },
   "footer": {
     "c": "Contact Us"
   }

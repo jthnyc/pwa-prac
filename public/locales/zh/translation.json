@@ -80,6 +80,9 @@
   "album": {
     "t": "相簿"
   },
+  "recommendations": {
+    "t": "景點建議"
+  },
   "footer": {
     "c": "聯絡我們"
   }

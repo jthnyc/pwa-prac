@@ -22,3 +22,4 @@ export {default as Images3} from "./Images3";
 export {default as Images4} from "./Images4";
 export {default as Album} from "./Album";
 export {default as PhotoTile} from "./PhotoTile";
+export {default as Recommendations} from "./Recommendations";

@@ -11,6 +11,7 @@ import {
   Story,
   Faq,
   Email,
+  Recommendations,
   COVID,
   Footer,
 } from "./components/index";
@@ -89,6 +90,9 @@ function App() {
             <Email />
           </Panels>
           <Images3 />
+          <Panels>
+            <Recommendations />
+          </Panels>
           <Panels>
             <COVID />
           </Panels>
