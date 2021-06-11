@@ -12,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: "Barlow Semi Condensed", serif;
+        // font-family: "La Belle Aurore", cursive;
+        font-family: "Playfair Display", serif;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
@@ -24,6 +25,14 @@ const GlobalStyle = createGlobalStyle`
 
     ul {
         list-style-type: none;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a:link {
+        text-decoration: none;
     }
 
     @mixin for-size($size) {

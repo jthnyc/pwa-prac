@@ -77,9 +77,6 @@ const Email = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={guestEmail}
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
           </Col>
         </Form.Row>
@@ -92,6 +89,7 @@ const Email = () => {
               </InputGroup.Prepend>
               <FormControl
                 as="textarea"
+                placeholder={t("email.placeholder")}
                 aria-label="With textarea"
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
@@ -101,7 +99,7 @@ const Email = () => {
         </Form.Row>
 
         <Test>
-          <Button variant="primary" type="submit">
+          <Button variant="outline-secondary" type="submit">
             {t("email.submit")}
           </Button>
         </Test>
@@ -115,13 +113,15 @@ export default Email;
 const EmailContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   width: 100vw;
+  padding: 8rem 0;
+  margin-left: 8%;
+  margin-right: 8%;
 
-  @media ${device.laptopL} {
-    padding: 3rem;
-    margin-left: 20%;
-    margin-right: 20%;
+  @media ${device.laptop} {
+    padding: 5rem 0;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 `;
 

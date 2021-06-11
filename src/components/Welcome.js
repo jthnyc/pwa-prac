@@ -38,6 +38,9 @@ const HeroContainer = styled.div`
   grid-template-columns: auto [col-start] 12rem auto;
   grid-template-rows: auto [top-start] 15%;
 
+  // creating parallax scrolling effect
+  background-attachment: fixed;
+
   @media ${device.tablet} {
     grid-template-columns: auto [col-start] 20.625rem;
     grid-template-rows: auto [top-start] 20%;
@@ -67,6 +70,7 @@ const fadeOut = keyframes`
 `;
 
 const DateText = styled.span`
+  font-family: "La Belle Aurore", cursive;
   font-size: 1.5em;
   color: white;
   text-align: center;

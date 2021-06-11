@@ -9,7 +9,7 @@ const Story = () => {
     <StoryContainer id="story">
       <h2>{t("story.t")}</h2>
       <StoryText>
-        <p>{t("story.l1")}</p>
+        <FirstLine>{t("story.l1")}</FirstLine>
         <p>{t("story.l2")}</p>
         <p>{t("story.l3")}</p>
         <p>{t("story.l4")}</p>
@@ -24,17 +24,24 @@ export default Story;
 const StoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 8rem 0;
+  margin-left: 8%;
+  margin-right: 8%;
 
-  @media ${device.laptopL} {
-    // align-items: center;
-    padding: 3rem;
-    margin-left: 20%;
-    margin-right: 20%;
+  @media ${device.laptop} {
+    padding: 5rem 0;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 `;
 
 const StoryText = styled.div`
   margin-top: 2em;
   line-height: 2em;
+`;
+
+const FirstLine = styled.p`
+  &::first-letter {
+    font-size: 2em;
+  }
 `;
