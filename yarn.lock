@@ -12672,6 +12672,14 @@ re2@^1.15.8:
     nan "^2.14.2"
     node-gyp "^7.1.2"
 
+react-add-to-calendar-hoc@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/react-add-to-calendar-hoc/-/react-add-to-calendar-hoc-1.0.10.tgz#ceec3776f28653172d2bad798e35d9f84701605a"
+  integrity sha512-/tbI8Vez0LKAIPKi8g6KK1NdnUMig3lve5w7xdzkoACmniCrUtAG8d9veh9zF7HqEUO049S6IIREfMRxqiFKiQ==
+  dependencies:
+    core-js "^2.5.7"
+    prop-types "^15.6.2"
+
 react-app-polyfill@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz"

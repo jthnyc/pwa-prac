@@ -21,6 +21,7 @@
     "particles-bg": "^2.5.5",
     "queue-microtask": "^1.2.2",
     "react": "^17.0.1",
+    "react-add-to-calendar-hoc": "^1.0.10",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.10",
