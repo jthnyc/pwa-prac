@@ -71,7 +71,7 @@ const StyledNav = styled(Nav)`
 
 const StyledNavLink = styled(Nav.Link)`
   font-weight: bold;
-  margin: 1.25rem 0 0 1.25rem;
+  margin: 1rem 0 0 1rem;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
 
@@ -79,7 +79,7 @@ const StyledNavLink = styled(Nav.Link)`
     margin-right: 1.5rem;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     font-size: 1rem;
     margin: 0;
   }

@@ -26,10 +26,11 @@ const Recommendations = () => {
           <Marker position={{lat: 40.7101, lng: -73.9623}} />
         </GoogleMap>
       </LoadScript> */}
+      <div></div>
       <iframe
         src="https://www.google.com/maps/d/u/0/embed?mid=1lKBvDOjExl5vQrCG1wTXpp-40WDWQLNv"
-        width="640"
-        height="480"
+        width="940"
+        height="780"
         title="Recommendations"
       ></iframe>
     </RecommendationsContainer>

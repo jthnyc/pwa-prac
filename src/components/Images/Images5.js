@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import {jg_bw} from "../img/index";
+import {jg_bw2} from "../../img/index";
 
-const Images2 = () => {
+const Images5 = () => {
   return <ImageContainer></ImageContainer>;
 };
 
-export default Images2;
+export default Images5;
 
 const ImageContainer = styled.div`
   position: relative;
-  background: transparent url(${jg_bw}) no-repeat center;
+  background: transparent url(${jg_bw2}) no-repeat center;
   background-size: cover;
   height: 100vh;
   background-attachment: fixed;
-  background-position-y: 35%;
-  background-position-x: 90%;
+  background-position-y: 25%;
+  background-position-x: 80%;
 `;

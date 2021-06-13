@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
-import {g_bw, j_color} from "../img/index";
+import {g_bw} from "../../img/index";
 
 const Images1 = () => {
   const [scrollUp, setScrollUp] = useState(false);
@@ -31,8 +31,7 @@ export default Images1;
 
 const ImageContainer = styled.div`
   position: relative;
-  background: transparent url(${(prop) => (prop.scrollUp ? g_bw : j_color)}) no-repeat
-    center;
+  background: transparent url(${g_bw}) no-repeat center;
   background-size: cover;
   height: 100vh;
   background-attachment: fixed;

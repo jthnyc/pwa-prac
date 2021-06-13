@@ -6,11 +6,14 @@ import {
   Images2,
   Images3,
   Images4,
+  Images5,
+  Images6,
   Album,
   Nav2,
   Story,
   Faq,
   Email,
+  Wedding,
   Recommendations,
   COVID,
   Footer,
@@ -83,20 +86,25 @@ function App() {
           </Panels>
           <Images1 />
           <Panels>
-            <Faq />
+            <Wedding />
           </Panels>
           <Images2 />
           <Panels>
-            <Email />
+            <Faq />
           </Panels>
           <Images3 />
           <Panels>
+            <Email />
+          </Panels>
+          <Images4 />
+          <Panels>
             <Recommendations />
           </Panels>
+          <Images5 />
           <Panels>
             <COVID />
           </Panels>
-          <Images4 />
+          <Images6 />
           <Album />
           <Footer />
         </AppContainer>
