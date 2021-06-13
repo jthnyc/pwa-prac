@@ -65,6 +65,7 @@ const StyledNav = styled(Nav)`
 
   @media ${device.mobileL} {
     margin-top: 1.25rem;
+    width: 80%;
   }
 `;
 
@@ -82,7 +83,7 @@ const StyledNavLink = styled(Nav.Link)`
   }
 
   @media ${device.laptopL} {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
