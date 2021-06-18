@@ -35,9 +35,9 @@ const Album = () => {
   return (
     <div id="album">
       <Tiles>
-        {photos.map((photo) => {
+        {photos.map((index, photo) => {
           return (
-            <Tile>
+            <Tile key={index}>
               <img src={photo} alt={photos.indexOf(photo)} />
             </Tile>
           );

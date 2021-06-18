@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 import {Form, Button, Col, FormControl, InputGroup} from "react-bootstrap";
+import {storage} from "../firebase/firebase";
+import {v4 as uuidv4} from "uuid";
 
 const Email = () => {
   const {t} = useTranslation();
@@ -11,12 +13,58 @@ const Email = () => {
   const [lastName, setLastName] = useState("");
   const [guestEmail, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [vaccineRecord, setVaccineRecord] = useState([]);
+  const [recordUrls, setRecordUrls] = useState([]);
+  const [progress, setProgress] = useState(0);
 
   const clearFields = () => {
     setFirstName("");
     setLastName("");
     setMessage("");
     setEmail("");
+    setVaccineRecord([]);
+    setRecordUrls([]);
+    setProgress(0);
+  };
+
+  const handleChange = (e) => {
+    for (let i = 0; i < e.target.files.length; i++) {
+      const newRecord = e.target.files[i];
+      newRecord["id"] = uuidv4();
+      setVaccineRecord((prevState) => [...prevState, newRecord]);
+    }
+  };
+
+  const handUpload = () => {
+    const promises = [];
+    vaccineRecord.map((record) => {
+      const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
+      promises.push(uploadTask);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          setProgress(progress);
+        },
+        (error) => {
+          console.log(error);
+        },
+        async () => {
+          await storage
+            .ref("vaccineRecords")
+            .child(record.name)
+            .getDownloadURL()
+            .then((url) => {
+              setRecordUrls((prevState) => [...prevState, url]);
+            });
+        }
+      );
+    });
+    Promise.all(promises)
+      .then(() => alert("All records uploaded"))
+      .catch((err) => console.log(err));
   };
 
   const handleSubmit = (e) => {
@@ -26,6 +74,7 @@ const Email = () => {
       uid: new Date().getTime(),
       message: message,
       email: guestEmail,
+      vaccineRecordUrl: recordUrls,
     };
 
     console.log("GUEST TO ADD - ", guest);
@@ -98,11 +147,30 @@ const Email = () => {
           </Col>
         </Form.Row>
 
-        <Test>
+        <MarginTop>
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="vaccineForm">
+                <Form.File
+                  type="file"
+                  multiple
+                  label="Upload Your COVID Vaccine Record"
+                  onChange={handleChange}
+                />
+                <Button variant="outline-primary" onClick={handUpload}>
+                  Upload
+                </Button>
+                <progress value={progress} max="100" />
+              </Form.Group>
+            </Col>
+          </Form.Row>
+        </MarginTop>
+
+        <MarginTop>
           <Button variant="outline-secondary" type="submit">
             {t("email.submit")}
           </Button>
-        </Test>
+        </MarginTop>
       </Form>
     </EmailContainer>
   );
@@ -130,6 +198,6 @@ const EmailText = styled.div`
   // line-height: 2em;
 `;
 
-const Test = styled.div`
+const MarginTop = styled.div`
   margin-top: 2em;
 `;

@@ -36,7 +36,7 @@ const Wedding = () => {
             width="100%"
             height="100%"
             style={mapStyles}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
             title="The Weylin"
           ></iframe>
