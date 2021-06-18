@@ -15,14 +15,19 @@ const Wedding = () => {
       <p>{t("wedding.subt")}</p>
       <InfoContainer>
         <WeddingTextContainer>
-          <h3>The Weylin</h3>
-          <h5>175 Broadway, Brooklyn, NY 11211</h5>
+          <h3>Saturday, November 20, 2021</h3>
           <br />
-          <h3>November 21, 2021</h3>
-          <h5>
-            Ceremony begins at 5 PM EST; <br />
-            Cocktail hour and reception follows at the same location
-          </h5>
+          <ul>
+            <li>
+              <h3>Ceremony -> 5:30 PM EST</h3>
+            </li>
+            <li>
+              <h3>Cocktail Hour -> 6:00 PM EST</h3>
+            </li>
+            <li>
+              <h3>Reception -> 7:00 PM EST</h3>
+            </li>
+          </ul>
         </WeddingTextContainer>
         <br />
         <MapContainer>
@@ -49,7 +54,6 @@ const WeddingContainer = styled.div`
   padding: 8rem 0;
   margin-left: 8%;
   margin-right: 8%;
-  // border: 1px solid green;
 
   @media ${device.laptop} {
     padding: 5rem 0;
@@ -58,28 +62,46 @@ const WeddingContainer = styled.div`
   }
 `;
 
-const WeddingTextContainer = styled.div`
-  margin-top: 2em;
-  line-height: 2em;
+// ask Nish about media query here
+const InfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media ${device.tablet} {
+    min-width: 850px;
+  }
+
   @media ${device.laptop} {
-    margin-top: 0;
+    flex-direction: row;
+    min-width: 1050px;
+  }
+
+  @media ${device.laptopL} {
+    min-width: 1250px;
+  }
+
+  @media ${device.desktop} {
+    min-width: 1440px;
   }
 `;
 
-const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  // border: 1px solid red;
-  @media ${device.laptop} {
-    flex-direction: row;
+const WeddingTextContainer = styled.div`
+  line-height: 2em;
+  padding-top: 0;
+
+  @media ${device.tablet} {
+    margin-top: 0;
+    padding-top: 3.125rem;
   }
 `;
 
 const MapContainer = styled.div`
-  width: 300px;
-  height: 250px;
+  width: 18.75rem;
+  height: 15.625rem;
+
   @media ${device.mobileL} {
-    width: 600px;
-    height: 450px;
+    width: 37.5rem;
+    height: 28.125rem;
   }
 `;
