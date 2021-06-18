@@ -151,15 +151,13 @@ const Email = () => {
           <Form.Row>
             <Col>
               <Form.Group controlId="vaccineForm">
-                <Form.File
-                  type="file"
-                  multiple
-                  label="Upload Your COVID Vaccine Record"
-                  onChange={handleChange}
-                />
-                <Button variant="outline-primary" onClick={handUpload}>
-                  Upload
-                </Button>
+                <Form.Label>Upload Your COVID Vaccine Record</Form.Label>
+                <TestDiv>
+                  <Form.File type="file" multiple onChange={handleChange} />
+                  <Button variant="outline-secondary" onClick={handUpload}>
+                    Upload
+                  </Button>
+                </TestDiv>
                 <progress value={progress} max="100" />
               </Form.Group>
             </Col>
@@ -200,4 +198,8 @@ const EmailText = styled.div`
 
 const MarginTop = styled.div`
   margin-top: 2em;
+`;
+
+const TestDiv = styled.div`
+  display: flex;
 `;
