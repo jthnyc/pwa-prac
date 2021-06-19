@@ -40,7 +40,7 @@ const Email = () => {
     vaccineRecord.map((record) => {
       const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
       promises.push(uploadTask);
-      uploadTask.on(
+      return uploadTask.on(
         "state_changed",
         (snapshot) => {
           const progress = Math.round(

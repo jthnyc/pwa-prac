@@ -32,16 +32,17 @@ const HeroContainer = styled.div`
   position: relative;
   background: transparent url(${hero_img}) no-repeat center;
   background-size: cover;
-  height: 100vh;
-  background-position-x: 16.667%;
+  height: 650px;
+  background-position-x: 12%;
   display: grid;
   grid-template-columns: auto [col-start] 12rem auto;
   grid-template-rows: auto [top-start] 15%;
-
-  // creating parallax scrolling effect
-  background-attachment: fixed;
+  background-attachment: initial;
 
   @media ${device.tablet} {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position-x: 20%;
     grid-template-columns: auto [col-start] 20.625rem;
     grid-template-rows: auto [top-start] 20%;
   }

@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {g_bw} from "../../img/index";
+import {device} from "../../device";
 
 const Images1 = () => {
   const [scrollUp, setScrollUp] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  // let scrolledY = window.scrollTop();
 
   const logging = () => {
     if (window.pageYOffset > scrollY) {
@@ -33,8 +35,12 @@ const ImageContainer = styled.div`
   position: relative;
   background: transparent url(${g_bw}) no-repeat center;
   background-size: cover;
-  height: 100vh;
-  background-attachment: fixed;
+  height: 900px;
+  background-attachment: initial;
   background-position-y: 18%;
-  background-position-x: 40%;
+  background-position-x: 45%;
+
+  @media ${device.tablet} {
+    background-attachment: fixed;
+  }
 `;
