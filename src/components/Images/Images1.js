@@ -6,7 +6,6 @@ import {device} from "../../device";
 const Images1 = () => {
   const [scrollUp, setScrollUp] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  // let scrolledY = window.scrollTop();
 
   const logging = () => {
     if (window.pageYOffset > scrollY) {
