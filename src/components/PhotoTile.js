@@ -81,7 +81,7 @@ const Tile = styled.div`
 
 const TileImage = styled.img`
   width: 100%;
-  min-height: 15.625rem;
+  min-height: 20.625rem;
   transition: transform 500ms ease;
   object-fit: cover;
 
