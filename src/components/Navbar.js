@@ -79,14 +79,17 @@ const StyledNavLink = styled(Nav.Link)`
     margin-right: 1.5rem;
   }
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 1rem;
     margin: 0;
   }
 
+  @media ${device.laptop} {
+    font-size: 1rem;
+  }
+
   @media ${device.laptopL} {
     font-size: 1.2rem;
-    margin: 0;
   }
 `;
 

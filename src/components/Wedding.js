@@ -15,17 +15,17 @@ const Wedding = () => {
       <p>{t("wedding.subt")}</p>
       <InfoContainer>
         <WeddingTextContainer>
-          <h3>Saturday, November 20, 2021</h3>
+          <WeddingDate>November 20, 2021</WeddingDate>
           <br />
           <ul>
             <li>
-              <h3>Ceremony -> 5:30 PM EST</h3>
+              <EventTime>Ceremony -> 5:30 PM EST</EventTime>
             </li>
             <li>
-              <h3>Cocktail Hour -> 6:00 PM EST</h3>
+              <EventTime>Cocktail Hour -> 6:00 PM EST</EventTime>
             </li>
             <li>
-              <h3>Reception -> 7:00 PM EST</h3>
+              <EventTime>Reception -> 7:00 PM EST</EventTime>
             </li>
           </ul>
         </WeddingTextContainer>
@@ -67,24 +67,46 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  @media ${device.tablet} {
-    min-width: 850px;
-  }
+  width: 80vw;
 
   @media ${device.laptop} {
     flex-direction: row;
-    min-width: 950px;
   }
 `;
 
 const WeddingTextContainer = styled.div`
   line-height: 2em;
   padding-top: 0;
+  border: 1px solid green;
+
+  @media ${device.laptop} {
+    width: 800px;
+    margin-top: 0;
+    padding: 3.125rem 3.125rem 0 3.125rem;
+  }
+`;
+
+const WeddingDate = styled.h3`
+  font-size: 1.5rem;
+
+  @media ${device.laptop} {
+    font-size: 2rem;
+  }
+`;
+
+const EventTime = styled.h4`
+  font-size: 1rem;
 
   @media ${device.tablet} {
-    margin-top: 0;
-    padding-top: 3.125rem;
+    font-size: 1.3rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.5rem;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 2rem;
   }
 `;
 
