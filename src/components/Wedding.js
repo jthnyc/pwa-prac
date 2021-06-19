@@ -74,15 +74,7 @@ const InfoContainer = styled.div`
 
   @media ${device.laptop} {
     flex-direction: row;
-    min-width: 1050px;
-  }
-
-  @media ${device.laptopL} {
-    min-width: 1250px;
-  }
-
-  @media ${device.desktop} {
-    min-width: 1440px;
+    min-width: 950px;
   }
 `;
 
