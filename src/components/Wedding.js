@@ -89,7 +89,7 @@ const WeddingTextContainer = styled.div`
   max-width: 21.875rem;
   text-align: center;
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     background-size: 30vh, 30vh, 90% 90%;
     background-position: right top, left bottom, center;
     max-width: 37.5rem;
