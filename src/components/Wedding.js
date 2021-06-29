@@ -62,7 +62,6 @@ const WeddingContainer = styled.div`
   }
 `;
 
-// ask Nish about media query here
 const InfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -77,7 +76,6 @@ const InfoContainer = styled.div`
 const WeddingTextContainer = styled.div`
   line-height: 2em;
   padding-top: 0;
-  border: 1px solid green;
 
   @media ${device.laptop} {
     width: 800px;
