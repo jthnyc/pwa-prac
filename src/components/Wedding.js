@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
+import {weddingBackground, branchBottom, branchTop} from "../img/index";
 
 const Wedding = () => {
   const {t} = useTranslation();
@@ -74,13 +75,31 @@ const InfoContainer = styled.div`
 `;
 
 const WeddingTextContainer = styled.div`
+  // border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   line-height: 2em;
-  padding-top: 0;
+  // padding: 3.125rem 3.125rem 0 3.125rem;
+  background-image: url(${branchTop}), url(${branchBottom}), url(${weddingBackground});
+  background-size: 30vh, 30vh, 98% 98%;
+  background-position: right top -15px, left bottom -30px, center;
+  background-repeat: no-repeat;
+  min-height: 50rem;
+  max-width: 21.875rem;
+  text-align: center;
+
+  @media ${device.tablet} {
+    background-size: 30vh, 30vh, 90% 90%;
+    background-position: right top, left bottom, center;
+    max-width: 37.5rem;
+  }
 
   @media ${device.laptop} {
-    width: 800px;
+    flex-direction: column;
+    min-width: 37.5rem;
     margin-top: 0;
-    padding: 3.125rem 3.125rem 0 3.125rem;
+    background-size: 30vh, 30vh, 95% 95%;
   }
 `;
 
@@ -113,6 +132,11 @@ const MapContainer = styled.div`
   height: 15.625rem;
 
   @media ${device.mobileL} {
+    width: 30rem;
+    height: 24rem;
+  }
+
+  @media ${device.tablet} {
     width: 37.5rem;
     height: 28.125rem;
   }
