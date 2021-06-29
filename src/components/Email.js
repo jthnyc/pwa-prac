@@ -13,41 +13,33 @@ const Email = () => {
   const [lastName, setLastName] = useState("");
   const [guestEmail, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [vaccineRecord, setVaccineRecord] = useState([]);
+  const [vaccineRecords, setVaccineRecords] = useState([]);
   const [recordUrls, setRecordUrls] = useState([]);
-  const [progress, setProgress] = useState(0);
 
   const clearFields = () => {
     setFirstName("");
     setLastName("");
     setMessage("");
     setEmail("");
-    setVaccineRecord([]);
+    setVaccineRecords([]);
     setRecordUrls([]);
-    setProgress(0);
   };
 
   const handleChange = (e) => {
     for (let i = 0; i < e.target.files.length; i++) {
       const newRecord = e.target.files[i];
       newRecord["id"] = uuidv4();
-      setVaccineRecord((prevState) => [...prevState, newRecord]);
+      setVaccineRecords((prevState) => [...prevState, newRecord]);
     }
   };
 
   const handUpload = () => {
     const promises = [];
-    vaccineRecord.map((record) => {
+    vaccineRecords.map((record) => {
       const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
       promises.push(uploadTask);
       return uploadTask.on(
         "state_changed",
-        (snapshot) => {
-          const progress = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
-          setProgress(progress);
-        },
         (error) => {
           console.log(error);
         },
@@ -63,7 +55,7 @@ const Email = () => {
       );
     });
     Promise.all(promises)
-      .then(() => alert("All records uploaded"))
+      .then(() => console.log("All records uploaded"))
       .catch((err) => console.log(err));
   };
 
@@ -151,17 +143,24 @@ const Email = () => {
           <Form.Row>
             <Col>
               <Form.Group controlId="vaccineForm">
-                <Form.Label>Upload Your COVID Vaccine Record</Form.Label>
+                <Form.Label>
+                  Upload Your COVID Vaccine Record(s). Feel free to choose or upload
+                  multiple files.{" "}
+                </Form.Label>
                 <TestDiv>
                   <Form.File type="file" multiple onChange={handleChange} />
                   <Button variant="outline-secondary" onClick={handUpload}>
                     Upload
                   </Button>
                 </TestDiv>
-                <progress value={progress} max="100" />
               </Form.Group>
             </Col>
           </Form.Row>
+          <Col>
+            {vaccineRecords.map((record, i) => {
+              return <div key={i}>{record.name}</div>;
+            })}
+          </Col>
         </MarginTop>
 
         <MarginTop>
@@ -203,3 +202,7 @@ const MarginTop = styled.div`
 const TestDiv = styled.div`
   display: flex;
 `;
+
+// const FormFile = styled(Form.File)`
+//   background: white;
+// `;

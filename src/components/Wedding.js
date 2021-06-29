@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 import {weddingBackground, branchBottom, branchTop} from "../img/index";
+import {AddToCalBtn} from "../components/index";
 
 const Wedding = () => {
   const {t} = useTranslation();
@@ -17,8 +18,11 @@ const Wedding = () => {
       <InfoContainer>
         <WeddingTextContainer>
           <WeddingDate>November 20, 2021</WeddingDate>
+          <WeddingDate>5:30 PM EST</WeddingDate>
+          <EventTime>175 Broadway, Brooklyn, NY 11211</EventTime>
           <br />
-          <ul>
+          <AddToCalBtn />
+          {/* <ul>
             <li>
               <EventTime>Ceremony -> 5:30 PM EST</EventTime>
             </li>
@@ -28,20 +32,36 @@ const Wedding = () => {
             <li>
               <EventTime>Reception -> 7:00 PM EST</EventTime>
             </li>
-          </ul>
+          </ul> */}
         </WeddingTextContainer>
         <br />
-        <MapContainer>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.436102077581!2d-73.9623258!3d40.7101123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf7e3bbe5f895f55!2sWeylin!5e0!3m2!1sen!2sus!4v1623620077841!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={mapStyles}
-            allowFullScreen=""
-            loading="lazy"
-            title="The Weylin"
-          ></iframe>
-        </MapContainer>
+        <div>
+          <MapContainer>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.436102077581!2d-73.9623258!3d40.7101123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf7e3bbe5f895f55!2sWeylin!5e0!3m2!1sen!2sus!4v1623620077841!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={mapStyles}
+              allowFullScreen=""
+              loading="lazy"
+              title="The Weylin"
+            ></iframe>
+          </MapContainer>
+          <EventTextContainer>
+            <WeddingDate>Schedule</WeddingDate>
+            <ul>
+              <li>
+                <EventTime>Ceremony -> 5:30 PM EST</EventTime>
+              </li>
+              <li>
+                <EventTime>Cocktail Hour -> 6:00 PM EST</EventTime>
+              </li>
+              <li>
+                <EventTime>Reception -> 7:00 PM EST</EventTime>
+              </li>
+            </ul>
+          </EventTextContainer>
+        </div>
       </InfoContainer>
     </WeddingContainer>
   );
@@ -109,6 +129,13 @@ const WeddingDate = styled.h3`
   @media ${device.laptop} {
     font-size: 2rem;
   }
+`;
+
+const EventTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 `;
 
 const EventTime = styled.h4`
