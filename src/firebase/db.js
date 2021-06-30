@@ -1,6 +1,15 @@
 import {db} from "../firebase/firebase";
 import {v4 as uuidv4} from "uuid";
 
+export const fetchAllImages = async () => {
+  const collection = await db.collection("images").get();
+  const res = [];
+  collection.forEach((imageRef) => {
+    res.push(imageRef.data());
+  });
+  return res;
+};
+
 /**
  * @return {Promise<Array>} which contains all guests.
  */

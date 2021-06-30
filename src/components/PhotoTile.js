@@ -66,11 +66,15 @@ const PhotoTile = (props) => {
 export default PhotoTile;
 
 const Tile = styled.div`
-  margin: 5px;
+  margin: 25px;
   cursor: pointer;
   overflow: hidden;
   width: 40vw;
   height: 40vw;
+
+  @media ${device.tablet} {
+    padding: 6vh 10vw;
+  }
 
   @media ${device.laptop} {
     margin: 15px;
