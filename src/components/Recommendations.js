@@ -41,7 +41,12 @@ const RecommendationsContainer = styled.div`
 const RecMapContainer = styled.div`
   width: 640;
   height: 480;
+
   @media ${device.mobileL} {
+    width: 750px;
+    height: 580px;
+  }
+  @media ${device.laptop} {
     width: 940px;
     height: 780px;
   }

@@ -5,6 +5,7 @@ import {
   Images1,
   Images2,
   Images3,
+  Images4,
   Images5,
   Images6,
   AlbumNew,
@@ -13,6 +14,7 @@ import {
   Faq,
   Email,
   Wedding,
+  Recommendations,
   COVID,
   Footer,
 } from "./components/index";
@@ -97,6 +99,10 @@ function App() {
           <Images6 />
           <Panels>
             <COVID />
+          </Panels>
+          <Images4 />
+          <Panels>
+            <Recommendations />
           </Panels>
           <Images5 />
           <AlbumNew />
