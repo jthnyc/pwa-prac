@@ -51,4 +51,7 @@ const Img = styled.img`
   top: 0;
   left: 0;
   object-fit: cover;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

@@ -44,4 +44,5 @@ export default Album;
 const AlbumContainer = styled.div`
   position: relative;
   margin: 0 auto;
+  padding: 3.125rem 0;
 `;

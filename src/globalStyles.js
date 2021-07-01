@@ -12,10 +12,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        // font-family: "La Belle Aurore", cursive;
         font-family: "Playfair Display", serif;
-        // font-family: "Lato", sans-serif;
-        // font-family: 'Inria Serif', serif;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
