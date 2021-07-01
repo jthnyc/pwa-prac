@@ -96,15 +96,15 @@ function App() {
           <Panels>
             <Email />
           </Panels>
-          <Images6 />
-          <Panels>
-            <COVID />
-          </Panels>
           <Images4 />
           <Panels>
             <Recommendations />
           </Panels>
           <Images5 />
+          <Panels>
+            <COVID />
+          </Panels>
+          <Images6 />
           <AlbumNew />
           <Footer />
         </AppContainer>

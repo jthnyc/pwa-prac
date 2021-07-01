@@ -12,7 +12,7 @@ const Wedding = () => {
   };
 
   return (
-    <WeddingContainer>
+    <WeddingContainer id="wedding">
       <h2>{t("wedding.t")}</h2>
       <p>{t("wedding.subt")}</p>
       <InfoContainer>

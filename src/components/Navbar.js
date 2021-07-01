@@ -17,6 +17,7 @@ const Nav2 = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <StyledNav className="mr-auto">
           <StyledNavLink href="#story">{t("story.t")}</StyledNavLink>
+          <StyledNavLink href="#wedding">{t("wedding.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
           <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
           <StyledNavLink href="#recommendations">{t("recommendations.t")}</StyledNavLink>
