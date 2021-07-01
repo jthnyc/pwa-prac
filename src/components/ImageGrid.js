@@ -1,6 +1,7 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
 import styled from "styled-components";
+import {device} from "../device";
 
 const ImageGrid = ({setSelectedImg}) => {
   const {docs} = useFirestore("images");
@@ -20,11 +21,15 @@ const ImageGrid = ({setSelectedImg}) => {
 export default ImageGrid;
 
 const ImageGridStyles = styled.div`
-  margin: 20px 300px;
+  margin: 20px 40px;
   display: grid;
-  grid-template-row: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
-  border: 1px solid red;
+
+  @media ${device.laptop} {
+    margin: 20px 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 const ImageWrap = styled.div`
@@ -32,7 +37,10 @@ const ImageWrap = styled.div`
   height: 0;
   padding: 50% 0;
   position: relative;
-  // opacity: 0.8;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Img = styled.img`
@@ -42,4 +50,5 @@ const Img = styled.img`
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
 `;

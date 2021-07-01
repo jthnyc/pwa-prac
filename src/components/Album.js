@@ -1,62 +1,107 @@
-import React, {useState} from "react";
-import ProgressBar from "./ProgressBar";
-import ImageGrid from "./ImageGrid";
-import Modal from "./Modal";
+import React from "react";
 import styled from "styled-components";
+import {device} from "../device";
+import PhotoTile from "../components/PhotoTile";
+import {
+  campus_gabe_jo_basement,
+  campus_gabe_jo_hallway,
+  campus_gabe_jo_stairs,
+  market_gabe_jo,
+  market_gabe,
+  market_jo,
+  tea_gabe_jo,
+  tea_gabe_jo_scrolls,
+  tea_gabe_jo_sunglasses,
+  woods_gabe_jo_veil,
+  woods_gabe_jo,
+  woods_jo,
+} from "../img/index";
 
 const Album = () => {
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-  const types = ["image/png", "image/jpeg"];
-  const [selectedImg, setSelectedImg] = useState(null);
-
-  const changeHandler = (e) => {
-    let selected = e.target.files[0];
-    if (selected && types.includes(selected.type)) {
-      setFile(selected);
-      setError("");
-    } else {
-      setFile(null);
-      setError("Please select an image file (png or jpeg)");
-    }
-  };
+  const photos = [
+    {
+      id: 1,
+      name: "picture 1",
+      image: woods_gabe_jo_veil,
+    },
+    {
+      id: 2,
+      name: "picture 2",
+      image: woods_gabe_jo,
+    },
+    {
+      id: 3,
+      name: "picture 3",
+      image: woods_jo,
+    },
+    {
+      id: 4,
+      name: "picture 4",
+      image: campus_gabe_jo_basement,
+    },
+    {
+      id: 5,
+      name: "picture 5",
+      image: campus_gabe_jo_hallway,
+    },
+    {
+      id: 6,
+      name: "picture 6",
+      image: campus_gabe_jo_stairs,
+    },
+    {
+      id: 7,
+      name: "picture 7",
+      image: tea_gabe_jo,
+    },
+    {
+      id: 8,
+      name: "picture 8",
+      image: tea_gabe_jo_scrolls,
+    },
+    {
+      id: 9,
+      name: "picture 9",
+      image: tea_gabe_jo_sunglasses,
+    },
+    {
+      id: 10,
+      name: "picture 10",
+      image: market_gabe,
+    },
+    {
+      id: 11,
+      name: "picture 11",
+      image: market_gabe_jo,
+    },
+    {
+      id: 12,
+      name: "picture 12",
+      image: market_jo,
+    },
+  ];
 
   return (
-    <AlbumContainer id="album">
-      <form>
-        <input type="file" onChange={changeHandler} />
-        <div>
-          {error && <div>{error}</div>}
-          {file && <div>{file.name}</div>}
-          {file && <ProgressBar file={file} setFile={setFile} />}
-        </div>
-      </form>
-      <ImageGrid setSelectedImg={setSelectedImg} />
-      {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
-    </AlbumContainer>
+    <div id="album">
+      <Tiles>
+        {photos.map((photo, index) => {
+          return <PhotoTile photo={photo} key={index} />;
+        })}
+      </Tiles>
+    </div>
   );
 };
 
 export default Album;
 
-const AlbumContainer = styled.div`
-  min-width: 960px;
-  margin: 0 auto;
+const Tiles = styled.div`
+  padding: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction; row;
+  justify-content: center;
+  position: relative;
+  @media ${device.laptop} {
+    padding: 6vh 16vw;
+  }
 `;
-
-// const Tiles = styled.div`
-//   padding: 6vh 5vw;
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction; row;
-//   justify-content: center;
-//   position: relative;
-
-//   @media ${device.tablet} {
-//     padding: 6vh 10vw;
-//   }
-
-//   @media ${device.laptop} {
-//     padding: 6vh 16vw;
-//   }
-// `;

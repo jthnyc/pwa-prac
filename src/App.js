@@ -8,7 +8,8 @@ import {
   // Images4,
   Images5,
   Images6,
-  Album,
+  // Album,
+  AlbumNew,
   Nav2,
   Story,
   Faq,
@@ -105,7 +106,8 @@ function App() {
             <COVID />
           </Panels>
           <Images5 />
-          <Album />
+          {/* <Album /> */}
+          <AlbumNew />
           <Footer />
         </AppContainer>
       ) : (

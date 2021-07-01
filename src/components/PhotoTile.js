@@ -66,16 +66,11 @@ const PhotoTile = (props) => {
 export default PhotoTile;
 
 const Tile = styled.div`
-  margin: 25px;
+  margin: 5px;
   cursor: pointer;
   overflow: hidden;
   width: 40vw;
   height: 40vw;
-
-  @media ${device.tablet} {
-    padding: 6vh 10vw;
-  }
-
   @media ${device.laptop} {
     margin: 15px;
     width: 18vw;
@@ -85,10 +80,9 @@ const Tile = styled.div`
 
 const TileImage = styled.img`
   width: 100%;
-  min-height: 20.625rem;
+  min-height: 15.625rem;
   transition: transform 500ms ease;
   object-fit: cover;
-
   &:hover {
     transform: scale(1.1);
   }

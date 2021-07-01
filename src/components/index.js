@@ -26,3 +26,4 @@ export {default as Album} from "./Album";
 export {default as PhotoTile} from "./PhotoTile";
 export {default as Recommendations} from "./Recommendations";
 export {default as AddToCalBtn} from "./AddToCalendar";
+export {default as AlbumNew} from "./AlbumNew";
