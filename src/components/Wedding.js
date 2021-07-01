@@ -78,13 +78,13 @@ const InfoContainer = styled.div`
   flex-direction: column;
   width: 80vw;
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     flex-direction: row;
   }
 `;
 
 const WeddingTextContainer = styled.div`
-  // border: 1px solid green;
+  border: 1px solid green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,6 +125,7 @@ const EventTextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  border: 1px solid orange;
 `;
 
 const EventTime = styled.h4`
@@ -147,13 +148,8 @@ const MapContainer = styled.div`
   width: 18.75rem;
   height: 15.625rem;
 
-  @media ${device.mobileL} {
+  @media ${device.mobileM} {
     width: 30rem;
     height: 24rem;
-  }
-
-  @media ${device.tablet} {
-    width: 37.5rem;
-    height: 28.125rem;
   }
 `;
