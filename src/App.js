@@ -5,17 +5,14 @@ import {
   Images1,
   Images2,
   Images3,
-  // Images4,
   Images5,
   Images6,
-  // Album,
   AlbumNew,
   Nav2,
   Story,
   Faq,
   Email,
   Wedding,
-  // Recommendations,
   COVID,
   Footer,
 } from "./components/index";
@@ -97,16 +94,11 @@ function App() {
           <Panels>
             <Email />
           </Panels>
-          {/* <Images4 />
-          <Panels>
-            <Recommendations />
-          </Panels> */}
           <Images6 />
           <Panels>
             <COVID />
           </Panels>
           <Images5 />
-          {/* <Album /> */}
           <AlbumNew />
           <Footer />
         </AppContainer>

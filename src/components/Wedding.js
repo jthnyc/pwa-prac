@@ -22,17 +22,6 @@ const Wedding = () => {
           <EventTime>175 Broadway, Brooklyn, NY 11211</EventTime>
           <br />
           <AddToCalBtn />
-          {/* <ul>
-            <li>
-              <EventTime>Ceremony -> 5:30 PM EST</EventTime>
-            </li>
-            <li>
-              <EventTime>Cocktail Hour -> 6:00 PM EST</EventTime>
-            </li>
-            <li>
-              <EventTime>Reception -> 7:00 PM EST</EventTime>
-            </li>
-          </ul> */}
         </WeddingTextContainer>
         <br />
         <div>

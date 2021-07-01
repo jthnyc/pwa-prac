@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {g_bw, j_color, jg_bw, jg_bw2, jg_color, jg_rings} from "../img/index";
 
 const Photos = () => {
-  // const photos = [g_bw, j_color, jg_bw, jg_bw2, jg_color, jg_rings];
   const [scrollY, setScrollY] = useState(0);
 
   const logging = () => {

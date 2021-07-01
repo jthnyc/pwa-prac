@@ -10,6 +10,7 @@ const Album = () => {
   // const types = ["image/png", "image/jpeg"];
   const [selectedImg, setSelectedImg] = useState(null);
 
+  // keeping changeHandler below commented out - using it to upload photos to firebase
   // const changeHandler = (e) => {
   //   let selected = e.target.files[0];
   //   if (selected && types.includes(selected.type)) {
@@ -23,6 +24,7 @@ const Album = () => {
 
   return (
     <AlbumContainer id="album">
+      {/* keeping form section below commented out - using it to upload photos to firebase */}
       {/* <form>
         <input type="file" onChange={changeHandler} />
         <div>
@@ -42,5 +44,4 @@ export default Album;
 const AlbumContainer = styled.div`
   position: relative;
   margin: 0 auto;
-  // border: 5px solid green;
 `;
