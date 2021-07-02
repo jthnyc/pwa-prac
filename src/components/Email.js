@@ -15,6 +15,9 @@ const Email = () => {
   const [message, setMessage] = useState("");
   const [vaccineRecords, setVaccineRecords] = useState([]);
   const [recordUrls, setRecordUrls] = useState([]);
+  const [uploaded, setUploaded] = useState(false);
+  const [fileCount, setFileCount] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   const clearFields = () => {
     setFirstName("");
@@ -23,6 +26,9 @@ const Email = () => {
     setEmail("");
     setVaccineRecords([]);
     setRecordUrls([]);
+    setFileCount(0);
+    setUploaded(false);
+    setSubmitted(false);
   };
 
   const handleChange = (e) => {
@@ -38,8 +44,13 @@ const Email = () => {
     vaccineRecords.map((record) => {
       const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
       promises.push(uploadTask);
-      return uploadTask.on(
+      uploadTask.on(
         "state_changed",
+        (snapshot) => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+        },
         (error) => {
           console.log(error);
         },
@@ -48,8 +59,8 @@ const Email = () => {
             .ref("vaccineRecords")
             .child(record.name)
             .getDownloadURL()
-            .then((url) => {
-              setRecordUrls((prevState) => [...prevState, url]);
+            .then((urls) => {
+              setRecordUrls((prevState) => [...prevState, urls]);
             });
         }
       );
@@ -57,9 +68,17 @@ const Email = () => {
     Promise.all(promises)
       .then(() => console.log("All records uploaded"))
       .catch((err) => console.log(err));
+
+    setFileCount(fileCount + vaccineRecords.length);
+    setVaccineRecords([]);
+    setUploaded(true);
   };
 
+  console.log("URLS ===========> ", recordUrls);
+
   const handleSubmit = (e) => {
+    e.preventDefault();
+
     const guest = {
       firstName: firstName,
       lastName: lastName,
@@ -69,12 +88,9 @@ const Email = () => {
       vaccineRecordUrl: recordUrls,
     };
 
-    console.log("GUEST TO ADD - ", guest);
-
-    e.preventDefault();
     addGuestEmail(guest);
-    console.log("after adding guest");
-    clearFields();
+    setSubmitted(true);
+    setTimeout(() => clearFields(), 8000);
   };
 
   return (
@@ -93,6 +109,7 @@ const Email = () => {
                 placeholder={t("email.first")}
                 onChange={(e) => setFirstName(e.target.value)}
                 value={firstName}
+                required
               />
             </Form.Group>
           </Col>
@@ -104,6 +121,7 @@ const Email = () => {
                 placeholder={t("email.last")}
                 onChange={(e) => setLastName(e.target.value)}
                 value={lastName}
+                required
               />
             </Form.Group>
           </Col>
@@ -117,6 +135,7 @@ const Email = () => {
                 placeholder={t("email.form")}
                 onChange={(e) => setEmail(e.target.value)}
                 value={guestEmail}
+                required
               />
             </Form.Group>
           </Col>
@@ -144,27 +163,64 @@ const Email = () => {
             <Col>
               <Form.Group controlId="vaccineForm">
                 <Form.Label>{t("email.upload")}</Form.Label>
+
+                <br />
                 <TestDiv>
-                  <Form.File type="file" multiple onChange={handleChange} />
-                  <Button variant="outline-secondary" onClick={handleUpload}>
+                  <FileUploadSection>
+                    <FileUploadSummary>
+                      <InputLabel>
+                        <InputField type="file" multiple onChange={handleChange} />
+                        <span>Choose Files</span>
+                      </InputLabel>
+
+                      {uploaded ? (
+                        <UploadCount>
+                          {fileCount} file{fileCount > 1 ? "s" : ""} uploaded
+                        </UploadCount>
+                      ) : (
+                        ""
+                      )}
+                    </FileUploadSummary>
+
+                    <div>
+                      {vaccineRecords.length ? (
+                        <FileUploadStatusSection>
+                          <FileToUpload>
+                            File{vaccineRecords.length > 1 ? "s" : ""} to Upload:
+                          </FileToUpload>
+                          {vaccineRecords.map((record, i) => {
+                            return (
+                              <div key={i}>
+                                <span>{record.name}</span>
+                              </div>
+                            );
+                          })}
+                        </FileUploadStatusSection>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </FileUploadSection>
+
+                  <UploadButton
+                    variant="outline-secondary"
+                    onClick={handleUpload}
+                    disabled={vaccineRecords.length === 0 ? "disabled" : ""}
+                  >
                     {t("email.uploadBtn")}
-                  </Button>
+                  </UploadButton>
                 </TestDiv>
               </Form.Group>
             </Col>
           </Form.Row>
-          <Col>
-            {vaccineRecords.map((record, i) => {
-              return <div key={i}>{record.name}</div>;
-            })}
-          </Col>
         </MarginTop>
 
-        <MarginTop>
+        <SubmitButton>
           <Button variant="outline-secondary" type="submit">
             {t("email.submit")}
           </Button>
-        </MarginTop>
+          {submitted ? <span>Received. Thank you {firstName}!</span> : ""}
+        </SubmitButton>
       </Form>
     </EmailContainer>
   );
@@ -196,10 +252,98 @@ const MarginTop = styled.div`
   margin-top: 2em;
 `;
 
-const TestDiv = styled.div`
+const FileUploadSection = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  // border: 5px solid red;
 `;
 
-// const FormFile = styled(Form.File)`
-//   background: white;
-// `;
+const FileUploadSummary = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  jusitfy-content: flex-start;
+  // border: 1px solid blue;
+
+  @media ${device.mobileL} {
+    min-width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+const FileUploadStatusSection = styled.div`
+  // border: 1px solid red;
+  margin-top: 1.5rem;
+
+  @media ${device.mobileL} {
+    margin-top: 0;
+  }
+`;
+
+const InputLabel = styled.label`
+  display: block;
+  width: 7.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(108, 117, 125);
+  border-radius: 4px;
+  margin: 10px 0;
+  line-height: 16px;
+  color: rgb(108, 117, 125);
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  padding: 6px 12px;
+
+  &:hover {
+    background: #6c757d;
+    color: white;
+  }
+`;
+
+const InputField = styled.input`
+  height: 0;
+  width: 0;
+  opacity: 0;
+`;
+
+const UploadCount = styled.span`
+  font-weight: bold;
+`;
+
+const FileToUpload = styled.span`
+  font-style: italic;
+`;
+
+const UploadButton = styled(Button)`
+  height: 2.5rem;
+  margin: 10px 0;
+  background: green;
+  color: white;
+  &:active {
+    transition-property: transform, box-shadow;
+    transform: scale(1.2);
+    box-shadow: 0 3px 15px -2px;
+    transition-duration: 1s;
+  }
+`;
+
+const TestDiv = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+const SubmitButton = styled.div`
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 320px;
+  // border: 1px solid red;
+`;
