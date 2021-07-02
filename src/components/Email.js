@@ -41,16 +41,12 @@ const Email = () => {
 
   const handleUpload = () => {
     const promises = [];
-    vaccineRecords.map((record) => {
+    vaccineRecords.forEach((record) => {
       const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
       promises.push(uploadTask);
       uploadTask.on(
         "state_changed",
-        (snapshot) => {
-          const progress = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
-        },
+        (snapshot) => {},
         (error) => {
           console.log(error);
         },
