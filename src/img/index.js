@@ -21,3 +21,6 @@ export {default as tea_gabe_jo_sunglasses} from "./tea_gabe_jo_sunglasses.jpg";
 export {default as woods_gabe_jo_veil} from "./woods_gabe_jo_veil.jpg";
 export {default as woods_gabe_jo} from "./woods_gabe_jo.jpg";
 export {default as woods_jo} from "./woods_jo.jpg";
+export {default as weddingBackground} from "./bkg.png";
+export {default as branchTop} from "./top.png";
+export {default as branchBottom} from "./bottom.png";

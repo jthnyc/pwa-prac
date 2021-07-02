@@ -17,6 +17,7 @@ const Nav2 = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <StyledNav className="mr-auto">
           <StyledNavLink href="#story">{t("story.t")}</StyledNavLink>
+          <StyledNavLink href="#wedding">{t("wedding.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
           <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
           <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
@@ -64,11 +65,13 @@ const StyledNav = styled(Nav)`
 
   @media ${device.mobileL} {
     margin-top: 1.25rem;
+    width: 80%;
   }
 `;
 
 const StyledNavLink = styled(Nav.Link)`
   font-weight: bold;
+  margin: 1rem 0 0 1rem;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
 
@@ -76,12 +79,17 @@ const StyledNavLink = styled(Nav.Link)`
     margin-right: 1.5rem;
   }
 
+  @media ${device.tablet} {
+    font-size: 1rem;
+    margin: 0;
+  }
+
   @media ${device.laptop} {
     font-size: 1rem;
   }
 
   @media ${device.laptopL} {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -104,4 +112,5 @@ const LangButton = styled.button`
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
+  margin: 1.25rem 0 0 1.25rem;
 `;

@@ -13,6 +13,20 @@
     "l4": "In 2019, Gabe proposed during a candlelight cruise in the Riviera Maya, Mexico. A year later, Joanna and Gabe were married in an intimate ceremony on October 10, 2020 — as much fun as that was, they can’t wait to celebrate with all of their favorite people.",
     "l5": "They also still disagree on Lang Lang — although they both agree Martha Argerich is better anyway."
   },
+  "wedding": {
+    "t": "Wedding",
+    "subt": "All wedding activities will be at the same location.",
+    "date": "November 20, 2021",
+    "time": "5:30 PM EST",
+    "address": "175 Broadway, Brooklyn, NY 11211",
+    "schedule": "Schedule",
+    "ceremony": "Ceremony",
+    "ceremonyTime": "5:30 PM EST",
+    "cocktail": "Cocktail Hour",
+    "cocktailTime": "6:00 PM EST",
+    "reception": "Reception",
+    "receptionTime": "7:00 PM EST"
+  },
   "faq": {
     "t": "FAQ",
     "subt": "We will be updating these regularly!\nIf you can’t find what you’re looking for, please reach out at: ",
@@ -39,7 +53,11 @@
     "form": "Email",
     "message": "Message",
     "placeholder": "We recently moved...",
-    "submit": "Send"
+    "upload": "Upload Your COVID Vaccine Record(s). Feel free to choose or upload multiple files.",
+    "uploadBtn": "Upload",
+    "choose": "Choose Files",
+    "submit": "Send",
+    "received": "Received. Thank you"
   },
   "covid": {
     "nav": "COVID Information",
@@ -79,6 +97,9 @@
   },
   "album": {
     "t": "Photos"
+  },
+  "recommendations": {
+    "t": "Recommendations"
   },
   "footer": {
     "c": "Contact Us"

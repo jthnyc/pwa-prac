@@ -1,7 +1,6 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
 import {useTranslation} from "react-i18next";
-// import {device} from "../device";
 
 const Nav = () => {
   const {t, i18n} = useTranslation();

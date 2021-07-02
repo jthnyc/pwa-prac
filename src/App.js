@@ -5,12 +5,14 @@ import {
   Images1,
   Images2,
   Images3,
-  Images4,
-  Album,
+  Images5,
+  Images6,
+  AlbumNew,
   Nav2,
   Story,
   Faq,
   Email,
+  Wedding,
   COVID,
   Footer,
 } from "./components/index";
@@ -82,18 +84,22 @@ function App() {
           </Panels>
           <Images1 />
           <Panels>
-            <Faq />
+            <Wedding />
           </Panels>
           <Images2 />
           <Panels>
-            <Email />
+            <Faq />
           </Panels>
           <Images3 />
           <Panels>
+            <Email />
+          </Panels>
+          <Images6 />
+          <Panels>
             <COVID />
           </Panels>
-          <Images4 />
-          <Album />
+          <Images5 />
+          <AlbumNew />
           <Footer />
         </AppContainer>
       ) : (
