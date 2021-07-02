@@ -37,9 +37,13 @@ const ImageWrap = styled.div`
   height: 0;
   padding: 50% 0;
   position: relative;
-  opacity: 0.8;
-  &:hover {
-    opacity: 1;
+  opacity: 1;
+
+  @media ${device.tablet} {
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
