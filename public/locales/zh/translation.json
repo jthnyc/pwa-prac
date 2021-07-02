@@ -55,7 +55,9 @@
     "placeholder": "我們最新的地址是...",
     "upload": "請上傳您與同行者的 COVID 疫苗紀錄 (可以複選檔案)",
     "uploadBtn": "上傳",
-    "submit": "寄出"
+    "choose": "選擇檔案",
+    "submit": "寄出",
+    "received": "收到！謝謝"
   },
   "covid": {
     "nav": "COVID 相關訊息",

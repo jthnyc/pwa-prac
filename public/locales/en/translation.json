@@ -55,7 +55,9 @@
     "placeholder": "We recently moved...",
     "upload": "Upload Your COVID Vaccine Record(s). Feel free to choose or upload multiple files.",
     "uploadBtn": "Upload",
-    "submit": "Send"
+    "choose": "Choose Files",
+    "submit": "Send",
+    "received": "Received. Thank you"
   },
   "covid": {
     "nav": "COVID Information",

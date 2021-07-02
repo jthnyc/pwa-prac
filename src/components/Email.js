@@ -65,16 +65,12 @@ const Email = () => {
         }
       );
     });
-    Promise.all(promises)
-      .then(() => console.log("All records uploaded"))
-      .catch((err) => console.log(err));
+    Promise.all(promises).catch((err) => console.log(err));
 
     setFileCount(fileCount + vaccineRecords.length);
     setVaccineRecords([]);
     setUploaded(true);
   };
-
-  console.log("URLS ===========> ", recordUrls);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,7 +86,7 @@ const Email = () => {
 
     addGuestEmail(guest);
     setSubmitted(true);
-    setTimeout(() => clearFields(), 8000);
+    setTimeout(() => clearFields(), 5000);
   };
 
   return (
@@ -170,7 +166,7 @@ const Email = () => {
                     <FileUploadSummary>
                       <InputLabel>
                         <InputField type="file" multiple onChange={handleChange} />
-                        <span>Choose Files</span>
+                        <span>{t("email.choose")}</span>
                       </InputLabel>
 
                       {uploaded ? (
@@ -219,7 +215,13 @@ const Email = () => {
           <Button variant="outline-secondary" type="submit">
             {t("email.submit")}
           </Button>
-          {submitted ? <span>Received. Thank you {firstName}!</span> : ""}
+          {submitted ? (
+            <span>
+              {t("email.received")} {firstName}!
+            </span>
+          ) : (
+            ""
+          )}
         </SubmitButton>
       </Form>
     </EmailContainer>
