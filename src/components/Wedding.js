@@ -38,17 +38,20 @@ const Wedding = () => {
           </MapContainer>
           <EventTextContainer>
             <WeddingDate>Schedule</WeddingDate>
-            <ul>
-              <li>
-                <EventTime>Ceremony ............... 5:30 PM EST</EventTime>
-              </li>
-              <li>
-                <EventTime>Cocktail Hour ........ 6:00 PM EST</EventTime>
-              </li>
-              <li>
-                <EventTime>Reception ............... 7:00 PM EST</EventTime>
-              </li>
-            </ul>
+            <EventList>
+              <EventItem>
+                <Event>Ceremony</Event>
+                <Time>5:30 PM EST</Time>
+              </EventItem>
+              <EventItem>
+                <Event>Cocktail Hour</Event>
+                <Time>6:00 PM EST</Time>
+              </EventItem>
+              <EventItem>
+                <Event>Reception</Event>
+                <Time>7:00 PM EST</Time>
+              </EventItem>
+            </EventList>
           </EventTextContainer>
         </WeddingDetailContainer>
       </InfoContainer>
@@ -97,13 +100,13 @@ const WeddingTextContainer = styled.div`
   text-align: center;
 
   @media ${device.mobileM} {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media ${device.tablet} {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
     min-height: 50rem;
   }
 
@@ -119,8 +122,8 @@ const WeddingTextContainer = styled.div`
     margin-top: 0;
     background-size: 30vh, 30vh, 95% 95%;
 
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -131,13 +134,13 @@ const WeddingDetailContainer = styled.div`
   align-items: center;
 
   @media ${device.tablet} {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
   }
 
   @media ${device.laptopL} {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -154,7 +157,31 @@ const EventTextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  border: 1px solid orange;
+  min-width: 18.75rem;
+
+  @media ${device.mobileM} {
+    min-width: 20rem;
+  }
+
+  @media ${device.mobileL} {
+    min-width: 25.75rem;
+  }
+
+  @media ${device.tablet} {
+    min-width: 35.25rem;
+  }
+
+  @media ${device.laptop} {
+    min-width: 50rem;
+  }
+
+  @media ${device.laptopL} {
+    min-width: 35.75rem;
+  }
+
+  @media ${device.desktop} {
+    min-width: 50.25rem;
+  }
 `;
 
 const EventTime = styled.h4`
@@ -170,6 +197,50 @@ const EventTime = styled.h4`
 
   @media ${device.laptopL} {
     font-size: 2rem;
+  }
+`;
+
+const EventList = styled.ul`
+  width: 100%;
+  margin-top: 1.25rem;
+`;
+
+const EventItem = styled.li`
+  display: flex;
+  border-bottom: 5px dotted green;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Event = styled.h4`
+  font-size: 1.3rem;
+
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.675rem;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 1.8rem;
+  }
+`;
+
+const Time = styled.span`
+  font-size: 1.3rem;
+
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.675rem;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 1.8rem;
   }
 `;
 
@@ -197,6 +268,6 @@ const MapContainer = styled.div`
   }
 
   @media ${device.desktop} {
-    width: 40rem;
+    width: 45rem;
   }
 `;
