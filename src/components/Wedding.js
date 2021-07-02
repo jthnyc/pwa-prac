@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 import {weddingBackground, branchBottom, branchTop} from "../img/index";
-import {AddToCalBtn} from "../components/index";
 
 const Wedding = () => {
   const {t} = useTranslation();
@@ -14,14 +13,11 @@ const Wedding = () => {
   return (
     <WeddingContainer id="wedding">
       <h2>{t("wedding.t")}</h2>
-      {/* <p>{t("wedding.subt")}</p> */}
       <InfoContainer>
         <WeddingTextContainer>
           <WeddingDate>{t("wedding.date")}</WeddingDate>
           <WeddingDate>{t("wedding.time")}</WeddingDate>
           <EventTime>{t("wedding.address")}</EventTime>
-          <br />
-          <AddToCalBtn />
         </WeddingTextContainer>
         <br />
         <WeddingDetailContainer>
@@ -94,16 +90,17 @@ const WeddingTextContainer = styled.div`
   line-height: 2em;
   background-image: url(${branchTop}), url(${branchBottom}), url(${weddingBackground});
   background-size: 30vh, 30vh, 98% 98%;
-  background-position: right 10px top -15px, left bottom -30px, center;
+  background-position: right -5px top -25px, left bottom -30px, center;
   background-repeat: no-repeat;
-  min-height: 50rem;
-  min-width: 20rem;
+  min-height: 30rem;
+  min-width: 10rem;
   text-align: center;
 
   @media ${device.mobileM} {
+    min-height: 40rem;
     margin-left: 0;
     margin-right: 0;
-    background-position: right -15px top -10px, left bottom -30px, center;
+    background-position: right -10px top -20px, left bottom -30px, center;
   }
 
   @media ${device.mobileL} {
