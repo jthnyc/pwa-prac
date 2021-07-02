@@ -93,7 +93,7 @@ const WeddingTextContainer = styled.div`
   line-height: 2em;
   background-image: url(${branchTop}), url(${branchBottom}), url(${weddingBackground});
   background-size: 30vh, 30vh, 98% 98%;
-  background-position: right top -15px, left bottom -30px, center;
+  background-position: right 10px top -15px, left bottom -30px, center;
   background-repeat: no-repeat;
   min-height: 50rem;
   min-width: 20rem;
@@ -102,18 +102,26 @@ const WeddingTextContainer = styled.div`
   @media ${device.mobileM} {
     margin-left: 0;
     margin-right: 0;
+    background-position: right -15px top -10px, left bottom -30px, center;
+  }
+
+  @media ${device.mobileL} {
+    background-position: right -20px top -10px, left bottom -30px, center;
   }
 
   @media ${device.tablet} {
     margin-left: 3.125rem;
     margin-right: 3.125rem;
+    background-position: right -10px top -8px, left bottom -30px, center;
     min-height: 50rem;
   }
 
   @media ${device.laptop} {
     background-size: 30vh, 30vh, 90% 90%;
-    background-position: right top 20px, left bottom 15px, center;
+    background-position: right 50px top 50px, left 30px bottom 40px, center;
     min-height: 60rem;
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
   }
 
   @media ${device.laptopL} {
@@ -121,6 +129,7 @@ const WeddingTextContainer = styled.div`
     min-width: 37.5rem;
     margin-top: 0;
     background-size: 30vh, 30vh, 95% 95%;
+    background-position: right top 30px, left bottom 15px, center;
 
     margin-left: 0;
     margin-right: 0;
@@ -207,9 +216,15 @@ const EventList = styled.ul`
 
 const EventItem = styled.li`
   display: flex;
-  border-bottom: 5px dotted green;
   justify-content: space-between;
   align-items: center;
+
+  @media ${device.tablet} {
+    border-bottom: 10px solid;
+    border-width: 5px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(#743ad5, #d53a9d);
+  }
 `;
 
 const Event = styled.h4`
