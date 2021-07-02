@@ -19,8 +19,8 @@ export default Modal;
 
 const Backdrop = styled.div`
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 1.25rem;
+  left: 1.25rem;
   width: 100%;
   height: 100%;
 
@@ -33,12 +33,22 @@ const Backdrop = styled.div`
 const BackdropImg = styled.img`
   display: block;
   max-width: 90%;
-  margin: 0.3125rem 0.3125rem;
+  margin: 5px 5px;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
 
+  @media ${device.mobileL} {
+    max-width: 75%;
+    margin: 20% auto;
+  }
+
   @media ${device.tablet} {
-    max-width: 35%;
-    margin: 10px auto;
+    max-width: 60%;
+    margin: 10% auto;
+  }
+
+  @media ${device.laptop} {
+    max-width: 40%;
+    margin: 5% auto;
   }
 `;
