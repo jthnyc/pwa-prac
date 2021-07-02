@@ -15,7 +15,17 @@
   },
   "wedding": {
     "t": "Wedding",
-    "subt": "The ceremony and reception will be at the same location."
+    "subt": "All wedding activities will be at the same location.",
+    "date": "November 20, 2021",
+    "time": "5:30 PM EST",
+    "address": "175 Broadway, Brooklyn, NY 11211",
+    "schedule": "Schedule",
+    "ceremony": "Ceremony",
+    "ceremonyTime": "5:30 PM EST",
+    "cocktail": "Cocktail Hour",
+    "cocktailTime": "6:00 PM EST",
+    "reception": "Reception",
+    "receptionTime": "7:00 PM EST"
   },
   "faq": {
     "t": "FAQ",
@@ -43,6 +53,7 @@
     "form": "Email",
     "message": "Message",
     "placeholder": "We recently moved...",
+    "upload": "Upload Your COVID Vaccine Record(s). Feel free to choose or upload multiple files.",
     "submit": "Send"
   },
   "covid": {

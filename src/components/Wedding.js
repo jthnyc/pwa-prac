@@ -14,12 +14,12 @@ const Wedding = () => {
   return (
     <WeddingContainer id="wedding">
       <h2>{t("wedding.t")}</h2>
-      <p>{t("wedding.subt")}</p>
+      {/* <p>{t("wedding.subt")}</p> */}
       <InfoContainer>
         <WeddingTextContainer>
-          <WeddingDate>November 20, 2021</WeddingDate>
-          <WeddingDate>5:30 PM EST</WeddingDate>
-          <EventTime>175 Broadway, Brooklyn, NY 11211</EventTime>
+          <WeddingDate>{t("wedding.date")}</WeddingDate>
+          <WeddingDate>{t("wedding.time")}</WeddingDate>
+          <EventTime>{t("wedding.address")}</EventTime>
           <br />
           <AddToCalBtn />
         </WeddingTextContainer>
@@ -37,19 +37,20 @@ const Wedding = () => {
             ></iframe>
           </MapContainer>
           <EventTextContainer>
-            <WeddingDate>Schedule</WeddingDate>
+            <WeddingDate>{t("wedding.schedule")}</WeddingDate>
+            <p>{t("wedding.subt")}</p>
             <EventList>
               <EventItem>
-                <Event>Ceremony</Event>
-                <Time>5:30 PM EST</Time>
+                <Event>{t("wedding.ceremony")}</Event>
+                <Time>{t("wedding.ceremonyTime")}</Time>
               </EventItem>
               <EventItem>
-                <Event>Cocktail Hour</Event>
-                <Time>6:00 PM EST</Time>
+                <Event>{t("wedding.cocktail")}</Event>
+                <Time>{t("wedding.cocktailTime")}</Time>
               </EventItem>
               <EventItem>
-                <Event>Reception</Event>
-                <Time>7:00 PM EST</Time>
+                <Event>{t("wedding.reception")}</Event>
+                <Time>{t("wedding.receptionTime")}</Time>
               </EventItem>
             </EventList>
           </EventTextContainer>
@@ -218,12 +219,13 @@ const EventItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.5rem;
 
   @media ${device.tablet} {
-    border-bottom: 10px solid;
-    border-width: 5px;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(#743ad5, #d53a9d);
+    border-bottom: 3px solid black;
+    // border-width: 5px;
+    // border-image-slice: 1;
+    // border-image-source: linear-gradient(45deg #ebf8e1, #7d745e);
   }
 `;
 

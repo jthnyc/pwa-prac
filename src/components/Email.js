@@ -143,15 +143,9 @@ const Email = () => {
           <Form.Row>
             <Col>
               <Form.Group controlId="vaccineForm">
-                <Form.Label>
-                  Upload Your COVID Vaccine Record(s). Feel free to choose or upload
-                  multiple files.{" "}
-                </Form.Label>
+                <Form.Label>{t("email.upload")}</Form.Label>
                 <TestDiv>
                   <Form.File type="file" multiple onChange={handleChange} />
-                  <Button variant="outline-secondary" onClick={handUpload}>
-                    Upload
-                  </Button>
                 </TestDiv>
               </Form.Group>
             </Col>
