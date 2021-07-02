@@ -100,7 +100,7 @@ const WeddingTextContainer = styled.div`
     min-height: 40rem;
     margin-left: 0;
     margin-right: 0;
-    background-position: right -10px top -20px, left bottom -30px, center;
+    background-position: right -20px top -30px, left -10px bottom -50px, center;
   }
 
   @media ${device.mobileL} {
@@ -108,18 +108,18 @@ const WeddingTextContainer = styled.div`
   }
 
   @media ${device.tablet} {
-    margin-left: 3.125rem;
-    margin-right: 3.125rem;
+    margin-left: 5.125rem;
+    margin-right: 5.125rem;
     background-position: right -10px top -10px, left bottom -30px, center;
     min-height: 50rem;
   }
 
   @media ${device.laptop} {
     background-size: 30vh, 30vh, 90% 90%;
-    background-position: right 10px top -20px, left -30px bottom -30px, center;
+    background-position: right 10px top 40px, left 50px bottom 20px, center;
     min-height: 60rem;
-    margin-left: 9.375rem;
-    margin-right: 9.375rem;
+    margin-left: 10.25rem;
+    margin-right: 10.25rem;
   }
 
   @media ${device.laptopL} {
