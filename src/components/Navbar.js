@@ -20,7 +20,6 @@ const Nav2 = () => {
           <StyledNavLink href="#wedding">{t("wedding.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
           <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
-          <StyledNavLink href="#recommendations">{t("recommendations.t")}</StyledNavLink>
           <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
           <StyledNavLink href="#album">{t("album.t")}</StyledNavLink>
         </StyledNav>
