@@ -24,7 +24,7 @@ const Wedding = () => {
           <AddToCalBtn />
         </WeddingTextContainer>
         <br />
-        <div>
+        <WeddingDetailContainer>
           <MapContainer>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.436102077581!2d-73.9623258!3d40.7101123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf7e3bbe5f895f55!2sWeylin!5e0!3m2!1sen!2sus!4v1623620077841!5m2!1sen!2sus"
@@ -40,17 +40,17 @@ const Wedding = () => {
             <WeddingDate>Schedule</WeddingDate>
             <ul>
               <li>
-                <EventTime>Ceremony -> 5:30 PM EST</EventTime>
+                <EventTime>Ceremony ............... 5:30 PM EST</EventTime>
               </li>
               <li>
-                <EventTime>Cocktail Hour -> 6:00 PM EST</EventTime>
+                <EventTime>Cocktail Hour ........ 6:00 PM EST</EventTime>
               </li>
               <li>
-                <EventTime>Reception -> 7:00 PM EST</EventTime>
+                <EventTime>Reception ............... 7:00 PM EST</EventTime>
               </li>
             </ul>
           </EventTextContainer>
-        </div>
+        </WeddingDetailContainer>
       </InfoContainer>
     </WeddingContainer>
   );
@@ -74,41 +74,70 @@ const WeddingContainer = styled.div`
 
 const InfoContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   width: 80vw;
 
   @media ${device.laptopL} {
     flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
 const WeddingTextContainer = styled.div`
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 2em;
-  // padding: 3.125rem 3.125rem 0 3.125rem;
   background-image: url(${branchTop}), url(${branchBottom}), url(${weddingBackground});
   background-size: 30vh, 30vh, 98% 98%;
   background-position: right top -15px, left bottom -30px, center;
   background-repeat: no-repeat;
   min-height: 50rem;
-  max-width: 21.875rem;
+  min-width: 20rem;
   text-align: center;
 
-  @media ${device.mobileL} {
-    background-size: 30vh, 30vh, 90% 90%;
-    background-position: right top, left bottom, center;
-    max-width: 37.5rem;
+  @media ${device.mobileM} {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  @media ${device.tablet} {
+    margin-left: 50px;
+    margin-right: 50px;
+    min-height: 50rem;
   }
 
   @media ${device.laptop} {
+    background-size: 30vh, 30vh, 90% 90%;
+    background-position: right top 20px, left bottom 15px, center;
+    min-height: 60rem;
+  }
+
+  @media ${device.laptopL} {
     flex-direction: column;
     min-width: 37.5rem;
     margin-top: 0;
     background-size: 30vh, 30vh, 95% 95%;
+
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+`;
+
+const WeddingDetailContainer = styled.div`
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media ${device.tablet} {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @media ${device.laptopL} {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 `;
 
@@ -148,8 +177,26 @@ const MapContainer = styled.div`
   width: 18.75rem;
   height: 15.625rem;
 
-  @media ${device.mobileM} {
-    width: 30rem;
-    height: 24rem;
+  @media ${device.mobileL} {
+    width: 30.75rem;
+    height: 22.25rem;
+  }
+
+  @media ${device.tablet} {
+    width: 35rem;
+    height: 20rem;
+  }
+
+  @media ${device.laptop} {
+    width: 48rem;
+  }
+
+  @media ${device.laptopL} {
+    width: 34.25rem;
+    height: 28rem;
+  }
+
+  @media ${device.desktop} {
+    width: 40rem;
   }
 `;

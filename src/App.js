@@ -14,7 +14,7 @@ import {
   Faq,
   Email,
   Wedding,
-  Recommendations,
+  // Recommendations,
   COVID,
   Footer,
 } from "./components/index";
@@ -97,9 +97,7 @@ function App() {
             <Email />
           </Panels>
           <Images4 />
-          <Panels>
-            <Recommendations />
-          </Panels>
+          <Panels>{/* <Recommendations /> */}</Panels>
           <Images5 />
           <Panels>
             <COVID />
