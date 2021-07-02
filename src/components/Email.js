@@ -33,7 +33,7 @@ const Email = () => {
     }
   };
 
-  const handUpload = () => {
+  const handleUpload = () => {
     const promises = [];
     vaccineRecords.map((record) => {
       const uploadTask = storage.ref(`vaccineRecords/${record.name}`).put(record);
@@ -146,6 +146,9 @@ const Email = () => {
                 <Form.Label>{t("email.upload")}</Form.Label>
                 <TestDiv>
                   <Form.File type="file" multiple onChange={handleChange} />
+                  <Button variant="outline-secondary" onClick={handleUpload}>
+                    {t("email.uploadBtn")}
+                  </Button>
                 </TestDiv>
               </Form.Group>
             </Col>

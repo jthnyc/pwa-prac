@@ -54,6 +54,7 @@
     "message": "留言",
     "placeholder": "我們最新的地址是...",
     "upload": "請上傳您與同行者的 COVID 疫苗紀錄 (可以複選檔案)",
+    "uploadBtn": "上傳",
     "submit": "寄出"
   },
   "covid": {
