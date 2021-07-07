@@ -7,13 +7,14 @@ import {
   Images3,
   Images5,
   Images6,
-  AlbumNew,
+  // AlbumNew,
   Nav2,
   Story,
   Faq,
   Email,
   Wedding,
   COVID,
+  PhotoGallery,
   Footer,
 } from "./components/index";
 import styled from "styled-components";
@@ -99,7 +100,8 @@ function App() {
             <COVID />
           </Panels>
           <Images5 />
-          <AlbumNew />
+          {/* <AlbumNew /> */}
+          <PhotoGallery />
           <Footer />
         </AppContainer>
       ) : (

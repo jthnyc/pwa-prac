@@ -7,11 +7,11 @@
   },
   "story": {
     "t": "我們的故事",
-    "l1": "在一個下著毛毛雨的星期二晚上....",
-    "l2": "子軒與宇誠在曼哈頓中城的一個籌款活動中認識。儘管他們對郎朗是否是一位偉大的鋼琴家持著相反的意見，他們還是為了彼此共同對音樂和藝術的愛好而建立了聯繫...",
-    "l3": "從交換 Spotify 音樂歌單，書籍及電影心得，到了解彼此對義大利美食及百老匯的熱衷，他們知道他們找到了一些特別的共同點。從那以後的幾年中，他們稱紐約皇后區的 Long Island City 多元化的社區為家，並繼續一起探索紐約獨有的藝術和各國美食。",
-    "l4": "2019年秋季，在取得子軒父親的准許後，宇誠精心安排了於墨西哥 Riviera Maya 的一場水上燭光晚餐，來向子軒求婚。一年後，子軒與宇誠於 2020年 十月十日 登記結婚，且期待能與親朋好友在延後的婚禮日期，一起歡聚慶祝!",
-    "l5": "他們仍然對郎朗持不同的意見 —- 但同意 Martha Argerich (瑪莎·阿格里奇) 是更棒的鋼琴家 :)"
+    "l1": "在一個下著傾盆大雨的週二夜晚.....",
+    "l2": "子軒與宇誠是在曼哈頓中城的一個募款晚會中第一次邂逅。儘管，在交談中，他們對於郎朗是否是一位偉大的鋼琴家這個問題各持己見，他們還是因著彼此共同對音樂和藝術的愛好而建立了聯繫...",
+    "l3": "在接下來的日子裡，從互換Spotify音樂歌單，分享對書籍及電影的心得，到發現彼此對義大利美食、百老匯、以及雞尾酒吧的熱衷，他們越來越能體會彼此的獨一無二。之後的幾年裡，他們以紐約皇后區的 Long Island City 為家，繼續一起探索著紐約獨有的人文及藝術，以及圓他們的老饕夢。",
+    "l4": "2019年秋季，在取得子軒父親的同意後，宇誠精心安排了於墨西哥 Riviera Maya 的一場水上燭光晚餐，來向子軒求婚。一年後，子軒與宇誠於 2020年 十月十日 登記結婚。他們期待著，在今年十一月的婚禮中，與親朋好友們一起歡聚慶祝！",
+    "l5": "儘管他們對與郎朗依舊持不同的意見 — 但他們彼此都同意的是，Martha Argerich (瑪莎·阿格里奇)，是他們都更為欣賞的鋼琴家！:)"
   },
   "wedding": {
     "t": "婚禮",
@@ -30,18 +30,18 @@
   "faq": {
     "t": "FAQ",
     "subt": "我們會經常更新這裡的訊息! 如需聯繫我們，請留言：",
-    "q1": "如何掌握婚禮的最新訊息？",
+    "q1": "我要如何掌握婚禮的最新訊息？",
     "a1": "我們會在這個網站上公布最新的訊息。如有任何其他疑問，也歡迎您直接以電郵聯繫我們！",
-    "q2": "如何聯繫你們？",
+    "q2": "要如何聯繫你們呢？",
     "a2": "歡迎您直接以電郵聯繫我們：hello@joannaandgabriel.love",
-    "q3": "如不能參與，是否會有線上直播或是以 參與？",
-    "a3": "我們目前。。。",
-    "q4": "如果婚禮需要延期，我們怎麼收到通知？",
+    "q3": "如不能參與，請問是否會有線上直播？",
+    "a3": "抱歉，我們目前並未規劃線上直播",
+    "q4": "如果婚禮需要延期，我們會如何收到通知？",
     "a4": "我們預計不會再延遲婚禮，但有關婚禮的任何公告都將首先發佈在我們的網站上。\n如果有緊急更新，我們會以電話聯絡或電子郵件與所有來賓聯繫。\n\n如果您想提供電郵或手機號碼方便聯絡，請寄電郵到：Hi@JoannaAndGabriel.love",
-    "q5": "有關線上結婚禮物",
-    "a5": "We don’t have one—at least in the traditional sense! Under the circumstances and hardships of the past year (and then some), your presence at our event is more than enough. We are truly blessed and are just happy to be celebrating if you are able to join us. That said, we have a feeling that this won’t stop some of you who still feel tradition-bound, in which case we’d like to direct your generosity towards some causes we care deeply about. And in case any of them don’t move you—or you are just incredibly loving!—we’ll set aside an option for our honeymoon fund. We will provide more detail on giving as we have more to share.",
+    "q5": "請問你們在哪裏有登記婚禮禮品？",
+    "a5": "謝謝您！真抱歉，我們並沒有在任何的店家登記了禮品。過去這一年多, 因為疫情的緣故,大家都甚少見面. 您能夠前來參與我們的婚禮, 我們已深感榮幸。 \n\n當然, 我們很感激您對我們的厚愛也能理解希望能帶給我們祝福的心情. 若您願意, 我們設立了幾個捐獻的管道...",
     "q6": "離婚禮場地最近的機場是？",
-    "a6": "需要飛國際線的親朋好友們，大多應是以紐約甘迺迪機場 John F. Kennedy International Airport（JFK）為目的地。\n\n飛國內線到紐約可以參考拉瓜迪亞機場 LaGuardia Airport (LGA) 或是甘迺迪機場。\n\n如您打算在紐澤西州停留，我們會建議飛往紐瓦克自由國際機場 Newark Liberty International Airport (EWR)。",
+    "a6": "需要飛國際線的親朋好友們，紐約甘迺迪機場 John F. Kennedy International Airport（JFK）最為方便。\n\n國內線則可參考拉瓜迪亞機場 LaGuardia Airport (LGA) 或是甘迺迪機場。\n\n若您打算在紐澤西州停留，我們會建議由紐瓦克自由國際機場 Newark Liberty International Airport (EWR)進出。",
     "q7": "賓客服裝要求",
     "a7": "我們婚禮的著裝要求是晚宴服裝，像是穿燕尾服或晚禮服（請參見此處），也可以選擇以台灣傳統（現代旗袍或中山裝）和菲律賓傳統（巴隆他加祿語或Maria Clara禮服）同等的禮服著裝。"
   },
