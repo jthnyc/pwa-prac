@@ -112,7 +112,7 @@ function App() {
               <FormContainer>
                 <FormBox onSubmit={(e) => handleSubmit(e)}>
                   <TextField
-                    variant="outlined"
+                    variant="standard"
                     margin="normal"
                     required
                     fullWidth
