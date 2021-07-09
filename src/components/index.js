@@ -2,8 +2,6 @@
 export {default as Landing} from "./Landing";
 
 // Navbar
-export {default as NavMenu} from "./NavMenu";
-export {default as Nav} from "./Nav";
 export {default as Nav2} from "./Navbar";
 
 // Hero Image

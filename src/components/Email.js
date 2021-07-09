@@ -99,6 +99,8 @@ const Email = () => {
                 type="text"
                 name="firstname"
                 placeholder={t("email.first")}
+                onFocus={(e) => (e.target.placeholder = "")}
+                onBlur={(e) => (e.target.placeholder = t("email.first"))}
                 onChange={(e) => setFirstName(e.target.value)}
                 value={firstName}
                 required
@@ -111,6 +113,8 @@ const Email = () => {
                 type="text"
                 name="lastname"
                 placeholder={t("email.last")}
+                onFocus={(e) => (e.target.placeholder = "")}
+                onBlur={(e) => (e.target.placeholder = t("email.last"))}
                 onChange={(e) => setLastName(e.target.value)}
                 value={lastName}
                 required
@@ -125,6 +129,8 @@ const Email = () => {
               <Form.Control
                 type="email"
                 placeholder={t("email.form")}
+                onFocus={(e) => (e.target.placeholder = "")}
+                onBlur={(e) => (e.target.placeholder = t("email.form"))}
                 onChange={(e) => setEmail(e.target.value)}
                 value={guestEmail}
                 required
@@ -142,6 +148,8 @@ const Email = () => {
               <FormControl
                 as="textarea"
                 placeholder={t("email.placeholder")}
+                onFocus={(e) => (e.target.placeholder = "")}
+                onBlur={(e) => (e.target.placeholder = t("email.placeholder"))}
                 aria-label="With textarea"
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}

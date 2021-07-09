@@ -93,11 +93,11 @@ function App() {
           </Panels>
           <Images3 />
           <Panels>
-            <Email />
+            <COVID />
           </Panels>
           <Images6 />
           <Panels>
-            <COVID />
+            <Email />
           </Panels>
           <Images5 />
           <PhotoGallery />
