@@ -100,7 +100,6 @@ function App() {
             <COVID />
           </Panels>
           <Images5 />
-          {/* <AlbumNew /> */}
           <PhotoGallery />
           <Footer />
         </AppContainer>

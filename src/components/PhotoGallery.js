@@ -1,4 +1,4 @@
-import React, {useState, useCallback, createRef} from "react";
+import React, {useState, useCallback} from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, {Modal, ModalGateway} from "react-images";
 import {photos} from "./PhotoFiles";
@@ -8,7 +8,6 @@ import {device} from "../device";
 const PhotoGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const domNodeRef = createRef();
 
   const openLightbox = useCallback((event, {photo, index}) => {
     setCurrentImage(index);
@@ -21,10 +20,8 @@ const PhotoGallery = () => {
   };
 
   return (
-    // ref={domNodeRef}
-    <PhotoGalleryContainer ref={domNodeRef}>
-      {/* direction={"column"}  */}
-      <Gallery photos={photos} onClick={openLightbox} />
+    <PhotoGalleryContainer id="album">
+      <Gallery photos={photos} onClick={openLightbox} columns={3} direction={"column"} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
@@ -48,9 +45,9 @@ export default PhotoGallery;
 const PhotoGalleryContainer = styled.div`
   // display: flex;
   // flex-direction: column;
-  // padding: 8rem 0;
-  // margin-left: 8%;
-  // margin-right: 8%;
+  padding: 8rem 0;
+  margin-left: 3%;
+  margin-right: 3%;
 
   @media ${device.laptop} {
     padding: 5rem 0;

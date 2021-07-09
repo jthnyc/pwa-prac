@@ -53,7 +53,7 @@
     "form": "Email",
     "message": "Message",
     "placeholder": "We recently moved...",
-    "upload": "Upload Your COVID Vaccine Record(s). Feel free to choose or upload multiple files.",
+    "upload": "Upload Your COVID Vaccine Record(s). Feel free to choose and upload multiple files.",
     "uploadBtn": "Upload",
     "choose": "Choose Files",
     "submit": "Send",
