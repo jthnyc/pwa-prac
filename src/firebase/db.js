@@ -114,33 +114,49 @@ export const findInviteByGuestId = async (id) => {
  */
 export const submitRSVPResponse = async ({
   allergies,
+  guestWhoResponded,
   email,
-  guest,
+  inviteID,
   plusOnes,
   rsvpState,
+  message,
+  vaccineRecords,
+  highRisk,
+  address,
 }) => {
-  const inviteToUpdate = await findInviteByGuestId(guest.id);
+  // const inviteToUpdate = await findInviteByGuestId(guest.id);
   const plusOneIds = [];
   for (let guest of plusOnes) {
     let guestRef = await findGuestByName(guest);
     let guestObj = {};
     guestObj.id = guestRef.id;
+    guestObj.name = guestRef.name;
     guestObj.attending = true;
     plusOneIds.push(guestObj);
   }
+  // adding the person who filled it out
   let guestObj = {};
-  guestObj.id = guest.id;
+  guestObj.id = guestWhoResponded.id;
+  guestObj.name = guestWhoResponded.name;
   guestObj.attending = true;
   plusOneIds.push({...guestObj});
 
   const response = {
-    id: inviteToUpdate.id,
-    guests: plusOneIds,
+    guestWhoResponded: guestWhoResponded,
+    confirmedGuests: plusOneIds,
     email: email,
     rsvpState: rsvpState,
     rsvp: true,
     allergies: allergies,
+    message: message,
+    vaccineRecords: vaccineRecords,
+    highRisk: highRisk,
+    address: address,
   };
 
-  db.collection("invites").doc(`${inviteToUpdate.id}`).set(response);
+  db.collection("invites")
+    .doc(`${inviteID}`)
+    .set(response, {merge: true})
+    .then(() => console.log("success"))
+    .catch((err) => console.error("error >>>>", err));
 };

@@ -16,6 +16,7 @@ const FindInvite = () => {
   const {t} = useTranslation();
   const [fullName, setFullName] = useState("");
   const [existingGuest, setExistingGuest] = useState({});
+  const [inviteID, setInviteID] = useState(null);
   const [rsvp, setRsvp] = useState("");
   const [plusOne, setPlusOne] = useState(false);
   const [plusOneList, setPlusOneList] = useState([]);
@@ -30,6 +31,7 @@ const FindInvite = () => {
   const [uploaded, setUploaded] = useState(false);
   const [fileCount, setFileCount] = useState(0);
   const [highRisk, setHighRisk] = useState(false);
+  const [address, setAddress] = useState(false);
 
   const clearFields = () => {
     setFullName("");
@@ -85,6 +87,7 @@ const FindInvite = () => {
     setExistingGuest(foundGuest);
     let inviteDetails = await findInviteByGuestId(foundGuest.id);
     console.log("invite details: ", inviteDetails);
+    setInviteID(inviteDetails.id);
     let plusOnes = await Promise.all(
       inviteDetails.guests
         .filter((guest) => guest.id !== foundGuest.id)
@@ -97,19 +100,24 @@ const FindInvite = () => {
 
   // WIP - this toggle logic needs to update existing plueOneRsvp array and not block checkbox
   const updatePlueOneRSVPStatus = (e) => {
-    let findMatch = plusOneRsvp.find((name) => name === e.target.value);
-    if (findMatch) {
-      alert("Already added to rsvp list");
-    } else {
-      setPlusOneRsvp([...plusOneRsvp, e.target.value]);
-    }
+    console.log("clicked on: ", e);
+    // add plusone to separate list - this list then becomes confirmed plusones
+
+    // let findMatch = plusOneRsvp.find((name) => name === e.target.value);
+    // if (findMatch) {
+    //   alert("Already added to rsvp list");
+    // } else {
+    setPlusOneRsvp([...plusOneRsvp, e.target.value]);
+    console.log("plus one RSVP: ", plusOneRsvp);
+    // }
   };
 
   // WIP - this submit needs to update existing invite in database
   const handleRSVPSubmit = (e) => {
     e.preventDefault();
     const rsvpSubmit = {
-      guest: existingGuest,
+      inviteID: inviteID,
+      guestWhoResponded: existingGuest,
       rsvpState: rsvp,
       plusOnes: plusOneName === "" ? plusOneRsvp : [plusOneName],
       allergies: allergies,
@@ -117,7 +125,9 @@ const FindInvite = () => {
       message: message,
       vaccineRecords: recordUrls,
       highRisk: highRisk,
+      address: address,
     };
+    console.log("rsvp submit ====> ", rsvpSubmit);
     submitRSVPResponse(rsvpSubmit);
   };
 
@@ -159,19 +169,22 @@ const FindInvite = () => {
               <div>sorry you can't join us</div>
             ) : (
               <div>
+                {/* ========= Joyfully Accept ========== */}
                 <Form.Check
                   label={`Plus One`}
                   onClick={(e) => setPlusOne(e.target.checked)}
                 />
 
+                {/* ========= PLUS ONES ========== */}
                 {plusOne ? (
                   <PlusOneContainer>
                     <Form.Row>
+                      {/* ========= PLUS ONE LIST ========== */}
                       {plusOneList.length !== 0 ? (
                         <ListGroup>
                           {plusOneList.map((person) => {
                             return (
-                              <ListGroup.Item key={uuidv4()}>
+                              <ListGroup.Item key={person.id}>
                                 {person.name}
                                 <Form.Check
                                   label={""}
@@ -291,7 +304,7 @@ const FindInvite = () => {
                     <Button
                       variant="light"
                       type="button"
-                      onClick={(e) => setHighRisk(e.target.outerText)}
+                      onClick={(e) => setAddress(e.target.outerText)}
                     >
                       Yes
                     </Button>
@@ -301,13 +314,13 @@ const FindInvite = () => {
                     <Button
                       variant="light"
                       type="button"
-                      onClick={(e) => setHighRisk(e.target.outerText)}
+                      onClick={(e) => setAddress(e.target.outerText)}
                     >
                       No
                     </Button>
                   </Form.Group>
                 </Form.Row>
-                {highRisk === "Yes" ? (
+                {address === "Yes" ? (
                   <div>
                     <p>
                       Please be sure to include your latest address in the message section
@@ -439,8 +452,12 @@ const FindInvite = () => {
 export default FindInvite;
 
 const FormContainer = styled.div`
-  padding: 2rem;
+  padding-top: 2rem;
   border: 1px solid red;
+
+  @media ${device.laptop} {
+    padding: 2rem;
+  }
 `;
 
 const PlusOneContainer = styled.div`
