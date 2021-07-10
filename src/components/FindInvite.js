@@ -11,7 +11,7 @@ import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 import {storage} from "../firebase/firebase";
-import UpdateRSVP from "./RSVP/UpdateRSVP";
+// import UpdateRSVP from "./RSVP/UpdateRSVP";
 
 const FindInvite = () => {
   const {t} = useTranslation();
@@ -36,7 +36,7 @@ const FindInvite = () => {
   const [fileCount, setFileCount] = useState(0);
   const [highRisk, setHighRisk] = useState(false);
   const [address, setAddress] = useState(false);
-  const [checked, setChecked] = useState([]);
+  // const [checked, setChecked] = useState([]);
 
   const clearFields = () => {
     setFullName("");
@@ -173,12 +173,25 @@ const FindInvite = () => {
         rsvpResponded && rsvpState === "Joyfully Accept" ? (
           <div>
             {/* ========= Existing Invite ========== */}
-            <UpdateRSVP
+            {/* <UpdateRSVP
               guest={existingGuest}
               list={confirmedGuests}
               checked={checked}
               setChecked={setChecked}
-            />
+              plusOneList={plusOneList}
+            /> */}
+            <h2>Welcome back, {existingGuest.name.split(" ")[0]}!</h2>
+            <p>Here are your confirmed guests:</p>
+            {confirmedGuests.map((guest) => {
+              return <div key={guest.id}>{guest.name}</div>;
+            })}
+            <br />
+            <p>
+              If you would like to make an update to your RSVP, please contact us directly
+              via email at{" "}
+              <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
+            </p>
+            <br />
           </div>
         ) : (
           <div>
