@@ -7,10 +7,6 @@ export {default as Nav2} from "./Navbar";
 // Hero Image
 export {default as Welcome} from "./Welcome";
 
-// RSVP (hidden at this time)
-export {default as FindInvite} from "./FindInvite";
-export {default as RSVPform} from "./RSVPform";
-
 // Story
 export {default as Story} from "./Story";
 export {default as StoryImage} from "./StoryImage";
@@ -20,6 +16,14 @@ export {default as Wedding} from "./Wedding";
 export {default as AddToCalBtn} from "./AddToCalendar";
 export {default as Event} from "./Event";
 export {default as EventImage} from "./EventImage";
+
+// RSVP (hidden at this time)
+export {default as FindInvite} from "./FindInvite";
+export {default as RSVPform} from "./RSVPform";
+export {default as RSVP} from "./RSVP";
+
+// Lodging
+export {default as Lodging} from "./Lodging";
 
 // FAQ
 export {default as Faq} from "./Faq";

@@ -27,6 +27,13 @@
     "reception": "宴會",
     "receptionTime": "晚間 7 點"
   },
+  "rsvp": {
+    "t": "R.S.V.P."
+  },
+  "lodging": {
+    "t": "Lodging & Transportation",
+    "subt": "All wedding activities will be at the same location."
+  },
   "faq": {
     "t": "FAQ",
     "subt": "我們會經常更新這裡的訊息! 如需聯繫我們，請於",

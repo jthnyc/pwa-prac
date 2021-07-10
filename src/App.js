@@ -15,6 +15,8 @@ import {
   Wedding,
   COVID,
   PhotoGallery,
+  RSVP,
+  Lodging,
   Footer,
 } from "./components/index";
 import styled from "styled-components";
@@ -86,6 +88,14 @@ function App() {
           <Images1 />
           <Panels>
             <Wedding />
+          </Panels>
+          <Images2 />
+          <Panels>
+            <RSVP />
+          </Panels>
+          <Images3 />
+          <Panels>
+            <Lodging />
           </Panels>
           <Images2 />
           <Panels>

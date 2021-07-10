@@ -27,6 +27,13 @@
     "reception": "Reception",
     "receptionTime": "7:00 PM EST"
   },
+  "rsvp": {
+    "t": "R.S.V.P."
+  },
+  "lodging": {
+    "t": "Lodging & Transportation",
+    "subt": "Hotel occupancy and availability are quickly changing in New York City. \nMany of hotels that had been closed due to the pandemic are now reopening! Check back soon for more updates."
+  },
   "faq": {
     "t": "FAQ",
     "subt": "We will be updating these regularly!\nIf you can’t find what you’re looking for, please reach out via ",
