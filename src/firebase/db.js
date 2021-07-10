@@ -124,26 +124,25 @@ export const submitRSVPResponse = async ({
   highRisk,
   address,
 }) => {
-  // const inviteToUpdate = await findInviteByGuestId(guest.id);
-  const plusOneIds = [];
+  const confirmedGuests = [];
   for (let guest of plusOnes) {
     let guestRef = await findGuestByName(guest);
     let guestObj = {};
     guestObj.id = guestRef.id;
     guestObj.name = guestRef.name;
     guestObj.attending = true;
-    plusOneIds.push(guestObj);
+    confirmedGuests.push(guestObj);
   }
   // adding the person who filled it out
   let guestObj = {};
   guestObj.id = guestWhoResponded.id;
   guestObj.name = guestWhoResponded.name;
   guestObj.attending = true;
-  plusOneIds.push({...guestObj});
+  confirmedGuests.unshift({...guestObj});
 
   const response = {
     guestWhoResponded: guestWhoResponded,
-    confirmedGuests: plusOneIds,
+    confirmedGuests: confirmedGuests,
     email: email,
     rsvpState: rsvpState,
     rsvp: true,

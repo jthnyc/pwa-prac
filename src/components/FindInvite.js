@@ -11,6 +11,7 @@ import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 import {storage} from "../firebase/firebase";
+import UpdateRSVP from "./RSVP/UpdateRSVP";
 
 const FindInvite = () => {
   const {t} = useTranslation();
@@ -18,10 +19,13 @@ const FindInvite = () => {
   const [existingGuest, setExistingGuest] = useState({});
   const [inviteID, setInviteID] = useState(null);
   const [rsvp, setRsvp] = useState("");
+  const [rsvpState, setRSVPState] = useState("");
+  const [rsvpResponded, setRSVPResponded] = useState(false);
   const [plusOne, setPlusOne] = useState(false);
   const [plusOneList, setPlusOneList] = useState([]);
   const [plusOneRsvp, setPlusOneRsvp] = useState([]);
   const [plusOneName, setPlusOneName] = useState("");
+  const [confirmedGuests, setConfirmedGuests] = useState([]);
   const [allergies, setAllergies] = useState("");
   const [message, setMessage] = useState("");
   const [guestEmail, setEmail] = useState("");
@@ -32,9 +36,28 @@ const FindInvite = () => {
   const [fileCount, setFileCount] = useState(0);
   const [highRisk, setHighRisk] = useState(false);
   const [address, setAddress] = useState(false);
+  const [checked, setChecked] = useState([]);
 
   const clearFields = () => {
     setFullName("");
+  };
+
+  const clearForm = () => {
+    setInviteID(null);
+    setExistingGuest({});
+    setRsvp("");
+    setRSVPResponded(false);
+    setPlusOneRsvp([]);
+    setPlusOneName("");
+    setAllergies("");
+    setEmail("");
+    setMessage("");
+    setVaccineRecords([]);
+    setRecordUrls([]);
+    setUploaded(false);
+    setFileCount(0);
+    setHighRisk(false);
+    setAddress(false);
   };
 
   const handleChange = (e) => {
@@ -88,6 +111,17 @@ const FindInvite = () => {
     let inviteDetails = await findInviteByGuestId(foundGuest.id);
     console.log("invite details: ", inviteDetails);
     setInviteID(inviteDetails.id);
+    setRSVPResponded(true);
+
+    let rsvpState = await Promise.all(inviteDetails.rsvpState);
+    console.log("accept or declined? ", rsvpState.join(""));
+    setRSVPState(rsvpState.join(""));
+
+    let confirmedGuests = await Promise.all(inviteDetails.confirmedGuests);
+    console.log("CONFIRMED GUESTS: ", confirmedGuests);
+    setConfirmedGuests([...inviteDetails.confirmedGuests]);
+
+    console.log();
     let plusOnes = await Promise.all(
       inviteDetails.guests
         .filter((guest) => guest.id !== foundGuest.id)
@@ -126,296 +160,313 @@ const FindInvite = () => {
       vaccineRecords: recordUrls,
       highRisk: highRisk,
       address: address,
+      rsvpResponded: rsvpResponded,
     };
     console.log("rsvp submit ====> ", rsvpSubmit);
     submitRSVPResponse(rsvpSubmit);
+    setTimeout(() => clearForm(), 5000);
   };
 
   return (
     <FormContainer>
-      {Object.keys(existingGuest).length !== 0 ? (
-        <div>
-          <h2>Hi, {existingGuest.name.split(" ")[0]}!</h2>
-          <br />
-          <p>Will you be able to join us?</p>
-          <Form onSubmit={(e) => handleRSVPSubmit(e)}>
-            <div>
-              <Form.Row>
-                <Form.Group>
-                  <Button
-                    variant="light"
-                    type="button"
-                    onClick={(e) => setRsvp(e.target.outerText)}
-                  >
-                    Joyfully Accept
-                  </Button>
-                </Form.Group>
-
-                <Form.Group>
-                  <Button
-                    variant="light"
-                    type="button"
-                    onClick={(e) => setRsvp(e.target.outerText)}
-                  >
-                    Regretfully Decline
-                  </Button>
-                </Form.Group>
-              </Form.Row>
-            </div>
-
-            {rsvp === "" ? (
-              <div></div>
-            ) : rsvp === "Regretfully Decline" ? (
-              <div>sorry you can't join us</div>
-            ) : (
-              <div>
-                {/* ========= Joyfully Accept ========== */}
-                <Form.Check
-                  label={`Plus One`}
-                  onClick={(e) => setPlusOne(e.target.checked)}
-                />
-
-                {/* ========= PLUS ONES ========== */}
-                {plusOne ? (
-                  <PlusOneContainer>
-                    <Form.Row>
-                      {/* ========= PLUS ONE LIST ========== */}
-                      {plusOneList.length !== 0 ? (
-                        <ListGroup>
-                          {plusOneList.map((person) => {
-                            return (
-                              <ListGroup.Item key={person.id}>
-                                {person.name}
-                                <Form.Check
-                                  label={""}
-                                  value={person.name}
-                                  onClick={(e) => {
-                                    updatePlueOneRSVPStatus(e);
-                                  }}
-                                />
-                              </ListGroup.Item>
-                            );
-                          })}
-                        </ListGroup>
-                      ) : (
-                        <Form.Group>
-                          <Form.Control
-                            type="text"
-                            placeholder="Plus One Name"
-                            onChange={(e) => setPlusOneName(e.target.value)}
-                            value={plusOneName}
-                          />
-                          <Form.Text className="text-muted">
-                            We're excited to celebrate with you and your guest!
-                          </Form.Text>
-                        </Form.Group>
-                      )}
-                    </Form.Row>
-                  </PlusOneContainer>
-                ) : (
-                  <div></div>
-                )}
-                <br />
-                <InputGroup>
-                  <InputGroup.Prepend>
-                    <InputGroup.Text>Dietary Restrictions</InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <FormControl
-                    as="textarea"
-                    aria-label="With textarea"
-                    onChange={(e) => setAllergies(e.target.value)}
-                    value={allergies}
-                  />
-                </InputGroup>
-                <br />
-                {existingGuest.email ? (
-                  <Form.Group controlId="formBasicEmail">
-                    <p>
-                      If the following email is not the best email to reach you, please
-                      update your email address:
-                    </p>
-                    <h4>{existingGuest.email}</h4>
-
-                    <Form.Control
-                      type="email"
-                      placeholder="Enter email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={guestEmail}
-                    />
-                    <Form.Text className="text-muted">
-                      We'll never share your email with anyone else.
-                    </Form.Text>
-                  </Form.Group>
-                ) : (
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="Enter email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={guestEmail}
-                    />
-                    <Form.Text className="text-muted">
-                      We'll never share your email with anyone else.
-                    </Form.Text>
-                  </Form.Group>
-                )}
-                <br />
-                <p>
-                  Do you consider yourself, your partner, or accompanying guests to be in
-                  any of the following groups? (pregnant, over 55+, existing underlying
-                  medical conditions, in contact with children)?
-                </p>
-                <Form.Row>
-                  <Form.Group>
-                    <Button
-                      variant="light"
-                      type="button"
-                      onClick={(e) => setHighRisk(e.target.outerText)}
-                    >
-                      Yes
-                    </Button>
-                  </Form.Group>
-
-                  <Form.Group>
-                    <Button
-                      variant="light"
-                      type="button"
-                      onClick={(e) => setHighRisk(e.target.outerText)}
-                    >
-                      No
-                    </Button>
-                  </Form.Group>
-                </Form.Row>
-                {highRisk === "Yes" ? (
-                  <div>
-                    <p>
-                      Please be sure to include details in the message section below.
-                      Thank you!
-                    </p>
-                  </div>
-                ) : (
-                  <div></div>
-                )}
-                <br />
-                <p>Has your address changed recently?</p>
-                <Form.Row>
-                  <Form.Group>
-                    <Button
-                      variant="light"
-                      type="button"
-                      onClick={(e) => setAddress(e.target.outerText)}
-                    >
-                      Yes
-                    </Button>
-                  </Form.Group>
-
-                  <Form.Group>
-                    <Button
-                      variant="light"
-                      type="button"
-                      onClick={(e) => setAddress(e.target.outerText)}
-                    >
-                      No
-                    </Button>
-                  </Form.Group>
-                </Form.Row>
-                {address === "Yes" ? (
-                  <div>
-                    <p>
-                      Please be sure to include your latest address in the message section
-                      below. Thank you!
-                    </p>
-                  </div>
-                ) : (
-                  <div></div>
-                )}
-
-                <br />
-                <MarginTop>
-                  <Form.Row>
-                    <Col>
-                      <Form.Group controlId="vaccineForm">
-                        <Form.Label>{t("email.upload")}</Form.Label>
-                        <br />
-                        <TestDiv>
-                          <FileUploadSection>
-                            <FileUploadSummary>
-                              <InputLabel>
-                                <InputField
-                                  type="file"
-                                  multiple
-                                  onChange={handleChange}
-                                />
-                                <span>{t("email.choose")}</span>
-                              </InputLabel>
-
-                              {uploaded ? (
-                                <UploadCount>
-                                  {fileCount} file{fileCount > 1 ? "s" : ""} uploaded
-                                </UploadCount>
-                              ) : (
-                                ""
-                              )}
-                            </FileUploadSummary>
-
-                            <div>
-                              {vaccineRecords.length ? (
-                                <FileUploadStatusSection>
-                                  <FileToUpload>
-                                    File{vaccineRecords.length > 1 ? "s" : ""} to Upload:
-                                  </FileToUpload>
-                                  {vaccineRecords.map((record, i) => {
-                                    return (
-                                      <div key={i}>
-                                        <span>{record.name}</span>
-                                      </div>
-                                    );
-                                  })}
-                                </FileUploadStatusSection>
-                              ) : (
-                                ""
-                              )}
-                            </div>
-                          </FileUploadSection>
-
-                          <UploadButton
-                            variant="outline-secondary"
-                            onClick={handleUpload}
-                            disabled={vaccineRecords.length === 0 ? "disabled" : ""}
-                          >
-                            {t("email.uploadBtn")}
-                          </UploadButton>
-                        </TestDiv>
-                      </Form.Group>
-                    </Col>
-                  </Form.Row>
-                </MarginTop>
-              </div>
-            )}
-
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text>{t("email.message")}</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                as="textarea"
-                placeholder={t("email.placeholder")}
-                onFocus={(e) => (e.target.placeholder = "")}
-                onBlur={(e) => (e.target.placeholder = t("email.placeholder"))}
-                aria-label="With textarea"
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-              />
-            </InputGroup>
+      {inviteID ? (
+        rsvpResponded && rsvpState === "Joyfully Accept" ? (
+          <div>
+            {/* ========= Existing Invite ========== */}
+            <UpdateRSVP
+              guest={existingGuest}
+              list={confirmedGuests}
+              checked={checked}
+              setChecked={setChecked}
+            />
+          </div>
+        ) : (
+          <div>
+            {/* ========= Found Invite ========== */}
+            <h2>Hi, {existingGuest.name.split(" ")[0]}!</h2>
             <br />
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </div>
+            <p>Will you be able to join us?</p>
+            <Form onSubmit={(e) => handleRSVPSubmit(e)}>
+              <div>
+                <Form.Row>
+                  <Form.Group>
+                    <Button
+                      variant="light"
+                      type="button"
+                      onClick={(e) => setRsvp(e.target.outerText)}
+                    >
+                      Joyfully Accept
+                    </Button>
+                  </Form.Group>
+
+                  <Form.Group>
+                    <Button
+                      variant="light"
+                      type="button"
+                      onClick={(e) => setRsvp(e.target.outerText)}
+                    >
+                      Regretfully Decline
+                    </Button>
+                  </Form.Group>
+                </Form.Row>
+              </div>
+
+              {rsvp === "" ? (
+                <div></div>
+              ) : rsvp === "Regretfully Decline" ? (
+                <div>sorry you can't join us</div>
+              ) : (
+                <div>
+                  {/* ========= Joyfully Accept ========== */}
+                  <Form.Check
+                    label={`Plus One`}
+                    onClick={(e) => setPlusOne(e.target.checked)}
+                  />
+
+                  {/* ========= PLUS ONES ========== */}
+                  {plusOne ? (
+                    <PlusOneContainer>
+                      <Form.Row>
+                        {/* ========= PLUS ONE LIST ========== */}
+                        {plusOneList.length !== 0 ? (
+                          <ListGroup>
+                            {plusOneList.map((person) => {
+                              return (
+                                <ListGroup.Item key={person.id}>
+                                  {person.name}
+                                  <Form.Check
+                                    label={""}
+                                    value={person.name}
+                                    onClick={(e) => {
+                                      updatePlueOneRSVPStatus(e);
+                                    }}
+                                  />
+                                </ListGroup.Item>
+                              );
+                            })}
+                          </ListGroup>
+                        ) : (
+                          <Form.Group>
+                            <Form.Control
+                              type="text"
+                              placeholder="Plus One Name"
+                              onChange={(e) => setPlusOneName(e.target.value)}
+                              value={plusOneName}
+                            />
+                            <Form.Text className="text-muted">
+                              We're excited to celebrate with you and your guest!
+                            </Form.Text>
+                          </Form.Group>
+                        )}
+                      </Form.Row>
+                    </PlusOneContainer>
+                  ) : (
+                    <div></div>
+                  )}
+                  <br />
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text>Dietary Restrictions</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl
+                      as="textarea"
+                      aria-label="With textarea"
+                      onChange={(e) => setAllergies(e.target.value)}
+                      value={allergies}
+                    />
+                  </InputGroup>
+                  <br />
+                  {existingGuest.email ? (
+                    <Form.Group controlId="formBasicEmail">
+                      <p>
+                        If the following email is not the best email to reach you, please
+                        update your email address:
+                      </p>
+                      <h4>{existingGuest.email}</h4>
+
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={guestEmail}
+                      />
+                      <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                      </Form.Text>
+                    </Form.Group>
+                  ) : (
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={guestEmail}
+                      />
+                      <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                      </Form.Text>
+                    </Form.Group>
+                  )}
+                  <br />
+                  <p>
+                    Do you consider yourself, your partner, or accompanying guests to be
+                    in any of the following groups? (pregnant, over 55+, existing
+                    underlying medical conditions, in contact with children)?
+                  </p>
+                  <Form.Row>
+                    <Form.Group>
+                      <Button
+                        variant="light"
+                        type="button"
+                        onClick={(e) => setHighRisk(e.target.outerText)}
+                      >
+                        Yes
+                      </Button>
+                    </Form.Group>
+
+                    <Form.Group>
+                      <Button
+                        variant="light"
+                        type="button"
+                        onClick={(e) => setHighRisk(e.target.outerText)}
+                      >
+                        No
+                      </Button>
+                    </Form.Group>
+                  </Form.Row>
+                  {highRisk === "Yes" ? (
+                    <div>
+                      <p>
+                        Please be sure to include details in the message section below.
+                        Thank you!
+                      </p>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
+                  <br />
+                  <p>Has your address changed recently?</p>
+                  <Form.Row>
+                    <Form.Group>
+                      <Button
+                        variant="light"
+                        type="button"
+                        onClick={(e) => setAddress(e.target.outerText)}
+                      >
+                        Yes
+                      </Button>
+                    </Form.Group>
+
+                    <Form.Group>
+                      <Button
+                        variant="light"
+                        type="button"
+                        onClick={(e) => setAddress(e.target.outerText)}
+                      >
+                        No
+                      </Button>
+                    </Form.Group>
+                  </Form.Row>
+                  {address === "Yes" ? (
+                    <div>
+                      <p>
+                        Please be sure to include your latest address in the message
+                        section below. Thank you!
+                      </p>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
+
+                  <br />
+                  <MarginTop>
+                    <Form.Row>
+                      <Col>
+                        <Form.Group controlId="vaccineForm">
+                          <Form.Label>{t("email.upload")}</Form.Label>
+                          <br />
+                          <TestDiv>
+                            <FileUploadSection>
+                              <FileUploadSummary>
+                                <InputLabel>
+                                  <InputField
+                                    type="file"
+                                    multiple
+                                    onChange={handleChange}
+                                  />
+                                  <span>{t("email.choose")}</span>
+                                </InputLabel>
+
+                                {uploaded ? (
+                                  <UploadCount>
+                                    {fileCount} file{fileCount > 1 ? "s" : ""} uploaded
+                                  </UploadCount>
+                                ) : (
+                                  ""
+                                )}
+                              </FileUploadSummary>
+
+                              <div>
+                                {vaccineRecords.length ? (
+                                  <FileUploadStatusSection>
+                                    <FileToUpload>
+                                      File{vaccineRecords.length > 1 ? "s" : ""} to
+                                      Upload:
+                                    </FileToUpload>
+                                    {vaccineRecords.map((record, i) => {
+                                      return (
+                                        <div key={i}>
+                                          <span>{record.name}</span>
+                                        </div>
+                                      );
+                                    })}
+                                  </FileUploadStatusSection>
+                                ) : (
+                                  ""
+                                )}
+                              </div>
+                            </FileUploadSection>
+
+                            <UploadButton
+                              variant="outline-secondary"
+                              onClick={handleUpload}
+                              disabled={vaccineRecords.length === 0 ? "disabled" : ""}
+                            >
+                              {t("email.uploadBtn")}
+                            </UploadButton>
+                          </TestDiv>
+                        </Form.Group>
+                      </Col>
+                    </Form.Row>
+                  </MarginTop>
+                </div>
+              )}
+
+              <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text>{t("email.message")}</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  as="textarea"
+                  placeholder={t("email.placeholder")}
+                  onFocus={(e) => (e.target.placeholder = "")}
+                  onBlur={(e) => (e.target.placeholder = t("email.placeholder"))}
+                  aria-label="With textarea"
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                />
+              </InputGroup>
+              <br />
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </div>
+        )
       ) : (
         <Form onSubmit={(e) => handleInviteSubmit(e)}>
+          {/* ===== Search for Invite ====== */}
           <Form.Row>
             <Col>
               {/* <Form.Text className="text-muted">
