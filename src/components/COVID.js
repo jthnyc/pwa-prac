@@ -141,16 +141,6 @@ const COVID = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
-          <Accordion.Toggle as={Card.Header} variant="link" eventKey="13">
-            {t("covid.q-14")}
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="13">
-            <Card.Body>
-              <p>{t("covid.a-14")}</p>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
       </Accordion>
     </COVIDContainer>
   );
