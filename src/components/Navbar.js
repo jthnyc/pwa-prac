@@ -22,7 +22,7 @@ const Nav2 = () => {
           <StyledNavLink href="#lodging">{t("lodging.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
           <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
-          <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
+          {/* <StyledNavLink href="#email">{t("email.t")}</StyledNavLink> */}
           <StyledNavLink href="#album">{t("album.t")}</StyledNavLink>
         </StyledNav>
         <LangContainer>

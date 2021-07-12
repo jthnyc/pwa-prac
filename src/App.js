@@ -11,7 +11,7 @@ import {
   Nav2,
   Story,
   Faq,
-  Email,
+  // Email,
   Wedding,
   COVID,
   PhotoGallery,
@@ -101,14 +101,14 @@ function App() {
           <Panels>
             <Faq />
           </Panels>
-          <Images3 />
+          <Images6 />
           <Panels>
             <COVID />
           </Panels>
-          <Images6 />
-          <Panels>
+
+          {/* <Panels>
             <Email />
-          </Panels>
+          </Panels> */}
           <Images5 />
           <PhotoGallery />
           <Footer />

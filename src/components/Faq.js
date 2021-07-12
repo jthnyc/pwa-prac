@@ -11,8 +11,6 @@ const Faq = () => {
       <h2>{t("faq.t")}</h2>
       <p>
         {t("faq.subt")}
-        <a href="#email">{t("email.t")}</a>
-        {t("faq.subt-zh")}
         <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
       </p>
       <Accordion defaultActiveKey="0">
@@ -83,6 +81,16 @@ const Faq = () => {
           <Accordion.Collapse eventKey="5">
             <Card.Body>
               <p>{t("faq.a6")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="6">
+            {t("faq.q7")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="6">
+            <Card.Body>
+              <p>{t("faq.a7")}</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

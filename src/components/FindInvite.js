@@ -113,15 +113,16 @@ const FindInvite = () => {
     setInviteID(inviteDetails.id);
     setRSVPResponded(true);
 
-    let rsvpState = await Promise.all(inviteDetails.rsvpState);
-    console.log("accept or declined? ", rsvpState.join(""));
-    setRSVPState(rsvpState.join(""));
+    let rsvpState = await inviteDetails.rsvpState;
+    if (rsvpState) {
+      setRSVPState(rsvpState.join(""));
+    }
 
-    let confirmedGuests = await Promise.all(inviteDetails.confirmedGuests);
-    console.log("CONFIRMED GUESTS: ", confirmedGuests);
-    setConfirmedGuests([...inviteDetails.confirmedGuests]);
+    let confirmedGuests = await inviteDetails.confirmedGuests;
+    if (confirmedGuests) {
+      setConfirmedGuests([...inviteDetails.confirmedGuests]);
+    }
 
-    console.log();
     let plusOnes = await Promise.all(
       inviteDetails.guests
         .filter((guest) => guest.id !== foundGuest.id)
