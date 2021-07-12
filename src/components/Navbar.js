@@ -12,15 +12,17 @@ const Nav2 = () => {
   }
 
   return (
-    <StyledNavbar fixed="top" bg="light" expand="lg">
+    <StyledNavbar inverse collapseOnSelect fixed="top" bg="light" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <StyledNav className="mr-auto">
           <StyledNavLink href="#story">{t("story.t")}</StyledNavLink>
           <StyledNavLink href="#wedding">{t("wedding.t")}</StyledNavLink>
+          <StyledNavLink href="#rsvp">{t("rsvp.t")}</StyledNavLink>
+          <StyledNavLink href="#lodging">{t("lodging.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
-          <StyledNavLink href="#email">{t("email.t")}</StyledNavLink>
           <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
+          {/* <StyledNavLink href="#email">{t("email.t")}</StyledNavLink> */}
           <StyledNavLink href="#album">{t("album.t")}</StyledNavLink>
         </StyledNav>
         <LangContainer>

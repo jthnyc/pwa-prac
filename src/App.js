@@ -5,15 +5,17 @@ import {
   Images1,
   Images2,
   Images3,
+  Images4,
   Images5,
   Images6,
-  AlbumNew,
   Nav2,
   Story,
   Faq,
-  Email,
   Wedding,
   COVID,
+  PhotoGallery,
+  RSVP,
+  Lodging,
   Footer,
 } from "./components/index";
 import styled from "styled-components";
@@ -88,18 +90,22 @@ function App() {
           </Panels>
           <Images2 />
           <Panels>
-            <Faq />
+            <RSVP />
           </Panels>
           <Images3 />
           <Panels>
-            <Email />
+            <Lodging />
           </Panels>
-          <Images6 />
+          <Images4 />
+          <Panels>
+            <Faq />
+          </Panels>
+          <Images5 />
           <Panels>
             <COVID />
           </Panels>
-          <Images5 />
-          <AlbumNew />
+          <Images6 />
+          <PhotoGallery />
           <Footer />
         </AppContainer>
       ) : (
@@ -110,7 +116,7 @@ function App() {
               <FormContainer>
                 <FormBox onSubmit={(e) => handleSubmit(e)}>
                   <TextField
-                    variant="outlined"
+                    variant="standard"
                     margin="normal"
                     required
                     fullWidth

@@ -1,30 +1,58 @@
-export {default as Welcome} from "./Welcome";
-export {default as NavMenu} from "./NavMenu";
-export {default as Nav} from "./Nav";
+// Landing
+export {default as Landing} from "./Landing";
+
+// Navbar
 export {default as Nav2} from "./Navbar";
+
+// Hero Image
+export {default as Welcome} from "./Welcome";
+
+// Story
 export {default as Story} from "./Story";
 export {default as StoryImage} from "./StoryImage";
-export {default as FindInvite} from "./FindInvite";
-export {default as RSVPform} from "./RSVPform";
+
+// Wedding
 export {default as Wedding} from "./Wedding";
-export {default as Travel} from "./Travel";
+export {default as AddToCalBtn} from "./AddToCalendar";
 export {default as Event} from "./Event";
 export {default as EventImage} from "./EventImage";
-export {default as Email} from "./Email";
+
+// RSVP (hidden at this time)
+export {default as FindInvite} from "./FindInvite";
+export {default as RSVPform} from "./RSVPform";
+export {default as RSVP} from "./RSVP";
+
+// Lodging
+export {default as Lodging} from "./Lodging";
+
+// FAQ
 export {default as Faq} from "./Faq";
+
+// Email
+export {default as Email} from "./Email";
+
+// Recommendations
+export {default as Recommendations} from "./Recommendations";
+
+// COVID Info
 export {default as COVID} from "./COVID";
-export {default as Footer} from "./Footer";
-export {default as Landing} from "./Landing";
+
+// Travel
+export {default as Travel} from "./Travel";
+
+// Photos
 export {default as Photos} from "./Photos";
+export {default as Album} from "./Album";
+export {default as AlbumUI} from "./AlbumUI";
+export {default as AlbumNew} from "./AlbumNew";
+export {default as PhotoTile} from "./PhotoTile";
+export {default as PhotoGallery} from "./PhotoGallery";
 export {default as Images1} from "./Images/Images1";
 export {default as Images2} from "./Images/Images2";
 export {default as Images3} from "./Images/Images3";
 export {default as Images4} from "./Images/Images4";
 export {default as Images5} from "./Images/Images5";
 export {default as Images6} from "./Images/Images6";
-export {default as Album} from "./Album";
-export {default as PhotoTile} from "./PhotoTile";
-export {default as Recommendations} from "./Recommendations";
-export {default as AddToCalBtn} from "./AddToCalendar";
-export {default as AlbumNew} from "./AlbumNew";
-export {default as AlbumUI} from "./AlbumUI";
+
+// Footer
+export {default as Footer} from "./Footer";

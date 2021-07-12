@@ -31,6 +31,8 @@ const Faq = () => {
           <Accordion.Collapse eventKey="1">
             <Card.Body>
               <p>{t("faq.a2")}</p>
+              <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
+              <p>{t("faq.a2-en")}</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -51,6 +53,7 @@ const Faq = () => {
           <Accordion.Collapse eventKey="3">
             <Card.Body>
               <p>{t("faq.a4")}</p>
+              <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -61,6 +64,13 @@ const Faq = () => {
           <Accordion.Collapse eventKey="4">
             <Card.Body>
               <p>{t("faq.a5")}</p>
+              <a
+                href="https://www.honeyfund.com/wedding/GabrielandJoanna2021"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Joanna & Gabe HoneyFund
+              </a>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -71,6 +81,16 @@ const Faq = () => {
           <Accordion.Collapse eventKey="5">
             <Card.Body>
               <p>{t("faq.a6")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="6">
+            {t("faq.q7")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="6">
+            <Card.Body>
+              <p>{t("faq.a7")}</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

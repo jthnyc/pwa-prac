@@ -15,6 +15,7 @@ const Wedding = () => {
       <h2>{t("wedding.t")}</h2>
       <InfoContainer>
         <WeddingTextContainer>
+          <WeddingDate>Weylin</WeddingDate>
           <WeddingDate>{t("wedding.date")}</WeddingDate>
           <WeddingDate>{t("wedding.time")}</WeddingDate>
           <EventTime>{t("wedding.address")}</EventTime>
