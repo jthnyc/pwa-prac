@@ -8,7 +8,7 @@ const TypeformRSVP = () => {
   return (
     <TypeformContainer>
       {/* {i18n.language === "en" ? ( */}
-      <Widget id="RBAPAwmO" style={{width: "100%", height: "100%"}} />
+      <WidgetStyle id="RBAPAwmO" />
       {/* ) : ( */}
       {/* <Widget id="jsVnrVmd" style={{width: "100%", height: "100%"}} /> */}
       {/* )} */}
@@ -23,5 +23,14 @@ const TypeformContainer = styled.div`
 
   @media ${device.laptop} {
     height: 100vh;
+  }
+`;
+
+const WidgetStyle = styled(Widget)`
+  width: 100%;
+  height: 130%;
+
+  @media ${device.laptop} {
+    height: 100%;
   }
 `;

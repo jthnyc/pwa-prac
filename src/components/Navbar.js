@@ -12,7 +12,7 @@ const Nav2 = () => {
   }
 
   return (
-    <StyledNavbar fixed="top" bg="light" expand="lg">
+    <StyledNavbar inverse collapseOnSelect fixed="top" bg="light" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <StyledNav className="mr-auto">

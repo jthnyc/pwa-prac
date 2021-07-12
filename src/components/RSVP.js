@@ -11,6 +11,7 @@ const RSVP = () => {
   return (
     <RSVPContainer id="rsvp">
       <h2>{t("rsvp.t")}</h2>
+
       <TypeformRSVP />
     </RSVPContainer>
   );
@@ -22,8 +23,8 @@ const RSVPContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
-  height: 100vh;
-  padding: 8rem 0 4rem 0;
+  height: 120vh;
+  padding: 8rem 0 0 0;
   margin-left: 8%;
   margin-right: 8%;
 
@@ -32,6 +33,6 @@ const RSVPContainer = styled.div`
     margin-left: 10%;
     margin-right: 10%;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
   }
 `;
