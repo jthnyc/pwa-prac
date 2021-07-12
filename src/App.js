@@ -5,13 +5,12 @@ import {
   Images1,
   Images2,
   Images3,
+  Images4,
   Images5,
   Images6,
-  // AlbumNew,
   Nav2,
   Story,
   Faq,
-  // Email,
   Wedding,
   COVID,
   PhotoGallery,
@@ -97,19 +96,15 @@ function App() {
           <Panels>
             <Lodging />
           </Panels>
-          <Images2 />
+          <Images4 />
           <Panels>
             <Faq />
           </Panels>
-          <Images6 />
+          <Images5 />
           <Panels>
             <COVID />
           </Panels>
-
-          {/* <Panels>
-            <Email />
-          </Panels> */}
-          <Images5 />
+          <Images6 />
           <PhotoGallery />
           <Footer />
         </AppContainer>
