@@ -114,8 +114,9 @@ const FindInvite = () => {
     setRSVPResponded(true);
 
     let rsvpState = await inviteDetails.rsvpState;
+    console.log("rsvp state: ", rsvpState);
     if (rsvpState) {
-      setRSVPState(rsvpState.join(""));
+      setRSVPState(rsvpState);
     }
 
     let confirmedGuests = await inviteDetails.confirmedGuests;
@@ -518,7 +519,7 @@ export default FindInvite;
 
 const FormContainer = styled.div`
   padding-top: 2rem;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @media ${device.laptop} {
     padding: 2rem;

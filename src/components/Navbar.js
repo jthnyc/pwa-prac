@@ -76,18 +76,19 @@ const StyledNavLink = styled(Nav.Link)`
   margin: 1rem 0 0 1rem;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
+  border: 1px solid red;
 
   &:not(:last-child) {
     margin-right: 1.5rem;
   }
 
   @media ${device.tablet} {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0;
   }
 
   @media ${device.laptop} {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   @media ${device.laptopL} {
