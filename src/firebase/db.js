@@ -98,7 +98,7 @@ export const findGuestById = async (id) => {
  */
 export const findInviteByGuestId = async (id) => {
   const allInvites = await fetchAllInvites();
-  console.log("allInvites", allInvites);
+  // console.log("allInvites", allInvites);
   for (const invite of allInvites) {
     let match = invite.guests.find((guest) => guest.id === id);
     if (match) {

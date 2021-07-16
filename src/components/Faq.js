@@ -84,7 +84,7 @@ const Faq = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
+        {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="6">
             {t("faq.q7")}
           </Accordion.Toggle>
@@ -93,7 +93,7 @@ const Faq = () => {
               <p>{t("faq.a7")}</p>
             </Card.Body>
           </Accordion.Collapse>
-        </Card>
+        </Card> */}
       </Accordion>
     </FAQContainer>
   );

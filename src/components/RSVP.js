@@ -11,7 +11,7 @@ const RSVP = () => {
   return (
     <RSVPContainer id="rsvp">
       <h2>{t("rsvp.t")}</h2>
-
+      {/* <FindInvite /> */}
       <TypeformRSVP />
     </RSVPContainer>
   );
@@ -24,7 +24,7 @@ const RSVPContainer = styled.div`
   flex-direction: column;
   width: 80vw;
   height: 120vh;
-  padding: 8rem 0 0 0;
+  padding: 8rem 0;
   margin-left: 8%;
   margin-right: 8%;
 
