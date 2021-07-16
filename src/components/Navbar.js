@@ -64,19 +64,18 @@ const StyledNavbar = styled(Navbar)`
 
 const StyledNav = styled(Nav)`
   width: 50%;
+  margin: 0 20px;
 
-  @media ${device.mobileL} {
-    margin-top: 1.25rem;
+  @media ${device.tablet} {
+    margin: 0;
     width: 80%;
   }
 `;
 
 const StyledNavLink = styled(Nav.Link)`
   font-weight: bold;
-  margin: 1rem 0 0 1rem;
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
-  border: 1px solid red;
 
   &:not(:last-child) {
     margin-right: 1.5rem;
@@ -115,5 +114,6 @@ const LangButton = styled.button`
   visibility: ${(props) => (props.out ? "hidden" : "visible")};
   animation: ${(props) => (props.out ? fadeOut : fadeIn)} 3s linear;
   transition: visibility 3s linear;
-  margin: 1.25rem 0 0 1.25rem;
+  // margin: 1.25rem 0 0 1.25rem;
+  margin: 0 20px;
 `;
