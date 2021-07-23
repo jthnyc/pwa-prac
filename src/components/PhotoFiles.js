@@ -2,8 +2,8 @@ export const photos = [
   {
     src:
       "https://firebasestorage.googleapis.com/v0/b/pwa-prac-c87af.appspot.com/o/woods_gabe_jo.jpg?alt=media&token=716d4751-36da-4b3a-8ed4-2cc7b05ae3ff",
-    width: 14,
-    height: 20,
+    width: 2,
+    height: 3,
   },
   {
     src:
@@ -14,8 +14,8 @@ export const photos = [
   {
     src:
       "https://firebasestorage.googleapis.com/v0/b/pwa-prac-c87af.appspot.com/o/woods_jo.jpg?alt=media&token=78d24c68-579f-4972-a546-ff586d66b551",
-    width: 14,
-    height: 20,
+    width: 2,
+    height: 3,
   },
   {
     src:
