@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import {Accordion, Card} from "react-bootstrap";
+// import {Accordion, Card} from "react-bootstrap";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+} from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 
@@ -13,8 +20,97 @@ const Faq = () => {
         {t("faq.subt")}
         <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
       </p>
-      <Accordion defaultActiveKey="0">
-        <Card>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q1")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a1")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q2")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            {t("faq.a2")}
+            <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
+            {t("faq.a2-en")}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q3")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a3")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q4")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a4")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q5")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a5")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q6")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a6")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      {/* <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{t("faq.q7")}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("faq.a7")}</Typography>
+        </AccordionDetails>
+      </Accordion> */}
+
+      {/* <Accordion defaultActiveKey="0"> */}
+      {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
             {t("faq.q1")}
           </Accordion.Toggle>
@@ -83,8 +179,8 @@ const Faq = () => {
               <p>{t("faq.a6")}</p>
             </Card.Body>
           </Accordion.Collapse>
-        </Card>
-        {/* <Card>
+        </Card> */}
+      {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="6">
             {t("faq.q7")}
           </Accordion.Toggle>
@@ -94,7 +190,7 @@ const Faq = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card> */}
-      </Accordion>
+      {/* </Accordion> */}
     </FAQContainer>
   );
 };
