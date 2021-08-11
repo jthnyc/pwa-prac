@@ -12,14 +12,53 @@ const Lodging = () => {
       name: "Williamsburg Hotel",
       address: "96 Wythe Ave, Brooklyn, NY 11249",
       time: "10 minutes",
-      map: "https://www.google.com",
+      map: "https://g.page/thewilliamsburghotel?share",
+      site: "https://www.thewilliamsburghotel.com/",
     },
     {
       id: "panel2",
+      name: "Hoxton Hotel",
+      address: "97 Wythe Ave, Brooklyn, NY 11249",
+      discount: "HITCHED1121",
+      time: "20 minutes",
+      map: "https://goo.gl/maps/ndqgAKfbBBCWooBM9",
+      site: "https://thehoxton.com/",
+    },
+    {
+      id: "panel4",
       name: "PUBLIC Hotel",
       address: "215 Chrystie St, New York, NY 10002",
       time: "30 minutes",
+      map: "https://goo.gl/maps/9nxZtRS51sRvjKxW8",
+      site: "https://www.publichotels.com/",
+    },
+    {
+      id: "panel5",
+      name: "Hilten Garden Inn Long Island City",
+      address: "29-21 41st Ave, Queens, NY 11101",
+      time: "15 minutes",
+      map:
+        "https://www.google.com/maps/dir//Hilton+Garden+Inn+Long+Island+City+New+York,+29-21+41st+Ave,+Queens,+NY+11101/@40.750225,-73.9391123,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c258d53a538c4b:0x8be3a5af657ae00a!2m2!1d-73.9369236!2d40.750225!3e0",
+      site:
+        "https://www.hilton.com/en/hotels/ispicgi-hilton-garden-inn-long-island-city-new-york/",
+    },
+    {
+      id: "panel6",
+      name: "Hyatt Place Long Island City",
+      address: "27-03 43rd Ave, Queens, NY 11101",
+      time: "15 minutes",
       map: "https://www.google.com",
+      site:
+        "https://www.hyatt.com/en-US/hotel/new-york/hyatt-place-long-island-city-new-york-city/lgazl?src=corp_lclb_gmb_seo_lgazl",
+    },
+    {
+      id: "panel7",
+      name: "Courtyard by Marriott Long Island City",
+      address: "29-15 Queens Plaza N, Queens, NY 11101",
+      time: "20 minutes",
+      map: "https://www.google.com",
+      site:
+        "https://www.marriott.com/hotels/travel/nycql-courtyard-long-island-city-new-york-manhattan-view/",
     },
     {
       id: "panel3",
@@ -27,43 +66,7 @@ const Lodging = () => {
       address: "60 Furman St, Brooklyn, NY 11201",
       time: "20 minutes",
       map: "https://www.google.com",
-    },
-    {
-      id: "panel4",
-      name: "Hoxton Hotel",
-      address: "97 Wythe Ave, Brooklyn, NY 11249",
-      discount: "HITCHED1121",
-      time: "20 minutes",
-      map: "https://www.google.com",
-    },
-    {
-      id: "panel5",
-      name: "Williamsburg Hotel",
-      address: "96 Wythe Ave, Brooklyn, NY 11249",
-      time: "10 minutes",
-      map: "https://www.google.com",
-    },
-    {
-      id: "panel6",
-      name: "PUBLIC Hotel",
-      address: "215 Chrystie St, New York, NY 10002",
-      time: "30 minutes",
-      map: "https://www.google.com",
-    },
-    {
-      id: "panel7",
-      name: "ONE Hotel",
-      address: "60 Furman St, Brooklyn, NY 11201",
-      time: "20 minutes",
-      map: "https://www.google.com",
-    },
-    {
-      id: "panel8",
-      name: "Hoxton Hotel",
-      address: "97 Wythe Ave, Brooklyn, NY 11249",
-      discount: "HITCHED1121",
-      time: "20 minutes",
-      map: "https://www.google.com",
+      site: "https://www.1hotels.com/brooklyn-bridge",
     },
   ];
 
@@ -87,9 +90,11 @@ const Lodging = () => {
                 <Hotels
                   key={hotel.id}
                   name={hotel.name}
+                  address={hotel.address}
                   discount={hotel.discount}
                   time={hotel.time}
                   map={hotel.map}
+                  site={hotel.site}
                 />
               );
             })}
@@ -117,31 +122,24 @@ const LodgingContainer = styled.div`
 `;
 
 const RecMapContainer = styled.div`
-  width: 320px;
-  height: 480px;
+  width: 80vw;
+  height: 70vh;
+  box-shadow: 10px 5px 5px gray;
+  // border: 2px solid purple;
 
   @media ${device.mobileL} {
-    width: 400px;
-    height: 580px;
+    width: 85vw;
   }
-  @media ${device.tablet} {
-    width: 650px;
-    height: 480px;
-  }
-  @media ${device.laptop} {
-    width: 840px;
-    height: 580px;
-  }
+
   @media ${device.laptopL} {
-    width: 740px;
-    height: 680px;
+    width: 50vw;
   }
 `;
 
 const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @media ${device.laptopL} {
     flex-direction: row;
@@ -149,8 +147,6 @@ const DetailContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  border: 1px solid blue;
-  min-width: 600px;
   margin-left: 0;
   margin-top: 30px;
   display: block;

@@ -262,6 +262,7 @@ const Time = styled.span`
 const MapContainer = styled.div`
   width: 18.75rem;
   height: 15.625rem;
+  box-shadow: 10px 5px 5px gray;
 
   @media ${device.mobileL} {
     width: 30.75rem;
