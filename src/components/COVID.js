@@ -12,14 +12,14 @@ const COVID = () => {
       <p>{t("covid.subt")}</p>
       <SumList>
         <li>
-          <strong>{t("covid.sum1")}</strong>
+          <strong>{t("covid.s-1")}</strong>
         </li>
-        <li>{t("covid.sum2")}</li>
-        <li>{t("covid.sum3")}</li>
-        <li>{t("covid.sum4")}</li>
-        <li>{t("covid.sum5")}</li>
+        <li>{t("covid.s-2")}</li>
+        <li>{t("covid.s-3")}</li>
+        <li>{t("covid.s-4")}</li>
+        <li>{t("covid.s-5")}</li>
       </SumList>
-      <p>{t("covid.subt2")}</p>
+      <p>{t("covid.note")}</p>
       <Accordion defaultActiveKey="13">
         <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="13">

@@ -23,7 +23,7 @@ const Faq = () => {
               <p>
                 {t("faq.a1")}
                 <a href="#covid">COVID Safety Policy</a>
-                {t("faq.a1-2")}
+                {t("faq.a12")}
               </p>
             </Card.Body>
           </Accordion.Collapse>
