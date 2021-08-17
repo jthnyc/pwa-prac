@@ -10,7 +10,47 @@ const COVID = () => {
     <COVIDContainer id="covid">
       <h2>{t("covid.t")}</h2>
       <p>{t("covid.subt")}</p>
-      <Accordion defaultActiveKey="0">
+      <SumList>
+        <li>
+          <strong>{t("covid.sum1")}</strong>
+        </li>
+        <li>{t("covid.sum2")}</li>
+        <li>{t("covid.sum3")}</li>
+        <li>{t("covid.sum4")}</li>
+        <li>{t("covid.sum5")}</li>
+      </SumList>
+      <p>{t("covid.subt2")}</p>
+      <Accordion defaultActiveKey="13">
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="13">
+            {t("covid.q-14")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="13">
+            <Card.Body>
+              <p>{t("covid.a-14")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="14">
+            {t("covid.q-15")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="14">
+            <Card.Body>
+              <p>{t("covid.a-15")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="8">
+            {t("covid.q-9")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="8">
+            <Card.Body>
+              <p>{t("covid.a-9")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
         <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
             {t("covid.q-1")}
@@ -18,6 +58,16 @@ const COVID = () => {
           <Accordion.Collapse eventKey="0">
             <Card.Body>
               <p>{t("covid.a-1")}</p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="15">
+            {t("covid.q-16")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="15">
+            <Card.Body>
+              <p>{t("covid.a-16")}</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -91,17 +141,8 @@ const COVID = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
-          <Accordion.Toggle as={Card.Header} variant="link" eventKey="8">
-            {t("covid.q-9")}
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="8">
-            <Card.Body>
-              <p>{t("covid.a-9")}</p>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-        <Card>
+
+        {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="9">
             {t("covid.q-10")}
           </Accordion.Toggle>
@@ -110,8 +151,8 @@ const COVID = () => {
               <p>{t("covid.a-10")}</p>
             </Card.Body>
           </Accordion.Collapse>
-        </Card>
-        <Card>
+        </Card> */}
+        {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="10">
             {t("covid.q-11")}
           </Accordion.Toggle>
@@ -120,8 +161,8 @@ const COVID = () => {
               <p>{t("covid.a-11")}</p>
             </Card.Body>
           </Accordion.Collapse>
-        </Card>
-        <Card>
+        </Card> */}
+        {/* <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="11">
             {t("covid.q-12")}
           </Accordion.Toggle>
@@ -130,7 +171,7 @@ const COVID = () => {
               <p>{t("covid.a-12")}</p>
             </Card.Body>
           </Accordion.Collapse>
-        </Card>
+        </Card> */}
         <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="12">
             {t("covid.q-13")}
@@ -154,10 +195,19 @@ const COVIDContainer = styled.div`
   padding: 8rem 0;
   margin-left: 8%;
   margin-right: 8%;
+  min-width: 80vw;
 
   @media ${device.laptop} {
     padding: 5rem 0;
     margin-left: 10%;
     margin-right: 10%;
+  }
+`;
+
+const SumList = styled.ul`
+  margin-left: 0;
+
+  @media ${device.laptop} {
+    margin-left: 20px;
   }
 `;

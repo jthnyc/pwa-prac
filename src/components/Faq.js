@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import {Accordion, Card} from "react-bootstrap";
-// import {
-//   Accordion,
-//   AccordionSummary,
-//   AccordionDetails,
-//   Typography,
-// } from "@material-ui/core";
-// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {useTranslation} from "react-i18next";
 import {device} from "../device";
 
@@ -20,19 +13,6 @@ const Faq = () => {
         {t("faq.subt")}
         <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
       </p>
-      {/* <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>{t("faq.q7")}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{t("faq.a7")}</Typography>
-        </AccordionDetails>
-      </Accordion> */}
-
       <Accordion defaultActiveKey="0">
         <Card>
           <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
@@ -40,7 +20,28 @@ const Faq = () => {
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <p>{t("faq.a1")}</p>
+              <p>
+                {t("faq.a1")}
+                <a href="#covid">COVID Safety Policy</a>
+                {t("faq.a1-2")}
+              </p>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} variant="link" eventKey="4">
+            {t("faq.q5")}
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="4">
+            <Card.Body>
+              <p>{t("faq.a5")}</p>
+              <a
+                href="https://www.honeyfund.com/wedding/GabrielandJoanna2021"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Joanna & Gabe HoneyFund
+              </a>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -74,23 +75,6 @@ const Faq = () => {
             <Card.Body>
               <p>{t("faq.a4")}</p>
               <a href="mailto:hello@joannaandgabriel.love">Hello@JoannaAndGabriel.love</a>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-        <Card>
-          <Accordion.Toggle as={Card.Header} variant="link" eventKey="4">
-            {t("faq.q5")}
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="4">
-            <Card.Body>
-              <p>{t("faq.a5")}</p>
-              <a
-                href="https://www.honeyfund.com/wedding/GabrielandJoanna2021"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Joanna & Gabe HoneyFund
-              </a>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    height: 330,
+    height: 380,
     width: 240,
     textAlign: "center",
     color: theme.palette.text.secondary,
@@ -44,6 +44,7 @@ const Hotels = ({id, name, address, discount, time, map, site}) => {
                 <LinkText>Google Map</LinkText>
               </Links>
             </LinkContainer>
+            <p>Booking Details Coming Soon!</p>
             {/* <LinkContainer>
               <LanguageIcon />
               <Links href={site} target="_blank" rel="noopener noreferrer">
