@@ -85,18 +85,10 @@ const HotelName = styled.h4`
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
-
-  @media ${device.mobileL} {
-    // font-size: 1em;
-  }
 `;
 
 const TravelTime = styled.p`
   // font-size: 0.6em;
-
-  @media ${device.mobileL} {
-    // font-size: 1em;
-  }
 `;
 
 const Time = styled.div`
@@ -105,16 +97,8 @@ const Time = styled.div`
 
 const HotelAddress = styled.p`
   // font-size: 0.6em;
-
-  @media ${device.mobileL} {
-    // font-size: 1em;
-  }
 `;
 
 const LinkText = styled.p`
   // font-size: 0.6em;
-
-  @media ${device.mobileL} {
-    // font-size: 1em;
-  }
 `;
