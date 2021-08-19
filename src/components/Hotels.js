@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Grid, Paper} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import MapIcon from "@material-ui/icons/Map";
-// import LanguageIcon from "@material-ui/icons/Language";
+import LanguageIcon from "@material-ui/icons/Language";
 import {device} from "../device";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Hotels = ({id, name, address, discount, time, map, site}) => {
+const Hotels = ({id, name, address, discount, time, map, book}) => {
   const classes = useStyles();
 
   return (
@@ -44,7 +44,16 @@ const Hotels = ({id, name, address, discount, time, map, site}) => {
                 <LinkText>Google Map</LinkText>
               </Links>
             </LinkContainer>
-            <p>Booking Details Coming Soon!</p>
+            {book ? (
+              <LinkContainer>
+                <LanguageIcon />
+                <Links href={book} target="_blank" rel="noopener noreferrer">
+                  <LinkText>Booking Link</LinkText>
+                </Links>
+              </LinkContainer>
+            ) : (
+              <p>Booking Details Coming Soon!</p>
+            )}
             {/* <LinkContainer>
               <LanguageIcon />
               <Links href={site} target="_blank" rel="noopener noreferrer">

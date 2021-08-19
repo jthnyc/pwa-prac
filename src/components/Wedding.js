@@ -16,9 +16,13 @@ const Wedding = () => {
       <InfoContainer>
         <WeddingTextContainer>
           <WeddingDate>Weylin</WeddingDate>
+          {/* <WeylinLogo>
+            <img src={weylin_logo} alt="Weylin logo" width="100%" height="100%" />
+          </WeylinLogo> */}
           <WeddingDate>{t("wedding.date")}</WeddingDate>
           <WeddingDate>{t("wedding.time")}</WeddingDate>
           <EventTime>{t("wedding.address")}</EventTime>
+          <WeddingDate>{t("wedding.attire")}</WeddingDate>
         </WeddingTextContainer>
         <br />
         <WeddingDetailContainer>
@@ -151,6 +155,13 @@ const WeddingDetailContainer = styled.div`
     margin-right: 0;
   }
 `;
+
+// const WeylinLogo = styled.div`
+//   width: 15.625rem;
+//   height: 7.5rem;
+//   // border: 1px solid red;
+//   margin-left: 9.375rem;
+// `;
 
 const WeddingDate = styled.h3`
   font-size: 1.5rem;

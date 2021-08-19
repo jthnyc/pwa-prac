@@ -27,7 +27,7 @@ const Lodging = () => {
       map: "https://g.page/courtyardlongislandcity?share",
       site:
         "https://www.marriott.com/hotels/travel/nycql-courtyard-long-island-city-new-york-manhattan-view/",
-      book: "",
+      book: "https://www.marriott.com/events/start.mi?id=1629230249158&key=GRP",
     },
   ];
 
@@ -57,7 +57,7 @@ const Lodging = () => {
                       discount={hotel.discount}
                       time={hotel.time}
                       map={hotel.map}
-                      site={hotel.site}
+                      book={hotel.book}
                     />
                   );
                 })}

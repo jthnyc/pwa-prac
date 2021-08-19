@@ -37,9 +37,6 @@ export {default as Recommendations} from "./Recommendations";
 // COVID Info
 export {default as COVID} from "./COVID";
 
-// Travel
-export {default as Travel} from "./Travel";
-
 // Photos
 export {default as Photos} from "./Photos";
 export {default as Album} from "./Album";
