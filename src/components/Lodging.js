@@ -17,7 +17,8 @@ const Lodging = () => {
         "https://www.google.com/maps/dir//Hilton+Garden+Inn+Long+Island+City+New+York,+29-21+41st+Ave,+Queens,+NY+11101/@40.750225,-73.9391123,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c258d53a538c4b:0x8be3a5af657ae00a!2m2!1d-73.9369236!2d40.750225!3e0",
       site:
         "https://www.hilton.com/en/hotels/ispicgi-hilton-garden-inn-long-island-city-new-york/",
-      book: "",
+      book:
+        "https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=ISPICGI&groupCode=HMWB21&arrivaldate=2021-11-19&departuredate=2021-11-21&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT",
     },
     {
       id: "panel2",
