@@ -30,6 +30,27 @@ const Lodging = () => {
         "https://www.marriott.com/hotels/travel/nycql-courtyard-long-island-city-new-york-manhattan-view/",
       book: "https://www.marriott.com/events/start.mi?id=1629230249158&key=GRP",
     },
+    {
+      id: "panel3",
+      name: "Hyatt Place Long Island City",
+      address: "27-03 43rd Ave, Queens, NY 11101",
+      time: "20 minutes",
+      map: "https://goo.gl/maps/ypRcG2RpvjYaec4u8",
+      site:
+        "https://www.hyatt.com/en-US/hotel/new-york/hyatt-place-long-island-city-new-york-city/lgazl?src=corp_lclb_gmb_seo_lgazl",
+      book:
+        "https://www.hyatt.com/en-US/hotel/new-york/hyatt-place-long-island-city-new-york-city/lgazl?corp_id=G-JG21",
+    },
+    {
+      id: "panel4",
+      name: "PUBLIC Hotel",
+      address: "215 Chrystie St, New York, NY 10002",
+      time: "15-20 minutes",
+      map: "https://goo.gl/maps/FDHghpqcfjYHM7YQA",
+      site:
+        "https://www.publichotels.com/?utm_source=local-directories&utm_medium=organic&utm_campaign=travelclick-localconnect",
+      discount: "Joanna-Gabe Wedding Group Block",
+    },
   ];
 
   return (

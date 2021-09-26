@@ -52,7 +52,7 @@ const Hotels = ({id, name, address, discount, time, map, book}) => {
                 </Links>
               </LinkContainer>
             ) : (
-              <p>Booking Details Coming Soon!</p>
+              <p>Booking Link Coming Soon!</p>
             )}
             {/* <LinkContainer>
               <LanguageIcon />
