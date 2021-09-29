@@ -50,6 +50,8 @@ const Lodging = () => {
       site:
         "https://www.publichotels.com/?utm_source=local-directories&utm_medium=organic&utm_campaign=travelclick-localconnect",
       discount: "Joanna-Gabe Wedding Group Block",
+      book:
+        "https://be.synxis.com/?adult=1&arrive=2021-11-19&chain=6312&child=0&currency=USD&depart=2021-11-21&group=101921JOAN&hotel=75126&level=hotel&locale=en-US&rooms=1",
     },
   ];
 
