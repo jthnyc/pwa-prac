@@ -37,7 +37,6 @@ const Hotels = ({id, name, bookby, discount, time, map, book}) => {
               <br />
               <Time>{time}</Time>
             </TravelTime>
-            <HotelAddress>{bookby}</HotelAddress>
             <LinkContainer>
               <MapIcon />
               <Links href={map} target="_blank" rel="noopener noreferrer">
@@ -54,6 +53,7 @@ const Hotels = ({id, name, bookby, discount, time, map, book}) => {
             ) : (
               <p>Booking Link Coming Soon!</p>
             )}
+            <HotelAddress>{bookby}</HotelAddress>
             {/* <LinkContainer>
               <LanguageIcon />
               <Links href={site} target="_blank" rel="noopener noreferrer">
