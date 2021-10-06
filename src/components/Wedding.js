@@ -22,6 +22,7 @@ const Wedding = () => {
           <WeddingDate>{t("wedding.date")}</WeddingDate>
           <WeddingDate>{t("wedding.time")}</WeddingDate>
           <EventTime>{t("wedding.address")}</EventTime>
+          <br />
           <WeddingDate>{t("wedding.attire")}</WeddingDate>
         </WeddingTextContainer>
         <br />
