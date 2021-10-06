@@ -11,7 +11,7 @@ const Lodging = () => {
     {
       id: "panel1",
       name: "Hilton Garden Inn Long Island City",
-      address: "29-21 41st Ave, Queens, NY 11101",
+      bookby: "Book by October 19th",
       time: "20 minutes",
       map:
         "https://www.google.com/maps/dir//Hilton+Garden+Inn+Long+Island+City+New+York,+29-21+41st+Ave,+Queens,+NY+11101/@40.750225,-73.9391123,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c258d53a538c4b:0x8be3a5af657ae00a!2m2!1d-73.9369236!2d40.750225!3e0",
@@ -23,7 +23,7 @@ const Lodging = () => {
     {
       id: "panel2",
       name: "Courtyard by Marriott Long Island City",
-      address: "29-15 Queens Plaza N, Queens, NY 11101",
+      bookby: "Book by October 19th",
       time: "20 minutes",
       map: "https://g.page/courtyardlongislandcity?share",
       site:
@@ -32,19 +32,8 @@ const Lodging = () => {
     },
     {
       id: "panel3",
-      name: "Hyatt Place Long Island City",
-      address: "27-03 43rd Ave, Queens, NY 11101",
-      time: "20 minutes",
-      map: "https://goo.gl/maps/ypRcG2RpvjYaec4u8",
-      site:
-        "https://www.hyatt.com/en-US/hotel/new-york/hyatt-place-long-island-city-new-york-city/lgazl?src=corp_lclb_gmb_seo_lgazl",
-      book:
-        "https://www.hyatt.com/en-US/hotel/new-york/hyatt-place-long-island-city-new-york-city/lgazl?corp_id=G-JG21",
-    },
-    {
-      id: "panel4",
       name: "PUBLIC Hotel",
-      address: "215 Chrystie St, New York, NY 10002",
+      bookby: "Book by October 29th",
       time: "15-20 minutes",
       map: "https://goo.gl/maps/FDHghpqcfjYHM7YQA",
       site:
@@ -77,7 +66,7 @@ const Lodging = () => {
                     <Hotels
                       key={hotel.id}
                       name={hotel.name}
-                      address={hotel.address}
+                      bookby={hotel.bookby}
                       discount={hotel.discount}
                       time={hotel.time}
                       map={hotel.map}

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Hotels = ({id, name, address, discount, time, map, book}) => {
+const Hotels = ({id, name, bookby, discount, time, map, book}) => {
   const classes = useStyles();
 
   return (
@@ -37,7 +37,7 @@ const Hotels = ({id, name, address, discount, time, map, book}) => {
               <br />
               <Time>{time}</Time>
             </TravelTime>
-            <HotelAddress>{address}</HotelAddress>
+            <HotelAddress>{bookby}</HotelAddress>
             <LinkContainer>
               <MapIcon />
               <Links href={map} target="_blank" rel="noopener noreferrer">

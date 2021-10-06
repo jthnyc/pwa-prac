@@ -14,10 +14,18 @@ const COVID = () => {
         <li>
           <strong>{t("covid.s-1")}</strong>
         </li>
-        <li>{t("covid.s-2")}</li>
-        <li>{t("covid.s-3")}</li>
-        <li>{t("covid.s-4")}</li>
-        <li>{t("covid.s-5")}</li>
+        <li>
+          <strong>{t("covid.s-2")}</strong>
+        </li>
+        <li>
+          <strong>{t("covid.s-3")}</strong>
+        </li>
+        <li>
+          <strong>{t("covid.s-4")}</strong>
+        </li>
+        <li>
+          <strong>{t("covid.s-5")}</strong>
+        </li>
       </SumList>
       <p>{t("covid.note")}</p>
       <Accordion defaultActiveKey="13">
