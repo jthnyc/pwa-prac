@@ -22,6 +22,9 @@ export {default as FindInvite} from "./FindInvite";
 export {default as RSVPform} from "./RSVPform";
 export {default as RSVP} from "./RSVP";
 
+// Registry
+export {default as Registry} from "./Registry";
+
 // Lodging
 export {default as Lodging} from "./Lodging";
 

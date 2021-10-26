@@ -14,7 +14,8 @@ import {
   Wedding,
   COVID,
   PhotoGallery,
-  RSVP,
+  // RSVP,
+  Registry,
   Lodging,
   Footer,
 } from "./components/index";
@@ -90,7 +91,8 @@ function App() {
           </Panels>
           <Images2 />
           <Panels>
-            <RSVP />
+            {/* <RSVP /> */}
+            <Registry />
           </Panels>
           <Images3 />
           <Panels>

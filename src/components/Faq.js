@@ -42,6 +42,9 @@ const Faq = () => {
               >
                 Joanna & Gabe HoneyFund
               </a>
+              <p>
+                {t("faq.a5-1")} <a href="#registry">{t("registry.t")}</a>
+              </p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

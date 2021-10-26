@@ -18,7 +18,7 @@ const Nav2 = () => {
         <StyledNav className="mr-auto">
           <StyledNavLink href="#story">{t("story.t")}</StyledNavLink>
           <StyledNavLink href="#wedding">{t("wedding.t")}</StyledNavLink>
-          <StyledNavLink href="#rsvp">{t("rsvp.t")}</StyledNavLink>
+          <StyledNavLink href="#registry">{t("registry.t")}</StyledNavLink>
           <StyledNavLink href="#lodging">{t("lodging.t")}</StyledNavLink>
           <StyledNavLink href="#faq">{t("faq.t")}</StyledNavLink>
           <StyledNavLink href="#covid">{t("covid.nav")}</StyledNavLink>
