@@ -12,11 +12,11 @@ const Registry = () => {
         <FirstLine>{t("registry.l1")}</FirstLine>
         <p>
           <a
-            href="https://www.honeyfund.com/wedding/GabrielandJoanna2021"
+            href="https://www.zola.com/registry/joannaandgabe"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Joanna & Gabe HoneyFund
+            Joanna & Gabe Registry
           </a>
         </p>
       </RegistryText>
