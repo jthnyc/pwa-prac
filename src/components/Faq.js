@@ -36,11 +36,11 @@ const Faq = () => {
             <Card.Body>
               <p>{t("faq.a5")}</p>
               <a
-                href="https://www.honeyfund.com/wedding/GabrielandJoanna2021"
+                href="https://www.zola.com/registry/joannaandgabe"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Joanna & Gabe HoneyFund
+                Joanna & Gabe Zola Registry
               </a>
               <p>
                 {t("faq.a5-1")} <a href="#registry">{t("registry.t")}</a>
