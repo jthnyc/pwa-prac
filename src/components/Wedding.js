@@ -39,6 +39,28 @@ const Wedding = () => {
             ></iframe>
           </MapContainer>
           <EventTextContainer>
+            <WeddingDate>{t("wedding.transportation")}</WeddingDate>
+            <p>
+              {t("wedding.lyftone")}
+              <a
+                href="https://www.lyft.com/lp/GABEMYHEARTTOJO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.lyft.com/lp/GABEMYHEARTTOJO
+              </a>
+              {t("wedding.lyfttwo")}
+            </p>
+            <p>
+              {t("wedding.lyftthree")}
+              <a
+                href="https://www.lyft.com/rider/lyftpass"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.lyft.com/rider/lyftpass
+              </a>
+            </p>
             <WeddingDate>{t("wedding.schedule")}</WeddingDate>
             <p>{t("wedding.subt")}</p>
             <EventList>
