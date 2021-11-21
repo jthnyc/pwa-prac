@@ -16,11 +16,15 @@ export {default as Wedding} from "./Wedding";
 export {default as AddToCalBtn} from "./AddToCalendar";
 export {default as Event} from "./Event";
 export {default as EventImage} from "./EventImage";
+export {default as PostParty} from "./PostParty";
 
 // RSVP (hidden at this time)
 export {default as FindInvite} from "./FindInvite";
 export {default as RSVPform} from "./RSVPform";
 export {default as RSVP} from "./RSVP";
+
+// Registry
+export {default as Registry} from "./Registry";
 
 // Lodging
 export {default as Lodging} from "./Lodging";
@@ -36,9 +40,6 @@ export {default as Recommendations} from "./Recommendations";
 
 // COVID Info
 export {default as COVID} from "./COVID";
-
-// Travel
-export {default as Travel} from "./Travel";
 
 // Photos
 export {default as Photos} from "./Photos";

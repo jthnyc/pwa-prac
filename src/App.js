@@ -9,12 +9,14 @@ import {
   Images5,
   Images6,
   Nav2,
-  Story,
+  // Story,
   Faq,
   Wedding,
+  PostParty,
   COVID,
   PhotoGallery,
-  RSVP,
+  // RSVP,
+  Registry,
   Lodging,
   Footer,
 } from "./components/index";
@@ -82,7 +84,8 @@ function App() {
           <Nav2 />
           <Welcome />
           <Panels>
-            <Story />
+            {/* <Story /> */}
+            <PostParty />
           </Panels>
           <Images1 />
           <Panels>
@@ -90,7 +93,8 @@ function App() {
           </Panels>
           <Images2 />
           <Panels>
-            <RSVP />
+            {/* <RSVP /> */}
+            <Registry />
           </Panels>
           <Images3 />
           <Panels>

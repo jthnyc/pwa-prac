@@ -16,9 +16,14 @@ const Wedding = () => {
       <InfoContainer>
         <WeddingTextContainer>
           <WeddingDate>Weylin</WeddingDate>
+          {/* <WeylinLogo>
+            <img src={weylin_logo} alt="Weylin logo" width="100%" height="100%" />
+          </WeylinLogo> */}
           <WeddingDate>{t("wedding.date")}</WeddingDate>
           <WeddingDate>{t("wedding.time")}</WeddingDate>
           <EventTime>{t("wedding.address")}</EventTime>
+          <br />
+          <WeddingDate>{t("wedding.attire")}</WeddingDate>
         </WeddingTextContainer>
         <br />
         <WeddingDetailContainer>
@@ -34,6 +39,28 @@ const Wedding = () => {
             ></iframe>
           </MapContainer>
           <EventTextContainer>
+            <WeddingDate>{t("wedding.transportation")}</WeddingDate>
+            <p>
+              {t("wedding.lyftone")}
+              <a
+                href="https://www.lyft.com/lp/GABEMYHEARTTOJO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.lyft.com/lp/GABEMYHEARTTOJO
+              </a>
+              {t("wedding.lyfttwo")}
+            </p>
+            <p>
+              {t("wedding.lyftthree")}
+              <a
+                href="https://www.lyft.com/rider/lyftpass"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.lyft.com/rider/lyftpass
+              </a>
+            </p>
             <WeddingDate>{t("wedding.schedule")}</WeddingDate>
             <p>{t("wedding.subt")}</p>
             <EventList>
@@ -152,6 +179,13 @@ const WeddingDetailContainer = styled.div`
   }
 `;
 
+// const WeylinLogo = styled.div`
+//   width: 15.625rem;
+//   height: 7.5rem;
+//   // border: 1px solid red;
+//   margin-left: 9.375rem;
+// `;
+
 const WeddingDate = styled.h3`
   font-size: 1.5rem;
 
@@ -262,6 +296,7 @@ const Time = styled.span`
 const MapContainer = styled.div`
   width: 18.75rem;
   height: 15.625rem;
+  box-shadow: 10px 5px 5px gray;
 
   @media ${device.mobileL} {
     width: 30.75rem;

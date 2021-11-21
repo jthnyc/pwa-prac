@@ -24,3 +24,4 @@ export {default as woods_jo} from "./woods_jo.jpg";
 export {default as weddingBackground} from "./bkg.png";
 export {default as branchTop} from "./top.png";
 export {default as branchBottom} from "./bottom.png";
+export {default as weylin_logo} from "./weylin_logo_hi_res.jpg";
