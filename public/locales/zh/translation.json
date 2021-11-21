@@ -32,6 +32,14 @@
     "reception": "宴會",
     "receptionTime": "晚間 7 點"
   },
+  "postparty": {
+    "t": "Thank You",
+    "l1": "Thank you for coming! We are so happy to be able to celebrate with you.  \n\nIf you have any photos you'd like to share, you can drop them in this ",
+    "l2": " or feel free to tag us via ",
+    "l3": "#GabeMyHeartToJo",
+    "l4": " via social media!",
+    "l5": "\n\nWe can't wait to see moments you've captured!"
+  },
   "rsvp": {
     "t": "R.S.V.P."
   },

@@ -16,6 +16,7 @@ export {default as Wedding} from "./Wedding";
 export {default as AddToCalBtn} from "./AddToCalendar";
 export {default as Event} from "./Event";
 export {default as EventImage} from "./EventImage";
+export {default as PostParty} from "./PostParty";
 
 // RSVP (hidden at this time)
 export {default as FindInvite} from "./FindInvite";

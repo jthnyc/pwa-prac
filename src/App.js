@@ -9,9 +9,10 @@ import {
   Images5,
   Images6,
   Nav2,
-  Story,
+  // Story,
   Faq,
   Wedding,
+  PostParty,
   COVID,
   PhotoGallery,
   // RSVP,
@@ -83,7 +84,8 @@ function App() {
           <Nav2 />
           <Welcome />
           <Panels>
-            <Story />
+            {/* <Story /> */}
+            <PostParty />
           </Panels>
           <Images1 />
           <Panels>
